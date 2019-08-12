@@ -20,9 +20,12 @@ class ViewController: UIViewController {
 	func Limpieza(data : [Element]){
 		for group in data{
 			do{
-				var temp = try group.children().text()
-				if !(temp == "GRUPOS SIN VACANTES") && !(temp == "GRUPOS CON VACANTES"){
-					print(temp)
+                print(group.children().count)
+                let temp = try group.children().text()
+				if (temp != "GRUPOS SIN VACANTES") && (temp != "GRUPOS CON VACANTES"){
+                    print(group.child(0))
+                    print(group.child(1))
+                    print("\n\n\n")
 				}
 			} catch{
 				print("Holi")
@@ -32,11 +35,12 @@ class ViewController: UIViewController {
 	
 	
 	func Extraccion(){
-		if let url = URL(string: "https://ssa.ingenieria.unam.mx/hrsHtml/674.html") {
+		if let url = URL(string: "https://ssa.ingenieria.unam.mx/hrsHtml/1322.html") {
 			do {
 				let html = try String(contentsOf: url)
 				let doc: Document = try SwiftSoup.parse(html)
-				var link: [Element] = try doc.select("tr").array()
+                var link: [Element] = try doc.select("tr").array()
+                link.remove(at: 0)
 				Limpieza(data: link)
 				//print(link)
 			} catch {
