@@ -8,10 +8,11 @@
 
 import Foundation
 
-class Lectures  {
+class Lecture  {
 	var clave: Int
 	var grupo: Int
 	var profesor: String
+    var tipo : String
 	var hora_in: Float = 0.0
 	var hora_fin: Float = 0.0
 	var horario: String
@@ -24,6 +25,7 @@ class Lectures  {
 		self.clave = clave
 		self.grupo = grupo
 		self.profesor = profesor
+        self.tipo = tipo
 		self.horario = horario
 		self.dias = dias
 		self.salon = salon

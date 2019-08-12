@@ -10,7 +10,7 @@ import UIKit
 import SwiftSoup
 
 class ViewController: UIViewController {
-
+    var test = [Lecture]()
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		Extraccion()
@@ -20,13 +20,22 @@ class ViewController: UIViewController {
 	func Limpieza(data : [Element]){
 		for group in data{
 			do{
-                print(group.children().count)
-                let temp = try group.children().text()
-				if (temp != "GRUPOS SIN VACANTES") && (temp != "GRUPOS CON VACANTES"){
-                    print(group.child(0))
-                    print(group.child(1))
+                if (group.children().count == 9){
+                    let clave = try Int(group.child(0).text())!
+                    let grup = try Int(group.child(1).text())!
+                    let profesor = try group.child(2).text()
+                    let tipo = try group.child(3).text()
+                    let horario = try group.child(4).text()
+                    let dias = try group.child(5).text()
+                    let salon = try group.child(6).text()
+                    let cupo = try Int(group.child(7).text())!
+                    let vacantes = try Int(group.child(8).text())!
+                    let a = Lecture(clave: clave, grupo: grup, profesor: profesor, tipo: tipo, horario: horario, dias: dias, salon: salon, cupo: cupo, vacantes: vacantes)
+                    test.append(a)
+                    
+                }
                     print("\n\n\n")
-				}
+
 			} catch{
 				print("Holi")
 		}
@@ -42,6 +51,7 @@ class ViewController: UIViewController {
                 var link: [Element] = try doc.select("tr").array()
                 link.remove(at: 0)
 				Limpieza(data: link)
+                print(test)
 				//print(link)
 			} catch {
 				print("Content could not be loaded")
