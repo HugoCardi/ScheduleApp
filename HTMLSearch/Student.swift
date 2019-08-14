@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//Clase Student
 class Student{
 	let st_name : String
 	let last_names : String
