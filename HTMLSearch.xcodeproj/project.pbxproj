@@ -14,6 +14,8 @@
 		FA66C5F122F9DEEA000BDBDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA66C5EF22F9DEEA000BDBDF /* Main.storyboard */; };
 		FA66C5F322F9DEEB000BDBDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA66C5F222F9DEEB000BDBDF /* Assets.xcassets */; };
 		FA66C5F622F9DEEB000BDBDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA66C5F422F9DEEB000BDBDF /* LaunchScreen.storyboard */; };
+		FACD0D352304558E00202CE1 /* ValidLecureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD0D342304558E00202CE1 /* ValidLecureList.swift */; };
+		FACD0D3723045B7600202CE1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD0D3623045B7600202CE1 /* DataManager.swift */; };
 		FAF0745B22FC8C11004314A8 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0745A22FC8C11004314A8 /* Lecture.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		FA66C5F222F9DEEB000BDBDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA66C5F522F9DEEB000BDBDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA66C5F722F9DEEB000BDBDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACD0D342304558E00202CE1 /* ValidLecureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidLecureList.swift; sourceTree = "<group>"; };
+		FACD0D3623045B7600202CE1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		FAF0745A22FC8C11004314A8 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,8 @@
 			children = (
 				FA66C5EB22F9DEEA000BDBDF /* AppDelegate.swift */,
 				FA66C5ED22F9DEEA000BDBDF /* ViewController.swift */,
+				FACD0D3623045B7600202CE1 /* DataManager.swift */,
+				FACD0D342304558E00202CE1 /* ValidLecureList.swift */,
 				FAF0745A22FC8C11004314A8 /* Lecture.swift */,
 				FA66C5EF22F9DEEA000BDBDF /* Main.storyboard */,
 				FA66C5F222F9DEEB000BDBDF /* Assets.xcassets */,
@@ -210,7 +216,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF0745B22FC8C11004314A8 /* Lecture.swift in Sources */,
+				FACD0D3723045B7600202CE1 /* DataManager.swift in Sources */,
 				FA66C5EE22F9DEEA000BDBDF /* ViewController.swift in Sources */,
+				FACD0D352304558E00202CE1 /* ValidLecureList.swift in Sources */,
 				FA66C5EC22F9DEEA000BDBDF /* AppDelegate.swift in Sources */,
 				30B22DF92301D31D0073082F /* Student.swift in Sources */,
 			);
