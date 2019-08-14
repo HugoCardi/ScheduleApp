@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view.
 	}
 	override func viewDidAppear(_ animated: Bool) {
-		Extraccion(claveDeseada: "674")
+		Extraccion(claveDeseada: "1667")
 	}
 
 	func Extraccion(claveDeseada : String){
@@ -42,7 +42,8 @@ class ViewController: UIViewController {
 			self.present(alert, animated: true)
 		}
 		for instanceOfLecture in test{
-			print(instanceOfLecture.profesor)
+			print(instanceOfLecture.profesor,"   ", instanceOfLecture.hora_in, "  ", instanceOfLecture.hora_fin)
+
 		}
 	
 	

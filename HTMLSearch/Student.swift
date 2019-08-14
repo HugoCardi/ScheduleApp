@@ -19,6 +19,6 @@ class Student{
 		if let nickname = nickname{
 			self.nickname = nickname
 		}
-		self.enrolled_lectures = enrolled_lectures
+	self.enrolled_lectures = enrolled_lectures
 	}
 }

@@ -10,7 +10,7 @@ import Foundation
 
 class Lecture  {
 	var clave: Int
-	var nombre : String
+	var nombreAsignatura : String
 	var grupo: Int
 	var profesor: String
     var tipo : String
@@ -22,9 +22,9 @@ class Lecture  {
 	var cupo: Int
 	var vacantes: Int
 	
-	init(clave: Int, nombre :String,  grupo: Int, profesor: String, tipo: String, horario: String, dias: String, salon: String, cupo: Int, vacantes: Int  ) {
+	init(clave: Int, nombreAsignatura :String,  grupo: Int, profesor: String, tipo: String, horario: String, dias: String, salon: String, cupo: Int, vacantes: Int  ) {
 		self.clave = clave
-		self.nombre = nombre
+		self.nombreAsignatura = nombreAsignatura
 		self.grupo = grupo
 		self.profesor = profesor
         self.tipo = tipo
@@ -33,5 +33,15 @@ class Lecture  {
 		self.salon = salon
 		self.cupo = cupo
 		self.vacantes = vacantes
+		time_to_float()
+	}
+	func time_to_float(){
+		//Separation of format : "x:xxhrs a y:yyhrs" into ["x:xxhrs", y:yyhrs"]
+		var array_of_times = self.horario.split(separator: "a")
+		let begin = array_of_times[0].replacingOccurrences(of: ":", with: ".")
+		let end = array_of_times[1].replacingOccurrences(of: ":", with: ".")
+		self.hora_in = Float(begin.replacingOccurrences(of: " ", with: "")) ?? 0.0
+		self.hora_fin = Float(end.replacingOccurrences(of: " ", with: "")) ?? 0.0
+		//print(temp)
 	}
 }
