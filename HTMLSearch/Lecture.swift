@@ -10,6 +10,7 @@ import Foundation
 
 class Lecture  {
 	var clave: Int
+	var nombre : String
 	var grupo: Int
 	var profesor: String
     var tipo : String
@@ -21,8 +22,9 @@ class Lecture  {
 	var cupo: Int
 	var vacantes: Int
 	
-	init(clave: Int, grupo: Int, profesor: String, tipo: String, horario: String, dias: String, salon: String, cupo: Int, vacantes: Int  ) {
+	init(clave: Int, nombre :String,  grupo: Int, profesor: String, tipo: String, horario: String, dias: String, salon: String, cupo: Int, vacantes: Int  ) {
 		self.clave = clave
+		self.nombre = nombre
 		self.grupo = grupo
 		self.profesor = profesor
         self.tipo = tipo

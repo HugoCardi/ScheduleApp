@@ -91,11 +91,11 @@
 				FACD0D3623045B7600202CE1 /* DataManager.swift */,
 				FACD0D342304558E00202CE1 /* ValidLecureList.swift */,
 				FAF0745A22FC8C11004314A8 /* Lecture.swift */,
+				30B22DF82301D31D0073082F /* Student.swift */,
 				FA66C5EF22F9DEEA000BDBDF /* Main.storyboard */,
 				FA66C5F222F9DEEB000BDBDF /* Assets.xcassets */,
 				FA66C5F422F9DEEB000BDBDF /* LaunchScreen.storyboard */,
 				FA66C5F722F9DEEB000BDBDF /* Info.plist */,
-				30B22DF82301D31D0073082F /* Student.swift */,
 			);
 			path = HTMLSearch;
 			sourceTree = "<group>";

@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view.
 	}
 	override func viewDidAppear(_ animated: Bool) {
-		Extraccion(claveDeseada: "20000")
+		Extraccion(claveDeseada: "674")
 	}
 
 	func Extraccion(claveDeseada : String){
