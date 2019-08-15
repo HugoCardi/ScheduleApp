@@ -16,7 +16,7 @@
 		FA66C5F622F9DEEB000BDBDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA66C5F422F9DEEB000BDBDF /* LaunchScreen.storyboard */; };
 		FACD0D352304558E00202CE1 /* ValidLecureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD0D342304558E00202CE1 /* ValidLecureList.swift */; };
 		FACD0D3723045B7600202CE1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD0D3623045B7600202CE1 /* DataManager.swift */; };
-		FAEE51502305CE8400CCCFE8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEE514E2305CE8400CCCFE8 /* Model.xcdatamodeld */; };
+		FAEE51502305CE8400CCCFE8 /* HTMLSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEE514E2305CE8400CCCFE8 /* HTMLSearch.xcdatamodeld */; };
 		FAEE518F2305D1E700CCCFE8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEE518E2305D1E700CCCFE8 /* CoreData.framework */; };
 		FAF0745B22FC8C11004314A8 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0745A22FC8C11004314A8 /* Lecture.swift */; };
 /* End PBXBuildFile section */
@@ -101,7 +101,7 @@
 				FA66C5EF22F9DEEA000BDBDF /* Main.storyboard */,
 				FA66C5F222F9DEEB000BDBDF /* Assets.xcassets */,
 				FA66C5F422F9DEEB000BDBDF /* LaunchScreen.storyboard */,
-				FAEE514E2305CE8400CCCFE8 /* Model.xcdatamodeld */,
+				FAEE514E2305CE8400CCCFE8 /* HTMLSearch.xcdatamodeld */,
 				FA66C5F722F9DEEB000BDBDF /* Info.plist */,
 			);
 			path = HTMLSearch;
@@ -225,7 +225,7 @@
 				FAF0745B22FC8C11004314A8 /* Lecture.swift in Sources */,
 				FACD0D3723045B7600202CE1 /* DataManager.swift in Sources */,
 				FA66C5EE22F9DEEA000BDBDF /* ViewController.swift in Sources */,
-				FAEE51502305CE8400CCCFE8 /* Model.xcdatamodeld in Sources */,
+				FAEE51502305CE8400CCCFE8 /* HTMLSearch.xcdatamodeld in Sources */,
 				FACD0D352304558E00202CE1 /* ValidLecureList.swift in Sources */,
 				FA66C5EC22F9DEEA000BDBDF /* AppDelegate.swift in Sources */,
 				30B22DF92301D31D0073082F /* Student.swift in Sources */,
@@ -432,13 +432,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FAEE514E2305CE8400CCCFE8 /* Model.xcdatamodeld */ = {
+		FAEE514E2305CE8400CCCFE8 /* HTMLSearch.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				FAEE514F2305CE8400CCCFE8 /* Model.xcdatamodel */,
 			);
 			currentVersion = FAEE514F2305CE8400CCCFE8 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			path = HTMLSearch.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

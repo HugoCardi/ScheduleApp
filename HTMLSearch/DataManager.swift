@@ -8,7 +8,8 @@
 
 import Foundation
 import SwiftSoup
-var test = [Lecture]()
+import CoreData
+var test = [NSManagedObject]()
 
 func ExtractLectures(data: [Element]) {
 	for group in data{
@@ -26,7 +27,7 @@ func ExtractLectures(data: [Element]) {
 				let vacantes = try Int(group.child(8).text()) ?? 0
 				if (clave != 0){
 					let a = Lecture(clave: clave, nombreAsignatura: nombre, grupo: grup, profesor: profesor, tipo: tipo, horario: horario, dias: dias, salon: salon, cupo: cupo, vacantes: vacantes)
-					test.append(a)
+					//test.append(a)
 				}
 			}
 			print("\n\n\n")
@@ -37,5 +38,36 @@ func ExtractLectures(data: [Element]) {
 	}
 	
 }
+
+func save(lecture: Lecture) {
+	
+	guard let appDelegate =
+		UIApplication.shared.delegate as? AppDelegate else {
+			return
+	}
+	// 1
+	let managedContext = appDelegate.persistentContainer.viewContext
+	// 2
+	let entity = NSEntityDescription.entity(forEntityName: "Lecture", in: managedContext)!
+	let lectureObject = NSManagedObject(entity: entity, insertInto: managedContext)
+	// 3
+	lectureObject.setValue(lecture.clave, forKey: "clave")
+	lectureObject.setValue(lecture.cupo, forKey: "cupo")
+	lectureObject.setValue(lecture.grupo, forKey: "grupo")
+	lectureObject.setValue(lecture.cupo, forKey: "cupo")
+	lectureObject.setValue(lecture.profesor, forKey: "profesor")
+	lectureObject.setValue(lecture.hora_in, forKey: "hora_in")
+	
+	
+	// 4
+	do {
+		try managedContext.save()
+		test.append(lectureObject)
+	} catch let error as NSError {
+		print("Could not save. \(error), \(error.userInfo)")
+	}
+}
+
+
 
 //End of Function

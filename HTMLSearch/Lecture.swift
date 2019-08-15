@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
-class Lecture  {
+class Lecture: NSObject  {
 	var clave: Int
 	var nombreAsignatura : String
 	var grupo: Int
@@ -33,6 +34,7 @@ class Lecture  {
 		self.salon = salon
 		self.cupo = cupo
 		self.vacantes = vacantes
+		super.init()
 		time_to_float()
 	}
 	func time_to_float(){

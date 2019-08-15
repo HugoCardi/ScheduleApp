@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftSoup
+import CoreData
 
 class ViewController: UIViewController {
 
@@ -40,13 +41,14 @@ class ViewController: UIViewController {
 			let alert = UIAlertController(title: "Error de clave", message: "La clave no existe o no hay grupos disponibles para dicha asignatura", preferredStyle: .alert)
 			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 			self.present(alert, animated: true)
-		}
+		}/*
 		for instanceOfLecture in test{
 			print(instanceOfLecture.profesor,"   ", instanceOfLecture.hora_in, "  ", instanceOfLecture.hora_fin)
 
 		}
+*/
+	}//Extraction Function Closing Bracket
+
 	
 	
-	
-	}
 	}//View Controller Closing Bracket
