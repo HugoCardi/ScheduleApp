@@ -10,7 +10,7 @@ import Foundation
 import SwiftSoup
 var test = [Lecture]()
 
-func ExtractLectures(data : [Element]) {
+func ExtractLectures(data: [Element]) {
 	for group in data{
 		do{
 			if (group.children().count == 9){
