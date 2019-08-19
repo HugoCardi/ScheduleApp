@@ -9,7 +9,8 @@
 import Foundation
 import CoreData
 
-class Lecture: NSObject  {
+class Lecture: NSObject {
+
 	var clave: Int
 	var nombreAsignatura : String
 	var grupo: Int

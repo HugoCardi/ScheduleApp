@@ -11,7 +11,10 @@ import SwiftSoup
 import CoreData
 var test = [NSManagedObject]()
 
-func ExtractLectures(data: [Element]) {
+
+
+func extractLectures(data: [Element])  -> [Lecture] {
+	var possibleChoices =  [Lecture]()
 	for group in data{
 		do{
 			if (group.children().count == 9){
@@ -26,7 +29,7 @@ func ExtractLectures(data: [Element]) {
 				let cupo = try Int(group.child(7).text()) ?? 0
 				let vacantes = try Int(group.child(8).text()) ?? 0
 				if (clave != 0){
-                    _ = Lecture(clave: clave, nombreAsignatura: nombre, grupo: grup, profesor: profesor, tipo: tipo, horario: horario, dias: dias, salon: salon, cupo: cupo, vacantes: vacantes)
+					 possibleChoices.append(Lecture(clave: clave, nombreAsignatura: nombre, grupo: grup, profesor: profesor, tipo: tipo, horario: horario, dias: dias, salon: salon, cupo: cupo, vacantes: vacantes))
 					//test.append(a)
 				}
 			}
@@ -36,8 +39,35 @@ func ExtractLectures(data: [Element]) {
 			print("Holi")
 		}
 	}
-	
+	return possibleChoices
 }
+
+func extractFromHTML(claveDeseada : String){
+    if asignatura[claveDeseada] != nil{
+        let stringedURL = "https://ssa.ingenieria.unam.mx/hrsHtml/" + claveDeseada + ".html"
+        if let url = URL(string: stringedURL) {
+            do {
+                let html = try String(contentsOf: url)
+                let doc: Document = try SwiftSoup.parse(html)
+                var link: [Element] = try doc.select("tr").array()
+                link.remove(at: 0)
+                link.remove(at: 0)
+                _ = extractLectures(data: link)
+            } catch {
+                print("Content could not be loaded")
+            }
+        } else {
+            print("The URL is invalid")
+        }
+    }else{/*
+         let alert = UIAlertController(title: "Error de clave", message: "La clave no existe o no hay grupos disponibles para dicha asignatura", preferredStyle: .alert)
+         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+         self.present(alert, animated: true)
+         */
+        print("\n\nNo existen grupos para dicha asignatura")
+    }//Extraction Function Closing Bracket
+}
+
 
 func save(lecture: Lecture) {
 	
@@ -71,8 +101,4 @@ func save(lecture: Lecture) {
 	} catch let error as NSError {
 		print("Could not save. \(error), \(error.userInfo)")
 	}
-}
-
-
-
-//End of Function
+}//End of Function
