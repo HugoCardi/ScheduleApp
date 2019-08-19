@@ -57,8 +57,13 @@ func save(lecture: Lecture) {
 	lectureObject.setValue(lecture.cupo, forKey: "cupo")
 	lectureObject.setValue(lecture.profesor, forKey: "profesor")
 	lectureObject.setValue(lecture.hora_in, forKey: "hora_in")
-	
-	
+	lectureObject.setValue(lecture.vacantes, forKey: "vacantes")
+	lectureObject.setValue(lecture.nombreAsignatura, forKey: "nombreAsignatura")
+	lectureObject.setValue(lecture.hora_fin, forKey: "hora_fin")
+	lectureObject.setValue(lecture.salon, forKey: "salon")
+	lectureObject.setValue(lecture.tipo, forKey: "tipo")
+	lectureObject.setValue(lecture.hora_fin, forKey: "hora_fin")
+
 	// 4
 	do {
 		try managedContext.save()
