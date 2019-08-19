@@ -18,7 +18,8 @@ class Lecture: NSObject  {
 	var hora_in: Float = 0.0
 	var hora_fin: Float = 0.0
 	var horario: String
-	var dias: String
+	//var dias: String
+    var arrayDays: [Bool]
 	var salon: String
 	var cupo: Int
 	var vacantes: Int
@@ -30,14 +31,16 @@ class Lecture: NSObject  {
 		self.profesor = profesor
         self.tipo = tipo
 		self.horario = horario
-		self.dias = dias
+        self.arrayDays = [false,false,false,false,false,false,false]
+		//self.dias = dias
 		self.salon = salon
 		self.cupo = cupo
 		self.vacantes = vacantes
 		super.init()
-		time_to_float()
+		timeToFloat()
+        daysToArray(dias: dias)
 	}
-	func time_to_float(){
+	func timeToFloat(){
 		//Separation of format : "x:xxhrs a y:yyhrs" into ["x:xxhrs", y:yyhrs"]
 		var array_of_times = self.horario.split(separator: "a")
 		let begin = array_of_times[0].replacingOccurrences(of: ":", with: ".")
@@ -46,4 +49,33 @@ class Lecture: NSObject  {
 		self.hora_fin = Float(end.replacingOccurrences(of: " ", with: "")) ?? 0.0
 		//print(temp)
 	}
+    func daysToArray(dias : String) {
+        let arrayOfString = dias.split(separator: ",")
+        for day in arrayOfString{
+            let a = day.replacingOccurrences(of: " ", with: "")
+            switch a {
+            case "Lun":
+                self.arrayDays[0] = true
+                break
+            case "Mar":
+                self.arrayDays[1] = true
+                break
+            case "Mier":
+                self.arrayDays[2] = true
+                break
+            case "Jue":
+                self.arrayDays[3] = true
+                break
+            case "Vie":
+                self.arrayDays[4] = true
+                break
+            case "Sab":
+                self.arrayDays[5] = true
+                break
+            default:
+                print("Wanker for coming on Sunday")
+                break
+            }
+        }
+    }
 }
