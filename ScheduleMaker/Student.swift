@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 //Clase Student
+/*
 class Student{
 	let student_name: String
 	let last_names: String
@@ -50,3 +51,4 @@ class Student{
 	
 	
 }
+*/

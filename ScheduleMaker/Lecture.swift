@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-
+/*
 class Lecture {
 	var clave: Int
 	var nombreAsignatura : String
@@ -78,3 +78,4 @@ class Lecture {
 		}
 	}
 }
+*/

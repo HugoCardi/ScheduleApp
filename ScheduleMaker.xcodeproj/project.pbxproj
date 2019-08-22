@@ -22,6 +22,8 @@
 		FA4BEAB8230F068100725245 /* ValidLectureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BEAB7230F068100725245 /* ValidLectureList.swift */; };
 		FA4BEABA230F146B00725245 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BEAB9230F146B00725245 /* Lecture.swift */; };
 		FA4BEABC230F149C00725245 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BEABB230F149C00725245 /* Student.swift */; };
+		FA75FFE5230F347000D977B4 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75FFE3230F347000D977B4 /* Student+CoreDataClass.swift */; };
+		FA75FFE6230F347000D977B4 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75FFE4230F347000D977B4 /* Student+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		FA4BEAB7230F068100725245 /* ValidLectureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidLectureList.swift; sourceTree = "<group>"; };
 		FA4BEAB9230F146B00725245 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		FA4BEABB230F149C00725245 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		FA75FFE3230F347000D977B4 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA75FFE4230F347000D977B4 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 		FA4BEA83230F04B800725245 /* ScheduleMaker */ = {
 			isa = PBXGroup;
 			children = (
+				FA75FFE3230F347000D977B4 /* Student+CoreDataClass.swift */,
+				FA75FFE4230F347000D977B4 /* Student+CoreDataProperties.swift */,
 				FA4BEA84230F04B800725245 /* AppDelegate.swift */,
 				FA4BEAB5230F05D800725245 /* DataManager.swift */,
 				FA4BEA86230F04B800725245 /* ViewController.swift */,
@@ -402,10 +408,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA4BEABA230F146B00725245 /* Lecture.swift in Sources */,
+				FA75FFE5230F347000D977B4 /* Student+CoreDataClass.swift in Sources */,
 				FA4BEA87230F04B800725245 /* ViewController.swift in Sources */,
 				FA4BEAB8230F068100725245 /* ValidLectureList.swift in Sources */,
 				FA4BEAB6230F05D800725245 /* DataManager.swift in Sources */,
 				FA4BEA8D230F04B800725245 /* ScheduleMaker.xcdatamodeld in Sources */,
+				FA75FFE6230F347000D977B4 /* Student+CoreDataProperties.swift in Sources */,
 				FA4BEABC230F149C00725245 /* Student.swift in Sources */,
 				FA4BEA85230F04B800725245 /* AppDelegate.swift in Sources */,
 			);
