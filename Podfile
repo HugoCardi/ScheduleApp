@@ -6,9 +6,7 @@ target 'ScheduleMaker' do
   use_frameworks!
 
   # Pods for ScheduleMaker
-
- pod 'SwiftSoup'
-
+  pod 'SwiftSoup'
   target 'ScheduleMakerTests' do
     inherit! :search_paths
     # Pods for testing

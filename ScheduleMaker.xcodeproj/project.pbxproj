@@ -3,201 +3,222 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		051AE2E4EAE15BB412F0CC16 /* Pods_ScheduleMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7C102286F0F818EFD486BC /* Pods_ScheduleMaker.framework */; };
-		1A51C85B990CE89582355C0C /* Pods_ScheduleMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AF7A11759FA152099DC783 /* Pods_ScheduleMakerTests.framework */; };
-		9D8F833FD0877EFCB68BDB53 /* Pods_ScheduleMakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E595FEDC4611B1842DEDDE7E /* Pods_ScheduleMakerUITests.framework */; };
-		FA4BEA85230F04B800725245 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BEA84230F04B800725245 /* AppDelegate.swift */; };
-		FA4BEA87230F04B800725245 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BEA86230F04B800725245 /* ViewController.swift */; };
-		FA4BEA8A230F04B800725245 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4BEA88230F04B800725245 /* Main.storyboard */; };
-		FA4BEA8D230F04B800725245 /* ScheduleMaker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA4BEA8B230F04B800725245 /* ScheduleMaker.xcdatamodeld */; };
-		FA4BEA8F230F04B900725245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4BEA8E230F04B900725245 /* Assets.xcassets */; };
-		FA4BEA92230F04B900725245 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4BEA90230F04B900725245 /* LaunchScreen.storyboard */; };
-		FA4BEA9D230F04B900725245 /* ScheduleMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BEA9C230F04B900725245 /* ScheduleMakerTests.swift */; };
-		FA4BEAA8230F04B900725245 /* ScheduleMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BEAA7230F04B900725245 /* ScheduleMakerUITests.swift */; };
-		FA4BEAB6230F05D800725245 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BEAB5230F05D800725245 /* DataManager.swift */; };
-		FA4BEAB8230F068100725245 /* ValidLectureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BEAB7230F068100725245 /* ValidLectureList.swift */; };
-		FA4BEABA230F146B00725245 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BEAB9230F146B00725245 /* Lecture.swift */; };
-		FA4BEABC230F149C00725245 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4BEABB230F149C00725245 /* Student.swift */; };
-		FA75FFE5230F347000D977B4 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75FFE3230F347000D977B4 /* Student+CoreDataClass.swift */; };
-		FA75FFE6230F347000D977B4 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75FFE4230F347000D977B4 /* Student+CoreDataProperties.swift */; };
+		3A38C93D19188BAD0248ACE8 /* Pods_ScheduleMakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C68242156C18F7A125A84F /* Pods_ScheduleMakerUITests.framework */; };
+		BDF1699D3C2332BDAE1F8946 /* Pods_ScheduleMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55AC43342B0865EF9DA8438 /* Pods_ScheduleMaker.framework */; };
+		EA9A8DB1E1CF1379B32295B8 /* Pods_ScheduleMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496277D59380A27A4F12F9F /* Pods_ScheduleMakerTests.framework */; };
+		FA750001230F44A200D977B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA75FFFF230F44A200D977B4 /* Main.storyboard */; };
+		FA750004230F44A200D977B4 /* ScheduleMaker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA750002230F44A200D977B4 /* ScheduleMaker.xcdatamodeld */; };
+		FA750006230F44A300D977B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA750005230F44A300D977B4 /* Assets.xcassets */; };
+		FA750009230F44A300D977B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA750007230F44A300D977B4 /* LaunchScreen.storyboard */; };
+		FA750014230F44A300D977B4 /* ScheduleMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA750013230F44A300D977B4 /* ScheduleMakerTests.swift */; };
+		FA75001F230F44A300D977B4 /* ScheduleMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75001E230F44A300D977B4 /* ScheduleMakerUITests.swift */; };
+		FA75FFFC230F44A200D977B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75FFFB230F44A200D977B4 /* AppDelegate.swift */; };
+		FA75FFFE230F44A200D977B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75FFFD230F44A200D977B4 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FA4BEA99230F04B900725245 /* PBXContainerItemProxy */ = {
+		FA750010230F44A300D977B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FA4BEA79230F04B800725245 /* Project object */;
+			containerPortal = FA75FFF0230F44A200D977B4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FA4BEA80230F04B800725245;
+			remoteGlobalIDString = FA75FFF7230F44A200D977B4;
 			remoteInfo = ScheduleMaker;
 		};
-		FA4BEAA4230F04B900725245 /* PBXContainerItemProxy */ = {
+		FA75001B230F44A300D977B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = FA4BEA79230F04B800725245 /* Project object */;
+			containerPortal = FA75FFF0230F44A200D977B4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FA4BEA80230F04B800725245;
+			remoteGlobalIDString = FA75FFF7230F44A200D977B4;
 			remoteInfo = ScheduleMaker;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A7C102286F0F818EFD486BC /* Pods_ScheduleMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38BFE49639279E454154108F /* Pods-ScheduleMakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMakerTests.release.xcconfig"; path = "Target Support Files/Pods-ScheduleMakerTests/Pods-ScheduleMakerTests.release.xcconfig"; sourceTree = "<group>"; };
-		4DA3669879331171749D3A8A /* Pods-ScheduleMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMakerTests.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleMakerTests/Pods-ScheduleMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7C19E5E760C13DD5B5D8AB0A /* Pods-ScheduleMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMaker.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleMaker/Pods-ScheduleMaker.debug.xcconfig"; sourceTree = "<group>"; };
-		9752FE1C1E069B3954C47AF1 /* Pods-ScheduleMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMaker.release.xcconfig"; path = "Target Support Files/Pods-ScheduleMaker/Pods-ScheduleMaker.release.xcconfig"; sourceTree = "<group>"; };
-		9AF6BF1ABC2C57C833DF58FC /* Pods-ScheduleMakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleMakerUITests/Pods-ScheduleMakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A3AF7A11759FA152099DC783 /* Pods_ScheduleMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBC9EDE172439E24F293B58D /* Pods-ScheduleMakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMakerUITests.release.xcconfig"; path = "Target Support Files/Pods-ScheduleMakerUITests/Pods-ScheduleMakerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E595FEDC4611B1842DEDDE7E /* Pods_ScheduleMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleMakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA4BEA81230F04B800725245 /* ScheduleMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA4BEA84230F04B800725245 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA4BEA86230F04B800725245 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FA4BEA89230F04B800725245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FA4BEA8C230F04B800725245 /* ScheduleMaker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleMaker.xcdatamodel; sourceTree = "<group>"; };
-		FA4BEA8E230F04B900725245 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FA4BEA91230F04B900725245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FA4BEA93230F04B900725245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA4BEA98230F04B900725245 /* ScheduleMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA4BEA9C230F04B900725245 /* ScheduleMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleMakerTests.swift; sourceTree = "<group>"; };
-		FA4BEA9E230F04B900725245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA4BEAA3230F04B900725245 /* ScheduleMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA4BEAA7230F04B900725245 /* ScheduleMakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleMakerUITests.swift; sourceTree = "<group>"; };
-		FA4BEAA9230F04B900725245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA4BEAB5230F05D800725245 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		FA4BEAB7230F068100725245 /* ValidLectureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidLectureList.swift; sourceTree = "<group>"; };
-		FA4BEAB9230F146B00725245 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
-		FA4BEABB230F149C00725245 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		FA75FFE3230F347000D977B4 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FA75FFE4230F347000D977B4 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		143BA1B94798F2F44EA589AF /* Pods-ScheduleMakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMakerTests.release.xcconfig"; path = "Target Support Files/Pods-ScheduleMakerTests/Pods-ScheduleMakerTests.release.xcconfig"; sourceTree = "<group>"; };
+		1DBD22193D731B57C05BB192 /* Pods-ScheduleMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMaker.release.xcconfig"; path = "Target Support Files/Pods-ScheduleMaker/Pods-ScheduleMaker.release.xcconfig"; sourceTree = "<group>"; };
+		3107635EA71C3953A67BC204 /* Pods-ScheduleMakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMakerUITests.release.xcconfig"; path = "Target Support Files/Pods-ScheduleMakerUITests/Pods-ScheduleMakerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		64C68242156C18F7A125A84F /* Pods_ScheduleMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleMakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83A7ADE9CA42F2751CAB6384 /* Pods-ScheduleMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMakerTests.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleMakerTests/Pods-ScheduleMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9489DFED49C103256125E11B /* Pods-ScheduleMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMaker.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleMaker/Pods-ScheduleMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		A496277D59380A27A4F12F9F /* Pods_ScheduleMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C34B60B2B92B2BF42070C208 /* Pods-ScheduleMakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleMakerUITests/Pods-ScheduleMakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F55AC43342B0865EF9DA8438 /* Pods_ScheduleMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA750000230F44A200D977B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA750003230F44A200D977B4 /* ScheduleMaker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleMaker.xcdatamodel; sourceTree = "<group>"; };
+		FA750005230F44A300D977B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA750008230F44A300D977B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA75000A230F44A300D977B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA75000F230F44A300D977B4 /* ScheduleMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA750013230F44A300D977B4 /* ScheduleMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleMakerTests.swift; sourceTree = "<group>"; };
+		FA750015230F44A300D977B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA75001A230F44A300D977B4 /* ScheduleMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScheduleMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA75001E230F44A300D977B4 /* ScheduleMakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleMakerUITests.swift; sourceTree = "<group>"; };
+		FA750020230F44A300D977B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA75FFF8230F44A200D977B4 /* ScheduleMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA75FFFB230F44A200D977B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA75FFFD230F44A200D977B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FA4BEA7E230F04B800725245 /* Frameworks */ = {
+		FA75000C230F44A300D977B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				051AE2E4EAE15BB412F0CC16 /* Pods_ScheduleMaker.framework in Frameworks */,
+				EA9A8DB1E1CF1379B32295B8 /* Pods_ScheduleMakerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA4BEA95230F04B900725245 /* Frameworks */ = {
+		FA750017230F44A300D977B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A51C85B990CE89582355C0C /* Pods_ScheduleMakerTests.framework in Frameworks */,
+				3A38C93D19188BAD0248ACE8 /* Pods_ScheduleMakerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA4BEAA0230F04B900725245 /* Frameworks */ = {
+		FA75FFF5230F44A200D977B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D8F833FD0877EFCB68BDB53 /* Pods_ScheduleMakerUITests.framework in Frameworks */,
+				BDF1699D3C2332BDAE1F8946 /* Pods_ScheduleMaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1820F6A8027BBB012D9DA05F /* Frameworks */ = {
+		B49F14D801D98F776803065D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1A7C102286F0F818EFD486BC /* Pods_ScheduleMaker.framework */,
-				A3AF7A11759FA152099DC783 /* Pods_ScheduleMakerTests.framework */,
-				E595FEDC4611B1842DEDDE7E /* Pods_ScheduleMakerUITests.framework */,
+				9489DFED49C103256125E11B /* Pods-ScheduleMaker.debug.xcconfig */,
+				1DBD22193D731B57C05BB192 /* Pods-ScheduleMaker.release.xcconfig */,
+				83A7ADE9CA42F2751CAB6384 /* Pods-ScheduleMakerTests.debug.xcconfig */,
+				143BA1B94798F2F44EA589AF /* Pods-ScheduleMakerTests.release.xcconfig */,
+				C34B60B2B92B2BF42070C208 /* Pods-ScheduleMakerUITests.debug.xcconfig */,
+				3107635EA71C3953A67BC204 /* Pods-ScheduleMakerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E74ED213E129FC288977AA3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F55AC43342B0865EF9DA8438 /* Pods_ScheduleMaker.framework */,
+				A496277D59380A27A4F12F9F /* Pods_ScheduleMakerTests.framework */,
+				64C68242156C18F7A125A84F /* Pods_ScheduleMakerUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B799038FF81B27F5B22C1369 /* Pods */ = {
+		FA750012230F44A300D977B4 /* ScheduleMakerTests */ = {
 			isa = PBXGroup;
 			children = (
-				7C19E5E760C13DD5B5D8AB0A /* Pods-ScheduleMaker.debug.xcconfig */,
-				9752FE1C1E069B3954C47AF1 /* Pods-ScheduleMaker.release.xcconfig */,
-				4DA3669879331171749D3A8A /* Pods-ScheduleMakerTests.debug.xcconfig */,
-				38BFE49639279E454154108F /* Pods-ScheduleMakerTests.release.xcconfig */,
-				9AF6BF1ABC2C57C833DF58FC /* Pods-ScheduleMakerUITests.debug.xcconfig */,
-				BBC9EDE172439E24F293B58D /* Pods-ScheduleMakerUITests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		FA4BEA78230F04B800725245 = {
-			isa = PBXGroup;
-			children = (
-				FA4BEA83230F04B800725245 /* ScheduleMaker */,
-				FA4BEA9B230F04B900725245 /* ScheduleMakerTests */,
-				FA4BEAA6230F04B900725245 /* ScheduleMakerUITests */,
-				FA4BEA82230F04B800725245 /* Products */,
-				B799038FF81B27F5B22C1369 /* Pods */,
-				1820F6A8027BBB012D9DA05F /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		FA4BEA82230F04B800725245 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FA4BEA81230F04B800725245 /* ScheduleMaker.app */,
-				FA4BEA98230F04B900725245 /* ScheduleMakerTests.xctest */,
-				FA4BEAA3230F04B900725245 /* ScheduleMakerUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		FA4BEA83230F04B800725245 /* ScheduleMaker */ = {
-			isa = PBXGroup;
-			children = (
-				FA75FFE3230F347000D977B4 /* Student+CoreDataClass.swift */,
-				FA75FFE4230F347000D977B4 /* Student+CoreDataProperties.swift */,
-				FA4BEA84230F04B800725245 /* AppDelegate.swift */,
-				FA4BEAB5230F05D800725245 /* DataManager.swift */,
-				FA4BEA86230F04B800725245 /* ViewController.swift */,
-				FA4BEAB7230F068100725245 /* ValidLectureList.swift */,
-				FA4BEAB9230F146B00725245 /* Lecture.swift */,
-				FA4BEABB230F149C00725245 /* Student.swift */,
-				FA4BEA88230F04B800725245 /* Main.storyboard */,
-				FA4BEA8E230F04B900725245 /* Assets.xcassets */,
-				FA4BEA90230F04B900725245 /* LaunchScreen.storyboard */,
-				FA4BEA93230F04B900725245 /* Info.plist */,
-				FA4BEA8B230F04B800725245 /* ScheduleMaker.xcdatamodeld */,
-			);
-			path = ScheduleMaker;
-			sourceTree = "<group>";
-		};
-		FA4BEA9B230F04B900725245 /* ScheduleMakerTests */ = {
-			isa = PBXGroup;
-			children = (
-				FA4BEA9C230F04B900725245 /* ScheduleMakerTests.swift */,
-				FA4BEA9E230F04B900725245 /* Info.plist */,
+				FA750013230F44A300D977B4 /* ScheduleMakerTests.swift */,
+				FA750015230F44A300D977B4 /* Info.plist */,
 			);
 			path = ScheduleMakerTests;
 			sourceTree = "<group>";
 		};
-		FA4BEAA6230F04B900725245 /* ScheduleMakerUITests */ = {
+		FA75001D230F44A300D977B4 /* ScheduleMakerUITests */ = {
 			isa = PBXGroup;
 			children = (
-				FA4BEAA7230F04B900725245 /* ScheduleMakerUITests.swift */,
-				FA4BEAA9230F04B900725245 /* Info.plist */,
+				FA75001E230F44A300D977B4 /* ScheduleMakerUITests.swift */,
+				FA750020230F44A300D977B4 /* Info.plist */,
 			);
 			path = ScheduleMakerUITests;
+			sourceTree = "<group>";
+		};
+		FA75FFEF230F44A200D977B4 = {
+			isa = PBXGroup;
+			children = (
+				FA75FFFA230F44A200D977B4 /* ScheduleMaker */,
+				FA750012230F44A300D977B4 /* ScheduleMakerTests */,
+				FA75001D230F44A300D977B4 /* ScheduleMakerUITests */,
+				FA75FFF9230F44A200D977B4 /* Products */,
+				B49F14D801D98F776803065D /* Pods */,
+				E74ED213E129FC288977AA3D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA75FFF9230F44A200D977B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA75FFF8230F44A200D977B4 /* ScheduleMaker.app */,
+				FA75000F230F44A300D977B4 /* ScheduleMakerTests.xctest */,
+				FA75001A230F44A300D977B4 /* ScheduleMakerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA75FFFA230F44A200D977B4 /* ScheduleMaker */ = {
+			isa = PBXGroup;
+			children = (
+				FA75FFFB230F44A200D977B4 /* AppDelegate.swift */,
+				FA75FFFD230F44A200D977B4 /* ViewController.swift */,
+				FA75FFFF230F44A200D977B4 /* Main.storyboard */,
+				FA750005230F44A300D977B4 /* Assets.xcassets */,
+				FA750007230F44A300D977B4 /* LaunchScreen.storyboard */,
+				FA75000A230F44A300D977B4 /* Info.plist */,
+				FA750002230F44A200D977B4 /* ScheduleMaker.xcdatamodeld */,
+			);
+			path = ScheduleMaker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA4BEA80230F04B800725245 /* ScheduleMaker */ = {
+		FA75000E230F44A300D977B4 /* ScheduleMakerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA4BEAAC230F04B900725245 /* Build configuration list for PBXNativeTarget "ScheduleMaker" */;
+			buildConfigurationList = FA750026230F44A300D977B4 /* Build configuration list for PBXNativeTarget "ScheduleMakerTests" */;
 			buildPhases = (
-				7865A5C55C002988C2F820B1 /* [CP] Check Pods Manifest.lock */,
-				FA4BEA7D230F04B800725245 /* Sources */,
-				FA4BEA7E230F04B800725245 /* Frameworks */,
-				FA4BEA7F230F04B800725245 /* Resources */,
-				E8A148BE3FA2DF3D6854E67A /* [CP] Embed Pods Frameworks */,
+				14D1410D4C5BCBBBE4E92F08 /* [CP] Check Pods Manifest.lock */,
+				FA75000B230F44A300D977B4 /* Sources */,
+				FA75000C230F44A300D977B4 /* Frameworks */,
+				FA75000D230F44A300D977B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA750011230F44A300D977B4 /* PBXTargetDependency */,
+			);
+			name = ScheduleMakerTests;
+			productName = ScheduleMakerTests;
+			productReference = FA75000F230F44A300D977B4 /* ScheduleMakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA750019230F44A300D977B4 /* ScheduleMakerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA750029230F44A300D977B4 /* Build configuration list for PBXNativeTarget "ScheduleMakerUITests" */;
+			buildPhases = (
+				722E768606E4084BD2AAAA34 /* [CP] Check Pods Manifest.lock */,
+				FA750016230F44A300D977B4 /* Sources */,
+				FA750017230F44A300D977B4 /* Frameworks */,
+				FA750018230F44A300D977B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA75001C230F44A300D977B4 /* PBXTargetDependency */,
+			);
+			name = ScheduleMakerUITests;
+			productName = ScheduleMakerUITests;
+			productReference = FA75001A230F44A300D977B4 /* ScheduleMakerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		FA75FFF7230F44A200D977B4 /* ScheduleMaker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA750023230F44A300D977B4 /* Build configuration list for PBXNativeTarget "ScheduleMaker" */;
+			buildPhases = (
+				7EA78E7F927EA422AFD43500 /* [CP] Check Pods Manifest.lock */,
+				FA75FFF4230F44A200D977B4 /* Sources */,
+				FA75FFF5230F44A200D977B4 /* Frameworks */,
+				FA75FFF6230F44A200D977B4 /* Resources */,
+				167876A064E90E279E5E86F3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,71 +226,33 @@
 			);
 			name = ScheduleMaker;
 			productName = ScheduleMaker;
-			productReference = FA4BEA81230F04B800725245 /* ScheduleMaker.app */;
+			productReference = FA75FFF8230F44A200D977B4 /* ScheduleMaker.app */;
 			productType = "com.apple.product-type.application";
-		};
-		FA4BEA97230F04B900725245 /* ScheduleMakerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA4BEAAF230F04B900725245 /* Build configuration list for PBXNativeTarget "ScheduleMakerTests" */;
-			buildPhases = (
-				0F32C7FB0D3845B7D5991C82 /* [CP] Check Pods Manifest.lock */,
-				FA4BEA94230F04B900725245 /* Sources */,
-				FA4BEA95230F04B900725245 /* Frameworks */,
-				FA4BEA96230F04B900725245 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FA4BEA9A230F04B900725245 /* PBXTargetDependency */,
-			);
-			name = ScheduleMakerTests;
-			productName = ScheduleMakerTests;
-			productReference = FA4BEA98230F04B900725245 /* ScheduleMakerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FA4BEAA2230F04B900725245 /* ScheduleMakerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA4BEAB2230F04B900725245 /* Build configuration list for PBXNativeTarget "ScheduleMakerUITests" */;
-			buildPhases = (
-				88F1C1CE94861CB3818C96B3 /* [CP] Check Pods Manifest.lock */,
-				FA4BEA9F230F04B900725245 /* Sources */,
-				FA4BEAA0230F04B900725245 /* Frameworks */,
-				FA4BEAA1230F04B900725245 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FA4BEAA5230F04B900725245 /* PBXTargetDependency */,
-			);
-			name = ScheduleMakerUITests;
-			productName = ScheduleMakerUITests;
-			productReference = FA4BEAA3230F04B900725245 /* ScheduleMakerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FA4BEA79230F04B800725245 /* Project object */ = {
+		FA75FFF0230F44A200D977B4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Hugo Cruz";
 				TargetAttributes = {
-					FA4BEA80230F04B800725245 = {
+					FA75000E230F44A300D977B4 = {
 						CreatedOnToolsVersion = 10.3;
+						TestTargetID = FA75FFF7230F44A200D977B4;
 					};
-					FA4BEA97230F04B900725245 = {
+					FA750019230F44A300D977B4 = {
 						CreatedOnToolsVersion = 10.3;
-						TestTargetID = FA4BEA80230F04B800725245;
+						TestTargetID = FA75FFF7230F44A200D977B4;
 					};
-					FA4BEAA2230F04B900725245 = {
+					FA75FFF7230F44A200D977B4 = {
 						CreatedOnToolsVersion = 10.3;
-						TestTargetID = FA4BEA80230F04B800725245;
 					};
 				};
 			};
-			buildConfigurationList = FA4BEA7C230F04B800725245 /* Build configuration list for PBXProject "ScheduleMaker" */;
+			buildConfigurationList = FA75FFF3230F44A200D977B4 /* Build configuration list for PBXProject "ScheduleMaker" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -277,47 +260,47 @@
 				en,
 				Base,
 			);
-			mainGroup = FA4BEA78230F04B800725245;
-			productRefGroup = FA4BEA82230F04B800725245 /* Products */;
+			mainGroup = FA75FFEF230F44A200D977B4;
+			productRefGroup = FA75FFF9230F44A200D977B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FA4BEA80230F04B800725245 /* ScheduleMaker */,
-				FA4BEA97230F04B900725245 /* ScheduleMakerTests */,
-				FA4BEAA2230F04B900725245 /* ScheduleMakerUITests */,
+				FA75FFF7230F44A200D977B4 /* ScheduleMaker */,
+				FA75000E230F44A300D977B4 /* ScheduleMakerTests */,
+				FA750019230F44A300D977B4 /* ScheduleMakerUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FA4BEA7F230F04B800725245 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA4BEA92230F04B900725245 /* LaunchScreen.storyboard in Resources */,
-				FA4BEA8F230F04B900725245 /* Assets.xcassets in Resources */,
-				FA4BEA8A230F04B800725245 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA4BEA96230F04B900725245 /* Resources */ = {
+		FA75000D230F44A300D977B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA4BEAA1230F04B900725245 /* Resources */ = {
+		FA750018230F44A300D977B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA75FFF6230F44A200D977B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA750009230F44A300D977B4 /* LaunchScreen.storyboard in Resources */,
+				FA750006230F44A300D977B4 /* Assets.xcassets in Resources */,
+				FA750001230F44A200D977B4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0F32C7FB0D3845B7D5991C82 /* [CP] Check Pods Manifest.lock */ = {
+		14D1410D4C5BCBBBE4E92F08 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -339,29 +322,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7865A5C55C002988C2F820B1 /* [CP] Check Pods Manifest.lock */ = {
+		167876A064E90E279E5E86F3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScheduleMaker/Pods-ScheduleMaker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ScheduleMaker-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-ScheduleMaker/Pods-ScheduleMaker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScheduleMaker/Pods-ScheduleMaker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		88F1C1CE94861CB3818C96B3 /* [CP] Check Pods Manifest.lock */ = {
+		722E768606E4084BD2AAAA34 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -383,94 +361,93 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E8A148BE3FA2DF3D6854E67A /* [CP] Embed Pods Frameworks */ = {
+		7EA78E7F927EA422AFD43500 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ScheduleMaker/Pods-ScheduleMaker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ScheduleMaker/Pods-ScheduleMaker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScheduleMaker-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScheduleMaker/Pods-ScheduleMaker-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FA4BEA7D230F04B800725245 /* Sources */ = {
+		FA75000B230F44A300D977B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA4BEABA230F146B00725245 /* Lecture.swift in Sources */,
-				FA75FFE5230F347000D977B4 /* Student+CoreDataClass.swift in Sources */,
-				FA4BEA87230F04B800725245 /* ViewController.swift in Sources */,
-				FA4BEAB8230F068100725245 /* ValidLectureList.swift in Sources */,
-				FA4BEAB6230F05D800725245 /* DataManager.swift in Sources */,
-				FA4BEA8D230F04B800725245 /* ScheduleMaker.xcdatamodeld in Sources */,
-				FA75FFE6230F347000D977B4 /* Student+CoreDataProperties.swift in Sources */,
-				FA4BEABC230F149C00725245 /* Student.swift in Sources */,
-				FA4BEA85230F04B800725245 /* AppDelegate.swift in Sources */,
+				FA750014230F44A300D977B4 /* ScheduleMakerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA4BEA94230F04B900725245 /* Sources */ = {
+		FA750016230F44A300D977B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA4BEA9D230F04B900725245 /* ScheduleMakerTests.swift in Sources */,
+				FA75001F230F44A300D977B4 /* ScheduleMakerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA4BEA9F230F04B900725245 /* Sources */ = {
+		FA75FFF4230F44A200D977B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA4BEAA8230F04B900725245 /* ScheduleMakerUITests.swift in Sources */,
+				FA75FFFE230F44A200D977B4 /* ViewController.swift in Sources */,
+				FA750004230F44A200D977B4 /* ScheduleMaker.xcdatamodeld in Sources */,
+				FA75FFFC230F44A200D977B4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FA4BEA9A230F04B900725245 /* PBXTargetDependency */ = {
+		FA750011230F44A300D977B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FA4BEA80230F04B800725245 /* ScheduleMaker */;
-			targetProxy = FA4BEA99230F04B900725245 /* PBXContainerItemProxy */;
+			target = FA75FFF7230F44A200D977B4 /* ScheduleMaker */;
+			targetProxy = FA750010230F44A300D977B4 /* PBXContainerItemProxy */;
 		};
-		FA4BEAA5230F04B900725245 /* PBXTargetDependency */ = {
+		FA75001C230F44A300D977B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FA4BEA80230F04B800725245 /* ScheduleMaker */;
-			targetProxy = FA4BEAA4230F04B900725245 /* PBXContainerItemProxy */;
+			target = FA75FFF7230F44A200D977B4 /* ScheduleMaker */;
+			targetProxy = FA75001B230F44A300D977B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FA4BEA88230F04B800725245 /* Main.storyboard */ = {
+		FA750007230F44A300D977B4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FA4BEA89230F04B800725245 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FA4BEA90230F04B900725245 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA4BEA91230F04B900725245 /* Base */,
+				FA750008230F44A300D977B4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FA75FFFF230F44A200D977B4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA750000230F44A200D977B4 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FA4BEAAA230F04B900725245 /* Debug */ = {
+		FA750021230F44A300D977B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -531,7 +508,7 @@
 			};
 			name = Debug;
 		};
-		FA4BEAAB230F04B900725245 /* Release */ = {
+		FA750022230F44A300D977B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -586,9 +563,9 @@
 			};
 			name = Release;
 		};
-		FA4BEAAD230F04B900725245 /* Debug */ = {
+		FA750024230F44A300D977B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C19E5E760C13DD5B5D8AB0A /* Pods-ScheduleMaker.debug.xcconfig */;
+			baseConfigurationReference = 9489DFED49C103256125E11B /* Pods-ScheduleMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -605,9 +582,9 @@
 			};
 			name = Debug;
 		};
-		FA4BEAAE230F04B900725245 /* Release */ = {
+		FA750025230F44A300D977B4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9752FE1C1E069B3954C47AF1 /* Pods-ScheduleMaker.release.xcconfig */;
+			baseConfigurationReference = 1DBD22193D731B57C05BB192 /* Pods-ScheduleMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -624,9 +601,9 @@
 			};
 			name = Release;
 		};
-		FA4BEAB0230F04B900725245 /* Debug */ = {
+		FA750027230F44A300D977B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DA3669879331171749D3A8A /* Pods-ScheduleMakerTests.debug.xcconfig */;
+			baseConfigurationReference = 83A7ADE9CA42F2751CAB6384 /* Pods-ScheduleMakerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -646,9 +623,9 @@
 			};
 			name = Debug;
 		};
-		FA4BEAB1230F04B900725245 /* Release */ = {
+		FA750028230F44A300D977B4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38BFE49639279E454154108F /* Pods-ScheduleMakerTests.release.xcconfig */;
+			baseConfigurationReference = 143BA1B94798F2F44EA589AF /* Pods-ScheduleMakerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -668,9 +645,9 @@
 			};
 			name = Release;
 		};
-		FA4BEAB3230F04B900725245 /* Debug */ = {
+		FA75002A230F44A300D977B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AF6BF1ABC2C57C833DF58FC /* Pods-ScheduleMakerUITests.debug.xcconfig */;
+			baseConfigurationReference = C34B60B2B92B2BF42070C208 /* Pods-ScheduleMakerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -689,9 +666,9 @@
 			};
 			name = Debug;
 		};
-		FA4BEAB4230F04B900725245 /* Release */ = {
+		FA75002B230F44A300D977B4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBC9EDE172439E24F293B58D /* Pods-ScheduleMakerUITests.release.xcconfig */;
+			baseConfigurationReference = 3107635EA71C3953A67BC204 /* Pods-ScheduleMakerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -713,38 +690,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA4BEA7C230F04B800725245 /* Build configuration list for PBXProject "ScheduleMaker" */ = {
+		FA750023230F44A300D977B4 /* Build configuration list for PBXNativeTarget "ScheduleMaker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA4BEAAA230F04B900725245 /* Debug */,
-				FA4BEAAB230F04B900725245 /* Release */,
+				FA750024230F44A300D977B4 /* Debug */,
+				FA750025230F44A300D977B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA4BEAAC230F04B900725245 /* Build configuration list for PBXNativeTarget "ScheduleMaker" */ = {
+		FA750026230F44A300D977B4 /* Build configuration list for PBXNativeTarget "ScheduleMakerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA4BEAAD230F04B900725245 /* Debug */,
-				FA4BEAAE230F04B900725245 /* Release */,
+				FA750027230F44A300D977B4 /* Debug */,
+				FA750028230F44A300D977B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA4BEAAF230F04B900725245 /* Build configuration list for PBXNativeTarget "ScheduleMakerTests" */ = {
+		FA750029230F44A300D977B4 /* Build configuration list for PBXNativeTarget "ScheduleMakerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA4BEAB0230F04B900725245 /* Debug */,
-				FA4BEAB1230F04B900725245 /* Release */,
+				FA75002A230F44A300D977B4 /* Debug */,
+				FA75002B230F44A300D977B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA4BEAB2230F04B900725245 /* Build configuration list for PBXNativeTarget "ScheduleMakerUITests" */ = {
+		FA75FFF3230F44A200D977B4 /* Build configuration list for PBXProject "ScheduleMaker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA4BEAB3230F04B900725245 /* Debug */,
-				FA4BEAB4230F04B900725245 /* Release */,
+				FA750021230F44A300D977B4 /* Debug */,
+				FA750022230F44A300D977B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -752,17 +729,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FA4BEA8B230F04B800725245 /* ScheduleMaker.xcdatamodeld */ = {
+		FA750002230F44A200D977B4 /* ScheduleMaker.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FA4BEA8C230F04B800725245 /* ScheduleMaker.xcdatamodel */,
+				FA750003230F44A200D977B4 /* ScheduleMaker.xcdatamodel */,
 			);
-			currentVersion = FA4BEA8C230F04B800725245 /* ScheduleMaker.xcdatamodel */;
+			currentVersion = FA750003230F44A200D977B4 /* ScheduleMaker.xcdatamodel */;
 			path = ScheduleMaker.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = FA4BEA79230F04B800725245 /* Project object */;
+	rootObject = FA75FFF0230F44A200D977B4 /* Project object */;
 }
