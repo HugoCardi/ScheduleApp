@@ -11,7 +11,7 @@ import Foundation
 import Foundation
 
 let asignatura =
-	["54" : "DIBUJO  (2016)"
+		["54" : "DIBUJO  (2016)"
 		,"61" : "DIBUJO"
 		,"65" : "ESTATICA"
 		,"66" : "CINEMATICA Y DINAMICA"

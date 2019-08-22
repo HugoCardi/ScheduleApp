@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -119,7 +119,6 @@
 				9AF6BF1ABC2C57C833DF58FC /* Pods-ScheduleMakerUITests.debug.xcconfig */,
 				BBC9EDE172439E24F293B58D /* Pods-ScheduleMakerUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

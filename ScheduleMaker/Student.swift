@@ -13,21 +13,21 @@ class Student{
 	let student_name: String
 	let last_names: String
 	var nickname: String?
-	var enrolled_lectures: [Lecture]
+	var enrolledLectures: [Lecture]
 	init(student_name: String, last_names : String, nickname: String?, enrolled_lectures : [Lecture]) {
 		self.student_name = student_name
 		self.last_names = last_names
 		if let nickname = nickname{
 			self.nickname = nickname
 		}
-		self.enrolled_lectures = enrolled_lectures
+		self.enrolledLectures = enrolled_lectures
 	}
 	
 	func enrollLecture(lecture : Lecture) {
 		let start = lecture.hora_in
 		let end = lecture.hora_fin
 		var x = 0
-		for currentLecture in self.enrolled_lectures{
+		for currentLecture in self.enrolledLectures{
 			if (currentLecture.clave == lecture.clave){
 				//Duplicated Lecture error handling
 				print("\n\n The Lecture has already been enrolled in another group")
@@ -41,7 +41,7 @@ class Student{
 				print("\n\n Error -- No vacancy in the selected group ")
 				
 			}else{
-				self.enrolled_lectures.append(lecture)
+				self.enrolledLectures.append(lecture)
 				print("\n\n The student has been succesfully enrolled in the lecture:  \(lecture.nombreAsignatura). ")
 			}
 			x += 1
