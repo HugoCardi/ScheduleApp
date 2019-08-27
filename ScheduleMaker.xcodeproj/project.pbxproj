@@ -20,6 +20,10 @@
 		FA75FFFE230F44A200D977B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75FFFD230F44A200D977B4 /* ViewController.swift */; };
 		FAEE34252315CADF000CFFBF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE34242315CADF000CFFBF /* DataManager.swift */; };
 		FAEE34272315CB05000CFFBF /* ValidLectureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE34262315CB05000CFFBF /* ValidLectureList.swift */; };
+		FAEE342C2315D11E000CFFBF /* Lecture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE34282315D11E000CFFBF /* Lecture+CoreDataClass.swift */; };
+		FAEE342D2315D11E000CFFBF /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE34292315D11E000CFFBF /* Student+CoreDataProperties.swift */; };
+		FAEE342E2315D11E000CFFBF /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE342A2315D11E000CFFBF /* Student+CoreDataClass.swift */; };
+		FAEE342F2315D11E000CFFBF /* Lecture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE342B2315D11E000CFFBF /* Lecture+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		FA75FFFD230F44A200D977B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAEE34242315CADF000CFFBF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		FAEE34262315CB05000CFFBF /* ValidLectureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidLectureList.swift; sourceTree = "<group>"; };
+		FAEE34282315D11E000CFFBF /* Lecture+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Lecture+CoreDataClass.swift"; path = "/Users/macbook/Developer/Schedule/ScheduleMaker/Lecture+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		FAEE34292315D11E000CFFBF /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Student+CoreDataProperties.swift"; path = "/Users/macbook/Developer/Schedule/ScheduleMaker/Student+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		FAEE342A2315D11E000CFFBF /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Student+CoreDataClass.swift"; path = "/Users/macbook/Developer/Schedule/ScheduleMaker/Student+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		FAEE342B2315D11E000CFFBF /* Lecture+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Lecture+CoreDataProperties.swift"; path = "/Users/macbook/Developer/Schedule/ScheduleMaker/Lecture+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,10 @@
 		FA75FFFA230F44A200D977B4 /* ScheduleMaker */ = {
 			isa = PBXGroup;
 			children = (
+				FAEE34282315D11E000CFFBF /* Lecture+CoreDataClass.swift */,
+				FAEE342B2315D11E000CFFBF /* Lecture+CoreDataProperties.swift */,
+				FAEE342A2315D11E000CFFBF /* Student+CoreDataClass.swift */,
+				FAEE34292315D11E000CFFBF /* Student+CoreDataProperties.swift */,
 				FA75FFFB230F44A200D977B4 /* AppDelegate.swift */,
 				FA75FFFD230F44A200D977B4 /* ViewController.swift */,
 				FA75FFFF230F44A200D977B4 /* Main.storyboard */,
@@ -411,11 +423,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEE342C2315D11E000CFFBF /* Lecture+CoreDataClass.swift in Sources */,
+				FAEE342E2315D11E000CFFBF /* Student+CoreDataClass.swift in Sources */,
 				FA75FFFE230F44A200D977B4 /* ViewController.swift in Sources */,
 				FAEE34272315CB05000CFFBF /* ValidLectureList.swift in Sources */,
 				FAEE34252315CADF000CFFBF /* DataManager.swift in Sources */,
 				FA750004230F44A200D977B4 /* ScheduleMaker.xcdatamodeld in Sources */,
 				FA75FFFC230F44A200D977B4 /* AppDelegate.swift in Sources */,
+				FAEE342F2315D11E000CFFBF /* Lecture+CoreDataProperties.swift in Sources */,
+				FAEE342D2315D11E000CFFBF /* Student+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,9 +14,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)-> Bool {
+		// Save test bow tie
+		let dude = NSEntityDescription.insertNewObject(
+			forEntityName: "Student",
+			into: self.persistentContainer.viewContext) as! Student
+		dude.student_name = "John"
+		dude.last_names = "Appleseed"
+		saveContext()
+		// Retrieve test bow tie
+		let request: NSFetchRequest<Student> = Student.fetchRequest()
+		if let dudes =
+			try? self.persistentContainer.viewContext.fetch(request),
+			let testName = dudes.first?.student_name,
+			let testLastWorn = dudes.first?.last_names {
+			print("Name: \(testName), Worn: \(testLastWorn)")
+		} else {
+			print("Test failed.")
+		}
 		return true
 	}
 
