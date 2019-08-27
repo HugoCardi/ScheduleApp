@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		FA75001F230F44A300D977B4 /* ScheduleMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75001E230F44A300D977B4 /* ScheduleMakerUITests.swift */; };
 		FA75FFFC230F44A200D977B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75FFFB230F44A200D977B4 /* AppDelegate.swift */; };
 		FA75FFFE230F44A200D977B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA75FFFD230F44A200D977B4 /* ViewController.swift */; };
+		FAEE34252315CADF000CFFBF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE34242315CADF000CFFBF /* DataManager.swift */; };
+		FAEE34272315CB05000CFFBF /* ValidLectureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE34262315CB05000CFFBF /* ValidLectureList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		FA75FFF8230F44A200D977B4 /* ScheduleMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA75FFFB230F44A200D977B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA75FFFD230F44A200D977B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAEE34242315CADF000CFFBF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		FAEE34262315CB05000CFFBF /* ValidLectureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidLectureList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +105,6 @@
 				C34B60B2B92B2BF42070C208 /* Pods-ScheduleMakerUITests.debug.xcconfig */,
 				3107635EA71C3953A67BC204 /* Pods-ScheduleMakerUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -165,6 +168,8 @@
 				FA750007230F44A300D977B4 /* LaunchScreen.storyboard */,
 				FA75000A230F44A300D977B4 /* Info.plist */,
 				FA750002230F44A200D977B4 /* ScheduleMaker.xcdatamodeld */,
+				FAEE34242315CADF000CFFBF /* DataManager.swift */,
+				FAEE34262315CB05000CFFBF /* ValidLectureList.swift */,
 			);
 			path = ScheduleMaker;
 			sourceTree = "<group>";
@@ -407,6 +412,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA75FFFE230F44A200D977B4 /* ViewController.swift in Sources */,
+				FAEE34272315CB05000CFFBF /* ValidLectureList.swift in Sources */,
+				FAEE34252315CADF000CFFBF /* DataManager.swift in Sources */,
 				FA750004230F44A200D977B4 /* ScheduleMaker.xcdatamodeld in Sources */,
 				FA75FFFC230F44A200D977B4 /* AppDelegate.swift in Sources */,
 			);

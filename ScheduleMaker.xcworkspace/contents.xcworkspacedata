@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Lecture+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Lecture+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Student+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Student+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:ScheduleMaker.xcodeproj">
    </FileRef>
    <FileRef
