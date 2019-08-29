@@ -2,18 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/macbook/Developer/Schedule/ScheduleMaker/Lecture+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/macbook/Developer/Schedule/ScheduleMaker/Lecture+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/macbook/Developer/Schedule/ScheduleMaker/Student+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/macbook/Developer/Schedule/ScheduleMaker/Student+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:ScheduleMaker.xcodeproj">
    </FileRef>
    <FileRef

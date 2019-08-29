@@ -13,7 +13,7 @@ import CoreData
 
 
 func extractLectures(data: [Element])  -> [Lecture] {
-	var possibleChoices =  [Lecture]()
+	let possibleChoices =  [Lecture]()
 	for group in data{
 		do{
 			if (group.children().count == 9){

@@ -1,8 +1,9 @@
 //
 //  Student+CoreDataClass.swift
-//  
+//  ScheduleMaker
 //
-//  Created by Hugo Cruz on 8/27/19.
+//  Created by Hugo Cruz on 8/29/19.
+//  Copyright © 2019 Hugo Cruz. All rights reserved.
 //
 //
 
