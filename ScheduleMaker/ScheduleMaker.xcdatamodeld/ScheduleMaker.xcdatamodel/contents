@@ -14,7 +14,7 @@
         <attribute name="vacantes" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES">
-        <attribute name="enrolledLectures" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="enrolledLectures" optional="YES" attributeType="Transformable" customClassName="[Lecture]" syncable="YES"/>
         <attribute name="last_names" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="student_name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
