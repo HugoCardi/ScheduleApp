@@ -24,11 +24,13 @@ class ViewController: UIViewController {
 		let managedContext = appDelegate.persistentContainer.viewContext
 		// 2
 				
-		func save(name: String) {
+        func save(student_name: String,last_names : String, enrolledLectures: [NSManagedObject] ) {
 
 			let entity = NSEntityDescription.entity(forEntityName: "Student",in: managedContext)!
 			let dude = NSManagedObject(entity: entity, insertInto: managedContext)
-						dude.setValue(name, forKeyPath: "student_name")
+						dude.setValue(student_name, forKeyPath: "student_name")
+                        dude.setValue(last_names, forKeyPath:  "last_names")
+                        dude.setValue(enrolledLectures, forKey: "enrolledLectures")
 			// 4
 			do {
 				try managedContext.save()
