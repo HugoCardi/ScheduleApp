@@ -22,6 +22,8 @@
 		FA77DCF923186EE200D98E07 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77DCF523186EE200D98E07 /* Student+CoreDataProperties.swift */; };
 		FA77DCFA23186EE200D98E07 /* Lecture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77DCF623186EE200D98E07 /* Lecture+CoreDataClass.swift */; };
 		FA77DCFB23186EE200D98E07 /* Lecture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77DCF723186EE200D98E07 /* Lecture+CoreDataProperties.swift */; };
+		FAE140B8231ED28500D368D3 /* RamStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE140B7231ED28500D368D3 /* RamStudent.swift */; };
+		FAE140BA231ED31D00D368D3 /* RamLecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE140B9231ED31D00D368D3 /* RamLecture.swift */; };
 		FAEE34252315CADF000CFFBF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE34242315CADF000CFFBF /* DataManager.swift */; };
 		FAEE34272315CB05000CFFBF /* ValidLectureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE34262315CB05000CFFBF /* ValidLectureList.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +73,8 @@
 		FA77DCF523186EE200D98E07 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA77DCF623186EE200D98E07 /* Lecture+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lecture+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA77DCF723186EE200D98E07 /* Lecture+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lecture+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FAE140B7231ED28500D368D3 /* RamStudent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamStudent.swift; sourceTree = "<group>"; };
+		FAE140B9231ED31D00D368D3 /* RamLecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamLecture.swift; sourceTree = "<group>"; };
 		FAEE34242315CADF000CFFBF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		FAEE34262315CB05000CFFBF /* ValidLectureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidLectureList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				FA77DCF423186EE200D98E07 /* Student+CoreDataClass.swift */,
+				FAE140B7231ED28500D368D3 /* RamStudent.swift */,
+				FAE140B9231ED31D00D368D3 /* RamLecture.swift */,
 				FA77DCF523186EE200D98E07 /* Student+CoreDataProperties.swift */,
 				FA77DCF623186EE200D98E07 /* Lecture+CoreDataClass.swift */,
 				FA77DCF723186EE200D98E07 /* Lecture+CoreDataProperties.swift */,
@@ -427,11 +433,13 @@
 				FA77DCF823186EE200D98E07 /* Student+CoreDataClass.swift in Sources */,
 				FAEE34272315CB05000CFFBF /* ValidLectureList.swift in Sources */,
 				FAEE34252315CADF000CFFBF /* DataManager.swift in Sources */,
+				FAE140B8231ED28500D368D3 /* RamStudent.swift in Sources */,
 				FA750004230F44A200D977B4 /* ScheduleMaker.xcdatamodeld in Sources */,
 				FA75FFFC230F44A200D977B4 /* AppDelegate.swift in Sources */,
 				FA77DCFA23186EE200D98E07 /* Lecture+CoreDataClass.swift in Sources */,
 				FA77DCFB23186EE200D98E07 /* Lecture+CoreDataProperties.swift in Sources */,
 				FA77DCF923186EE200D98E07 /* Student+CoreDataProperties.swift in Sources */,
+				FAE140BA231ED31D00D368D3 /* RamLecture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

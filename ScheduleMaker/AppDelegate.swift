@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		dude.student_name = "John"
 		dude.last_names = "Appleseed"
 		saveContext()
-		// Retrieve test bow tie
+		
+		//retrieve
 		let request: NSFetchRequest<Student> = Student.fetchRequest()
 		if let dudes =
 			try? self.persistentContainer.viewContext.fetch(request),

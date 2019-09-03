@@ -32,9 +32,10 @@ func extractLectures(data: [Element])  -> [Lecture] {
 					//test.append(a)
 					print("Alright")
 					print(clave,grup,nombre,profesor,tipo,horario,dias,salon, cupo, vacantes)
+					_ = RamLecture(clave: clave, nombreAsignatura: nombre, grupo: grup, profesor: profesor, tipo: tipo, horario: horario, dias: dias, salon: salon, cupo: cupo, vacantes: vacantes)
 				}
 			}
-			print("\n\n\n")
+			print("\n")
 			
 		} catch{
 			print("Holi")
@@ -45,7 +46,7 @@ func extractLectures(data: [Element])  -> [Lecture] {
 
 func extractFromHTML(claveDeseada : String){
 	if asignatura[claveDeseada] != nil{
-		let stringedURL = "https://ssa.ingenieria.unam.mx/hrsHtml/" + claveDeseada + ".html"
+		let stringedURL = "https://ssa.ingenieria.unam.mx/cj/tmp/programacion_horarios/" + claveDeseada + ".html"
 		if let url = URL(string: stringedURL) {
 			do {
 				let html = try String(contentsOf: url)
