@@ -12,8 +12,8 @@ import CoreData
 
 
 
-func extractLectures(data: [Element])  -> [Lecture] {
-	let possibleChoices =  [Lecture]()
+func extractLectures(data: [Element])  -> [RamLecture] {
+	let possibleChoices =  [RamLecture]()
 	for group in data{
 		do{
 			if (group.children().count == 9){
@@ -30,8 +30,9 @@ func extractLectures(data: [Element])  -> [Lecture] {
 				if (clave != 0){
 					//possibleChoices.append(Lecture(clave: clave, nombreAsignatura: nombre, grupo: grup, profesor: profesor, tipo: tipo, horario: horario, dias: dias, salon: salon, cupo: cupo, vacantes: vacantes))
 					//test.append(a)
-					print("Alright")
 					print(clave,grup,nombre,profesor,tipo,horario,dias,salon, cupo, vacantes)
+					//Atempting to init a new class.
+					//Translation of Run-Time Lecture to CoreDataLecture still to be written
 					_ = RamLecture(clave: clave, nombreAsignatura: nombre, grupo: grup, profesor: profesor, tipo: tipo, horario: horario, dias: dias, salon: salon, cupo: cupo, vacantes: vacantes)
 				}
 			}

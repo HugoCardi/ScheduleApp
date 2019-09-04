@@ -68,7 +68,7 @@ class RamLecture {
 			case "Mar":
 				self.arrayDays[1] = true
 				break
-			case "Mier":
+			case "Mie":
 				self.arrayDays[2] = true
 				break
 			case "Jue":

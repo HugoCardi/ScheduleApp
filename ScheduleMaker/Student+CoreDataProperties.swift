@@ -2,7 +2,7 @@
 //  Student+CoreDataProperties.swift
 //  ScheduleMaker
 //
-//  Created by Hugo Cruz on 8/29/19.
+//  Created by Hugo Cruz on 9/3/19.
 //  Copyright © 2019 Hugo Cruz. All rights reserved.
 //
 //
@@ -17,7 +17,8 @@ extension Student {
         return NSFetchRequest<Student>(entityName: "Student")
     }
 
-    @NSManaged public var enrolledLectures: NSObject?
+    @NSManaged public var enrolledLectures: [Lecture]?
     @NSManaged public var last_names: String?
     @NSManaged public var student_name: String?
+
 }

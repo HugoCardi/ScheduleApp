@@ -15,26 +15,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)-> Bool {
-		// Save test Student
-        /*
+		/*
+		
+		let exampleLectureData = NSEntityDescription.insertNewObject(forEntityName: "Lecture",into: self.persistentContainer.viewContext) as! Lecture
+		
+		exampleLectureData.clave = 1234
+		exampleLectureData.grupo = 1
+		exampleLectureData.nombreAsignatura = "Filosofia"
+		exampleLectureData.hora_in = 7.0
+		exampleLectureData.hora_fin = 9.0
+		exampleLectureData.salon = "P010"
+		exampleLectureData.profesor = "John Salchichon"
+		exampleLectureData.cupo = 1
+		exampleLectureData.vacantes = 0
+		exampleLectureData.arrayDays = true as NSObject
+		
 		let dude = NSEntityDescription.insertNewObject(
 			forEntityName: "Student",
 			into: self.persistentContainer.viewContext) as! Student
-		dude.student_name = "John"
-		dude.last_names = "Appleseed"
+		dude.student_name = "Javier"
+		dude.last_names = "Peña"
+		//dude.enrolledLectures =
 		saveContext()
 		
-		//retrieve
-		let request: NSFetchRequest<Student> = Student.fetchRequest()
-		if let dudes =
-			try? self.persistentContainer.viewContext.fetch(request),
-			let testName = dudes.first?.student_name,
-			let testLastWorn = dudes.first?.last_names {
-			print("Name: \(testName), Worn: \(testLastWorn)")
-		} else {
-			print("Test failed.")
-		}
-        */
+		*/
 		return true
 	}
 

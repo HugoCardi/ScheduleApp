@@ -173,9 +173,11 @@
 		FA75FFFA230F44A200D977B4 /* ScheduleMaker */ = {
 			isa = PBXGroup;
 			children = (
-				FA77DCF423186EE200D98E07 /* Student+CoreDataClass.swift */,
+				FAEE34242315CADF000CFFBF /* DataManager.swift */,
+				FAEE34262315CB05000CFFBF /* ValidLectureList.swift */,
 				FAE140B7231ED28500D368D3 /* RamStudent.swift */,
 				FAE140B9231ED31D00D368D3 /* RamLecture.swift */,
+				FA77DCF423186EE200D98E07 /* Student+CoreDataClass.swift */,
 				FA77DCF523186EE200D98E07 /* Student+CoreDataProperties.swift */,
 				FA77DCF623186EE200D98E07 /* Lecture+CoreDataClass.swift */,
 				FA77DCF723186EE200D98E07 /* Lecture+CoreDataProperties.swift */,
@@ -186,8 +188,6 @@
 				FA750007230F44A300D977B4 /* LaunchScreen.storyboard */,
 				FA75000A230F44A300D977B4 /* Info.plist */,
 				FA750002230F44A200D977B4 /* ScheduleMaker.xcdatamodeld */,
-				FAEE34242315CADF000CFFBF /* DataManager.swift */,
-				FAEE34262315CB05000CFFBF /* ValidLectureList.swift */,
 			);
 			path = ScheduleMaker;
 			sourceTree = "<group>";

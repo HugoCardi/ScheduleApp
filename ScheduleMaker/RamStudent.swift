@@ -19,21 +19,33 @@ class RamStudent{
 	let student_name: String
 	let last_names: String
 	var nickname: String?
-	var enrolled_lectures: [RamLecture]
-	init(student_name: String, last_names : String, nickname: String?, enrolled_lectures : [RamLecture]) {
+	var enrolledLectures: [RamLecture]
+	init(student_name: String, last_names : String, nickname: String?, enrolledLectures : [RamLecture]) {
 		self.student_name = student_name
 		self.last_names = last_names
 		if let nickname = nickname{
 			self.nickname = nickname
 		}
-		self.enrolled_lectures = enrolled_lectures
+		self.enrolledLectures = enrolledLectures
 	}
 	
-	func enrollLecture(lecture : RamLecture) {
+	func enrollLecture(lecture : RamLecture, studentSaved: Student, delegate : AppDelegate, context: NSManagedObjectContext) {
 		let start = lecture.hora_in
 		let end = lecture.hora_fin
+		//var listOfSavedLectures = [NSManagedObject]()
+		var currentLectures = [RamLecture]()
 		var x = 0
-		for currentLecture in self.enrolled_lectures{
+		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Lecture")
+		
+		do {
+			let listOfSavedLectures = try context.fetch(fetchRequest)
+			print(listOfSavedLectures)
+		} catch let error as NSError {
+			print("Could not fetch. \(error), \(error.userInfo)")
+		}
+		/*
+		//self enrolled lectures must be a fetch from CoreData
+		for currentLecture in currentLectures{
 			if (currentLecture.clave == lecture.clave){
 				//Duplicated Lecture error handling
 				print("\n\n The Lecture has already been enrolled in another group")
@@ -47,12 +59,14 @@ class RamStudent{
 				print("\n\n Error -- No vacancy in the selected group ")
 				
 			}else{
-				self.enrolled_lectures.append(lecture)
+				//self.enrolledLectures.append() must be replaced by CoreData save function
+				self.enrolledLectures.append(lecture)
 				print("\n\n The student has been succesfully enrolled in the lecture:  \(lecture.nombreAsignatura). ")
 			}
 			x += 1
+		*/
 		}
 	}
 	
 	
-}
+
