@@ -13,32 +13,15 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
+	
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)-> Bool {
-		/*
-		
-		let exampleLectureData = NSEntityDescription.insertNewObject(forEntityName: "Lecture",into: self.persistentContainer.viewContext) as! Lecture
-		
-		exampleLectureData.clave = 1234
-		exampleLectureData.grupo = 1
-		exampleLectureData.nombreAsignatura = "Filosofia"
-		exampleLectureData.hora_in = 7.0
-		exampleLectureData.hora_fin = 9.0
-		exampleLectureData.salon = "P010"
-		exampleLectureData.profesor = "John Salchichon"
-		exampleLectureData.cupo = 1
-		exampleLectureData.vacantes = 0
-		exampleLectureData.arrayDays = true as NSObject
-		
 		let dude = NSEntityDescription.insertNewObject(
 			forEntityName: "Student",
 			into: self.persistentContainer.viewContext) as! Student
-		dude.student_name = "Javier"
-		dude.last_names = "Peña"
-		//dude.enrolledLectures =
-		saveContext()
-		
-		*/
+		dude.student_name = "Hugo"
+		dude.last_names = "Cruz"
+		self.saveContext()
 		return true
 	}
 

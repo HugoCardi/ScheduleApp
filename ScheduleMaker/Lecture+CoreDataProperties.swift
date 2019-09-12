@@ -2,7 +2,7 @@
 //  Lecture+CoreDataProperties.swift
 //  ScheduleMaker
 //
-//  Created by Hugo Cruz on 9/3/19.
+//  Created by Hugo Cruz on 9/5/19.
 //  Copyright © 2019 Hugo Cruz. All rights reserved.
 //
 //
@@ -17,7 +17,7 @@ extension Lecture {
         return NSFetchRequest<Lecture>(entityName: "Lecture")
     }
 
-    @NSManaged public var arrayDays: NSObject?
+    @NSManaged public var arrayDays: [Bool]?
     @NSManaged public var clave: Int32
     @NSManaged public var cupo: Int32
     @NSManaged public var grupo: Int32
@@ -28,5 +28,6 @@ extension Lecture {
     @NSManaged public var salon: String?
     @NSManaged public var tipo: String?
     @NSManaged public var vacantes: Int32
+    @NSManaged public var student: Student?
 
 }

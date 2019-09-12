@@ -8,12 +8,11 @@
 import Foundation
 import SwiftSoup
 import CoreData
-//var test = [NSManagedObject]()
 
 
 
-func extractLectures(data: [Element])  -> [RamLecture] {
-	let possibleChoices =  [RamLecture]()
+func createLectures(data: [Element])  -> [RamLecture] {
+	var possibleChoices =  [RamLecture]()
 	for group in data{
 		do{
 			if (group.children().count == 9){
@@ -33,19 +32,21 @@ func extractLectures(data: [Element])  -> [RamLecture] {
 					print(clave,grup,nombre,profesor,tipo,horario,dias,salon, cupo, vacantes)
 					//Atempting to init a new class.
 					//Translation of Run-Time Lecture to CoreDataLecture still to be written
-					_ = RamLecture(clave: clave, nombreAsignatura: nombre, grupo: grup, profesor: profesor, tipo: tipo, horario: horario, dias: dias, salon: salon, cupo: cupo, vacantes: vacantes)
+					possibleChoices.append(RamLecture(clave: clave, nombreAsignatura: nombre, grupo: grup, profesor: profesor, tipo: tipo, horario: horario, dias: dias, salon: salon, cupo: cupo, vacantes: vacantes))
 				}
 			}
+			//Line jump to improve style of the test output : To be removed before deploy
 			print("\n")
 			
 		} catch{
-			print("Holi")
+			print("Error while obtaining data from the parsed HTML")
 		}
 	}
 	return possibleChoices
 }
 
-func extractFromHTML(claveDeseada : String){
+func extractFromHTML(claveDeseada : String) -> [RamLecture]?{
+	var choices: [RamLecture]?
 	if asignatura[claveDeseada] != nil{
 		let stringedURL = "https://ssa.ingenieria.unam.mx/cj/tmp/programacion_horarios/" + claveDeseada + ".html"
 		if let url = URL(string: stringedURL) {
@@ -53,20 +54,28 @@ func extractFromHTML(claveDeseada : String){
 				let html = try String(contentsOf: url)
 				let doc: Document = try SwiftSoup.parse(html)
 				var link: [Element] = try doc.select("tr").array()
+				//Remove HTML Headers
 				link.remove(at: 0)
+				//Remove Table titles
 				link.remove(at: 0)
-				_ = extractLectures(data: link)
+				choices = createLectures(data: link)
 			} catch {
 				print("Content could not be loaded")
+				//Return will be null
+				return choices
 			}
 		} else {
 			print("The URL is invalid")
 		}
-	}else{/*
+	}else{
+		/* DEPRECATED
 		let alert = UIAlertController(title: "Error de clave", message: "La clave no existe o no hay grupos disponibles para dicha asignatura", preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 		self.present(alert, animated: true)
 		*/
 		print("\n\nNo existen grupos para dicha asignatura")
+		//Return will be null
+		return choices
 	}//Extraction Function Closing Bracket
+	return choices
 }
