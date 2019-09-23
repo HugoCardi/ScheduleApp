@@ -6,6 +6,10 @@
 //  Copyright © 2019 Hugo Cruz. All rights reserved.
 //
 
+//Modify logic in enrollLecture to check availability within the foor-loop
+//Place returns false in the for-loop so that the flows fails to enroll in any case it's impossible to enroll
+//if the function doesn't return, then self.addToLectures
+
 import UIKit
 import CoreData
 
@@ -20,7 +24,7 @@ class ViewController: UIViewController {
 		self.defaultUser = getStudentFromCoreData()
 		super.viewDidLoad()
 		//print("User Name")
-		print(defaultUser?.student_name! ?? "Unable to print users name")
+        print(defaultUser?.student_name ?? "Hugo")
 
 		//7 Do any additional setup after loading the view.
 	}
@@ -29,15 +33,38 @@ class ViewController: UIViewController {
 		//Extract from HTML returns an array of RAMLectures
 		let enrolledInCoreData = defaultUser?.lectures as! Set<Lecture>
 		for enrolled in enrolledInCoreData{
-			print("Nombre estudiante : \(String(describing: enrolled.student?.student_name))")
-			print("Nombre asignatura del estudiante : \(enrolled.nombreAsignatura)")
+			//print("Nombre estudiante : \(String(describing: enrolled.student?.student_name))")
+			print("Nombre asignatura n del estudiante : \(enrolled.nombreAsignatura)")
 		}
+        testFunction()
+        print("I'm a breakline")
+        for enrolled in enrolledInCoreData{
+            //print("Nombre estudiante : \(String(describing: enrolled.student?.student_name))")
+            print("Nombre asignatura n del estudiante : \(enrolled.nombreAsignatura)")
+        }
+
 	}
+    func  testFunction() {
+        let lecture = NSEntityDescription.insertNewObject(forEntityName: "Lecture", into: managedContext) as! Lecture
+        lecture.nombreAsignatura = "Computo Movil"
+        lecture.clave = 0674
+        lecture.arrayDays = [true, false, false, false, false, true]
+        lecture.cupo = 30
+        lecture.grupo = 2
+        lecture.hora_in = 17.0
+        lecture.hora_fin = 19.0
+        lecture.profesor = "Rocio Aldeco"
+        lecture.tipo = "T"
+        lecture.salon = "B403"
+        lecture.vacantes = 0
+        self.enrollLecture(lectureToEnroll: lecture)
+    }
 	override func viewDidAppear(_ animated: Bool) {
 
 		
 		
 	}
+    
 	func getStudentFromCoreData() -> Student?{
 		do {
 			let coreDataUsers = try managedContext.fetch(Student.fetchRequest())
@@ -47,12 +74,12 @@ class ViewController: UIViewController {
 		}
 		return nil
 	}
-	func enrollLecture(currentlyInCoreData: Set<Lecture>, lectureToEnroll: Lecture){
+	func enrollLecture(lectureToEnroll: Lecture){
+        let currentlyInCoreData = self.defaultUser?.lectures as! Set<Lecture>
 		let starts = lectureToEnroll.hora_in
 		let ends = lectureToEnroll.hora_fin
-
 		for enrolledLecture in currentlyInCoreData{
-			for iterator in Range(0 ... currentlyInCoreData.count){
+			for iterator in Range(0 ... 5){
 				if enrolledLecture.arrayDays[iterator] == lectureToEnroll.arrayDays[iterator]{
 					if  ((enrolledLecture.hora_in ... enrolledLecture.hora_fin).contains(starts) || (enrolledLecture.hora_in ... enrolledLecture.hora_fin).contains(ends)){
 						print("Error, time of new lecture is already busy.")
@@ -65,31 +92,25 @@ class ViewController: UIViewController {
 				print("Error, No vacancy in the selected group")
 				return
 			}else{
-				print("Se ha agregado correctamente : \(lectureToEnroll.nombreAsignatura) en el grupo : \(lectureToEnroll.grupo)")
+                defaultUser?.addToLectures(lectureToEnroll)
+				print("Se ha agregado correctamente : \(lectureToEnroll.nombreAsignatura) en el grupo \(lectureToEnroll.grupo)")
+                appDelegate.saveContext()
 				//to declare function to save lecture
 			}
 			}
 			}
 		}
 	}
+    func deleteLectureFromCoreData(lectureToRemove: Lecture){
+        defaultUser?.removeFromLectures(lectureToRemove)
+        let temp =  defaultUser?.lectures as! Set<Lecture>
+        for names in temp{
+            if names.nombreAsignatura == lectureToRemove.nombreAsignatura{
+                print("Error while deleting the Lecture")
+                return
+            }
+        }
+        print("\(lectureToRemove.nombreAsignatura) has been removed correctly")
+    }
 	
-	func loadFromCoreData() -> [RamLecture]{
-		var savedEnrolled = [Lecture]()
-		var ramEnrolled = [RamLecture]()
-		//Code to fetch and save all the current enrolled lectures into saveEnrolled[Lecture]
-		do {
-			savedEnrolled = try managedContext.fetch(Lecture.fetchRequest())
-			for lecture in savedEnrolled {
-				if (lecture.student?.student_name) == defaultUser?.student_name {
-					ramEnrolled.append(RamLecture(clave: Int(lecture.clave), nombreAsignatura: lecture.nombreAsignatura, grupo: Int(lecture.grupo), profesor: lecture.profesor, tipo: lecture.tipo, hora_in: lecture.hora_in,hora_fin: lecture.hora_fin, dias: lecture.arrayDays, salon: lecture.salon, cupo: Int(lecture.cupo), vacantes: Int(lecture.vacantes)))
-				}
-			}
-		}catch let error as NSError {
-			print("Could not fetch : \(error)")
-			//returns an empty array
-			return [RamLecture]()
-		}
-		return ramEnrolled
-		
-	}
 }
