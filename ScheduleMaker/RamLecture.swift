@@ -6,14 +6,6 @@
 //  Copyright © 2019 Hugo Cruz. All rights reserved.
 //
 
-//
-//  Lecture.swift
-//  HTMLSearch
-//
-//  Created by Hugo Cruz on 8/8/19.
-//  Copyright © 2019 Hugo Cruz. All rights reserved.
-//
-
 import Foundation
 import CoreData
 

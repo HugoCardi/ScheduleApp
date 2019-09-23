@@ -21,6 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			into: self.persistentContainer.viewContext) as! Student
 		dude.student_name = "Hugo"
 		dude.last_names = "Cruz"
+		let lecture = NSEntityDescription.insertNewObject(forEntityName: "Lecture", into: self.persistentContainer.viewContext) as! Lecture
+		lecture.nombreAsignatura = "Crypto"
+		lecture.clave = 2930
+		lecture.arrayDays = [false, true, false, true, false, false]
+		lecture.cupo = 30
+		lecture.grupo = 2
+		lecture.hora_in = 7.0
+		lecture.hora_fin = 9.0
+		lecture.profesor = "Rocio Aldeco"
+		lecture.tipo = "T"
+		lecture.salon = "B403"
+		lecture.vacantes = 0
+		lecture.student = dude
 		self.saveContext()
 		return true
 	}

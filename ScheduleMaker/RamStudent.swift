@@ -26,24 +26,20 @@ class RamStudent{
 		if let nickname = nickname{
 			self.nickname = nickname
 		}
+		else{
+			self.nickname = nil
+		}
 		self.enrolledLectures = enrolledLectures
 	}
-	
+			/*
 	func enrollLecture(lecture : RamLecture, studentSaved: Student, delegate : AppDelegate, context: NSManagedObjectContext) {
-		let start = lecture.hora_in
-		let end = lecture.hora_fin
+		let start = 7.0
+		let end = 9.0
 		//var listOfSavedLectures = [NSManagedObject]()
 		var currentLectures = [RamLecture]()
 		var x = 0
-		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Lecture")
-		
-		do {
-			let listOfSavedLectures = try context.fetch(fetchRequest)
-			print(listOfSavedLectures)
-		} catch let error as NSError {
-			print("Could not fetch. \(error), \(error.userInfo)")
-		}
-		/*
+
+
 		//self enrolled lectures must be a fetch from CoreData
 		for currentLecture in currentLectures{
 			if (currentLecture.clave == lecture.clave){
@@ -64,8 +60,9 @@ class RamStudent{
 				print("\n\n The student has been succesfully enrolled in the lecture:  \(lecture.nombreAsignatura). ")
 			}
 			x += 1
-		*/
+
 		}
+	*/
 	}
 	
 	
