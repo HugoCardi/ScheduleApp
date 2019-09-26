@@ -13,7 +13,7 @@
         <!--Horario-->
         <scene sceneID="Fdd-9x-wvy">
             <objects>
-                <viewController id="pK3-QT-nYc" customClass="ViewControllerHorario" customModule="Proyecto_Final" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Horario" id="pK3-QT-nYc" customClass="ViewControllerHorario" customModule="Proyecto_Final" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iX1-hh-kpL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +116,7 @@
         <!--Agregar-->
         <scene sceneID="Dwg-5y-q5d">
             <objects>
-                <viewController id="3GT-3b-kYO" customClass="ViewControllerAgregar" customModule="Proyecto_Final" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Agregar" id="3GT-3b-kYO" customClass="ViewControllerAgregar" customModule="Proyecto_Final" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OTJ-Cj-DTN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +204,7 @@
         <!--Eliminar-->
         <scene sceneID="e24-Ft-qH7">
             <objects>
-                <viewController id="EvW-so-7fo" customClass="ViewControllerEliminar" customModule="Proyecto_Final" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Eliminar" id="EvW-so-7fo" customClass="ViewControllerEliminar" customModule="Proyecto_Final" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o7X-di-FUk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

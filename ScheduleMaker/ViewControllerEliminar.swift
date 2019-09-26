@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewControllerEliminar: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
@@ -18,12 +19,26 @@ class ViewControllerEliminar: UIViewController, UITableViewDelegate, UITableView
     var horaIn = [7.0, 8.0, 9.0]
     var horaFin = [9.0, 9.3, 11.0]
     
+    let appDelegateEliminar = UIApplication.shared.delegate as! AppDelegate
+    let managedContextEliminar = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var defaultUserEliminar: Student? = nil
+    
     
     override func viewDidLoad() {
+        self.defaultUserEliminar = getStudentFromCoreDataEliminar()
         super.viewDidLoad()
         self.tableView.isEditing = true
     }
     
+    func getStudentFromCoreDataEliminar() -> Student?{
+        do {
+            let coreDataUsers = try managedContextEliminar.fetch(Student.fetchRequest())
+            return coreDataUsers.first as? Student
+        }catch let error as NSError{
+            print("Could not fetch : \(error)")
+        }
+        return nil
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -77,6 +92,28 @@ class ViewControllerEliminar: UIViewController, UITableViewDelegate, UITableView
             }))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func fetchInstanceToDeleteFunction(clave: Int) -> Lecture?{
+        for item in self.defaultUserEliminar?.lectures as! Set<Lecture>{
+            if item.clave == clave{
+                return item
+            }
+        }
+        return nil
+    }
+    
+    func deleteLectureFromCoreData(lectureToRemove: Lecture){
+        defaultUserEliminar?.removeFromLectures(lectureToRemove)
+        let temp =  defaultUserEliminar?.lectures as! Set<Lecture>
+        for names in temp{
+            if names.nombreAsignatura == lectureToRemove.nombreAsignatura{
+                print("Error while deleting the Lecture")
+                return
+            }
+        }
+        print("\(lectureToRemove.nombreAsignatura) has been removed correctly")
+        return
     }
 
 }

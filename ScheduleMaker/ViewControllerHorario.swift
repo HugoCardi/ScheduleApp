@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
 
@@ -16,9 +17,23 @@ class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICol
     var horaPar: Int = 0
     var horaNon: Int = 0
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var defaultUser: Student? = nil
+    
     override func viewDidLoad() {
+        self.defaultUser = getStudentFromCoreData()
         super.viewDidLoad()
-
+    }
+    
+    func getStudentFromCoreData() -> Student?{
+        do {
+            let coreDataUsers = try managedContext.fetch(Student.fetchRequest())
+            return coreDataUsers.first as? Student
+        }catch let error as NSError{
+            print("Could not fetch : \(error)")
+        }
+        return nil
     }
     
     override func viewDidAppear(_ animated: Bool) {

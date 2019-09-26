@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 func delay(_ seconds: Double, completion: @escaping ()->Void) {
     DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
@@ -33,9 +34,15 @@ class ViewControllerAgregar: UIViewController {
     
     var isBottonPush: Bool = false
     
+    let appDelegateAgregar = UIApplication.shared.delegate as! AppDelegate
+    let managedContextAgregar = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var defaultUserAgregar: Student? = nil
+    
     override func viewDidLoad() {
+        self.defaultUserAgregar = getStudentFromCoreDataAgregar()
         super.viewDidLoad()
         
+        print("Se carga Agregar")
         addButton.layer.cornerRadius = 8.0
         addButton.layer.masksToBounds = true
         addButton.center.y = claveTextField.center.y + 150
@@ -73,6 +80,16 @@ class ViewControllerAgregar: UIViewController {
         animatedAirplaneOrange(orangeAirplane)
         animatedAirplaneGreen(greenAirplane)
         //animatedAirplaneBlue(blueAirplane)
+    }
+    
+    func getStudentFromCoreDataAgregar() -> Student?{
+        do {
+            let coreDataUsers = try managedContextAgregar.fetch(Student.fetchRequest())
+            return coreDataUsers.first as? Student
+        }catch let error as NSError{
+            print("Could not fetch : \(error)")
+        }
+        return nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,6 +140,34 @@ class ViewControllerAgregar: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0.5, options: [], animations: {
             self.blueAirplane.alpha = 1.0
         }, completion: nil)
+    }
+    
+    func enrollLecture(lectureToEnroll: Lecture){
+        let currentlyInCoreData = self.defaultUserAgregar?.lectures as! Set<Lecture>
+        let starts = lectureToEnroll.hora_in
+        let ends = lectureToEnroll.hora_fin
+        for enrolledLecture in currentlyInCoreData{
+            for iterator in Range(0 ... 5){
+                if enrolledLecture.arrayDays[iterator] == lectureToEnroll.arrayDays[iterator]{
+                    if  ((enrolledLecture.hora_in ... enrolledLecture.hora_fin).contains(starts) || (enrolledLecture.hora_in ... enrolledLecture.hora_fin).contains(ends)){
+                        print("Error, time of new lecture is already busy.")
+                        return
+                    }
+                    if(enrolledLecture.clave == lectureToEnroll.clave){
+                        print("\n\n The Lecture has already been enrolled in another group")
+                        return
+                    }else if (lectureToEnroll.cupo == 0){
+                        print("Error, No vacancy in the selected group")
+                        return
+                    }
+                }
+            }
+        }
+        defaultUserAgregar?.addToLectures(lectureToEnroll)
+        print("Se ha agregado correctamente : \(lectureToEnroll.nombreAsignatura) en el grupo \(lectureToEnroll.grupo)")
+        appDelegateAgregar.saveContext()
+        return
+        //to declare function to save lecture
     }
 
     @IBAction func add() {
