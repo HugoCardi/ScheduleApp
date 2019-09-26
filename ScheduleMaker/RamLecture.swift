@@ -58,7 +58,7 @@ class RamLecture {
 	}
 	func timeToFloat(){
 		//Separation of format : "x:xxhrs a y:yyhrs" into ["x:xxhrs", y:yyhrs"]
-		var array_of_times = self.horario!.split(separator: "a")
+		let array_of_times = self.horario!.split(separator: "a")
 		let begin = array_of_times[0].replacingOccurrences(of: ":", with: ".")
 		let end = array_of_times[1].replacingOccurrences(of: ":", with: ".")
 		self.hora_in = Float(begin.replacingOccurrences(of: " ", with: "")) ?? 0.0

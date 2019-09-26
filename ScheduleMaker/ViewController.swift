@@ -4,7 +4,7 @@
 //
 //  Created by Hugo Cruz on 8/22/19.
 //  Copyright © 2019 Hugo Cruz. All rights reserved.
-//
+//comprobante inscripcion, dos fotos infantiles, pago $40
 
 //Modify logic in enrollLecture to check availability within the foor-loop
 //Place returns false in the for-loop so that the flows fails to enroll in any case it's impossible to enroll
@@ -16,34 +16,46 @@ import CoreData
 class ViewController: UIViewController {
 	let appDelegate = UIApplication.shared.delegate as! AppDelegate
 	let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-	//var currentlyEnrolled = [RamLecture]()
 	var defaultUser: Student? = nil
 	
 	override func viewDidLoad() {
-		//self.currentlyEnrolled = loadFromCoreData()
 		self.defaultUser = getStudentFromCoreData()
 		super.viewDidLoad()
-		//print("User Name")
-        print(defaultUser?.student_name ?? "Hugo")
-
 		//7 Do any additional setup after loading the view.
+	}
+	func getStudentFromCoreData() -> Student?{
+		do {
+			let coreDataUsers = try managedContext.fetch(Student.fetchRequest())
+			return coreDataUsers.first as? Student
+		}catch let error as NSError{
+			print("Could not fetch : \(error)")
+		}
+		return nil
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
-		//Extract from HTML returns an array of RAMLectures
-		let enrolledInCoreData = defaultUser?.lectures as! Set<Lecture>
+		//Code to test the functionality of core data
+		/*
+		var enrolledInCoreData = defaultUser?.lectures as! Set<Lecture>
 		for enrolled in enrolledInCoreData{
-			//print("Nombre estudiante : \(String(describing: enrolled.student?.student_name))")
 			print("Nombre asignatura n del estudiante : \(enrolled.nombreAsignatura)")
 		}
-        testFunction()
+		let instanceToDelete = fetchInstanceToDeleteFunction(clave: 0674)
+		if let instanceToDelete = instanceToDelete {
+			self.deleteLectureFromCoreData(lectureToRemove: instanceToDelete)
+		}else{
+			print("Error, no lecture with that key has been enrolled")
+		}
         print("I'm a breakline")
+		enrolledInCoreData = defaultUser?.lectures as! Set<Lecture>
         for enrolled in enrolledInCoreData{
             //print("Nombre estudiante : \(String(describing: enrolled.student?.student_name))")
             print("Nombre asignatura n del estudiante : \(enrolled.nombreAsignatura)")
         }
+		*/
 
 	}
+
     func  testFunction() {
         let lecture = NSEntityDescription.insertNewObject(forEntityName: "Lecture", into: managedContext) as! Lecture
         lecture.nombreAsignatura = "Computo Movil"
@@ -65,15 +77,7 @@ class ViewController: UIViewController {
 		
 	}
     
-	func getStudentFromCoreData() -> Student?{
-		do {
-			let coreDataUsers = try managedContext.fetch(Student.fetchRequest())
-			return coreDataUsers.first as? Student
-		}catch let error as NSError{
-			print("Could not fetch : \(error)")
-		}
-		return nil
-	}
+
 	func enrollLecture(lectureToEnroll: Lecture){
         let currentlyInCoreData = self.defaultUser?.lectures as! Set<Lecture>
 		let starts = lectureToEnroll.hora_in
@@ -91,15 +95,23 @@ class ViewController: UIViewController {
 			}else if (lectureToEnroll.cupo == 0){
 				print("Error, No vacancy in the selected group")
 				return
-			}else{
-                defaultUser?.addToLectures(lectureToEnroll)
-				print("Se ha agregado correctamente : \(lectureToEnroll.nombreAsignatura) en el grupo \(lectureToEnroll.grupo)")
-                appDelegate.saveContext()
-				//to declare function to save lecture
 			}
 			}
 			}
 		}
+		defaultUser?.addToLectures(lectureToEnroll)
+		print("Se ha agregado correctamente : \(lectureToEnroll.nombreAsignatura) en el grupo \(lectureToEnroll.grupo)")
+		appDelegate.saveContext()
+		return
+		//to declare function to save lecture
+	}
+	func fetchInstanceToDeleteFunction(clave: Int) -> Lecture?{
+		for item in self.defaultUser?.lectures as! Set<Lecture>{
+			if item.clave == clave{
+				return item
+			}
+		}
+		return nil
 	}
     func deleteLectureFromCoreData(lectureToRemove: Lecture){
         defaultUser?.removeFromLectures(lectureToRemove)
@@ -111,6 +123,7 @@ class ViewController: UIViewController {
             }
         }
         print("\(lectureToRemove.nombreAsignatura) has been removed correctly")
+		return
     }
 	
 }

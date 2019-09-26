@@ -27,8 +27,6 @@ func createLectures(data: [Element])  -> [RamLecture] {
 				let cupo = try Int(group.child(7).text()) ?? 0
 				let vacantes = try Int(group.child(8).text()) ?? 0
 				if (clave != 0){
-					//possibleChoices.append(Lecture(clave: clave, nombreAsignatura: nombre, grupo: grup, profesor: profesor, tipo: tipo, horario: horario, dias: dias, salon: salon, cupo: cupo, vacantes: vacantes))
-					//test.append(a)
 					print(clave,grup,nombre,profesor,tipo,horario,dias,salon, cupo, vacantes)
 					//Atempting to init a new class.
 					//Translation of Run-Time Lecture to CoreDataLecture still to be written
