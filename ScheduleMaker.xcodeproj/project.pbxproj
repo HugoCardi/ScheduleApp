@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3A38C93D19188BAD0248ACE8 /* Pods_ScheduleMakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C68242156C18F7A125A84F /* Pods_ScheduleMakerUITests.framework */; };
+		90AB7DD1233D3BC90003C911 /* EliminarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AB7DD0233D3BC90003C911 /* EliminarTableViewCell.swift */; };
+		90AB7DD3233D3BDC0003C911 /* HorarioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AB7DD2233D3BDC0003C911 /* HorarioCollectionViewCell.swift */; };
+		90AB7DD5233D3BE80003C911 /* ViewControllerAgregar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AB7DD4233D3BE80003C911 /* ViewControllerAgregar.swift */; };
+		90AB7DD7233D3BF10003C911 /* ViewControllerEliminar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AB7DD6233D3BF10003C911 /* ViewControllerEliminar.swift */; };
+		90AB7DD9233D3BF90003C911 /* ViewControllerHorario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AB7DD8233D3BF90003C911 /* ViewControllerHorario.swift */; };
 		BDF1699D3C2332BDAE1F8946 /* Pods_ScheduleMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55AC43342B0865EF9DA8438 /* Pods_ScheduleMaker.framework */; };
 		EA9A8DB1E1CF1379B32295B8 /* Pods_ScheduleMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A496277D59380A27A4F12F9F /* Pods_ScheduleMakerTests.framework */; };
 		FA750001230F44A200D977B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA75FFFF230F44A200D977B4 /* Main.storyboard */; };
@@ -51,6 +56,11 @@
 		3107635EA71C3953A67BC204 /* Pods-ScheduleMakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMakerUITests.release.xcconfig"; path = "Target Support Files/Pods-ScheduleMakerUITests/Pods-ScheduleMakerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		64C68242156C18F7A125A84F /* Pods_ScheduleMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleMakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A7ADE9CA42F2751CAB6384 /* Pods-ScheduleMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMakerTests.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleMakerTests/Pods-ScheduleMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		90AB7DD0233D3BC90003C911 /* EliminarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EliminarTableViewCell.swift; sourceTree = "<group>"; };
+		90AB7DD2233D3BDC0003C911 /* HorarioCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorarioCollectionViewCell.swift; sourceTree = "<group>"; };
+		90AB7DD4233D3BE80003C911 /* ViewControllerAgregar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAgregar.swift; sourceTree = "<group>"; };
+		90AB7DD6233D3BF10003C911 /* ViewControllerEliminar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerEliminar.swift; sourceTree = "<group>"; };
+		90AB7DD8233D3BF90003C911 /* ViewControllerHorario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerHorario.swift; sourceTree = "<group>"; };
 		9489DFED49C103256125E11B /* Pods-ScheduleMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMaker.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleMaker/Pods-ScheduleMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		A496277D59380A27A4F12F9F /* Pods_ScheduleMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34B60B2B92B2BF42070C208 /* Pods-ScheduleMakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMakerUITests.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleMakerUITests/Pods-ScheduleMakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +183,11 @@
 		FA75FFFA230F44A200D977B4 /* ScheduleMaker */ = {
 			isa = PBXGroup;
 			children = (
+				90AB7DD8233D3BF90003C911 /* ViewControllerHorario.swift */,
+				90AB7DD6233D3BF10003C911 /* ViewControllerEliminar.swift */,
+				90AB7DD4233D3BE80003C911 /* ViewControllerAgregar.swift */,
+				90AB7DD2233D3BDC0003C911 /* HorarioCollectionViewCell.swift */,
+				90AB7DD0233D3BC90003C911 /* EliminarTableViewCell.swift */,
 				FAEE34242315CADF000CFFBF /* DataManager.swift */,
 				FAEE34262315CB05000CFFBF /* ValidLectureList.swift */,
 				FAE140B7231ED28500D368D3 /* RamStudent.swift */,
@@ -433,12 +448,17 @@
 				FA77DCF823186EE200D98E07 /* Student+CoreDataClass.swift in Sources */,
 				FAEE34272315CB05000CFFBF /* ValidLectureList.swift in Sources */,
 				FAEE34252315CADF000CFFBF /* DataManager.swift in Sources */,
+				90AB7DD7233D3BF10003C911 /* ViewControllerEliminar.swift in Sources */,
 				FAE140B8231ED28500D368D3 /* RamStudent.swift in Sources */,
 				FA750004230F44A200D977B4 /* ScheduleMaker.xcdatamodeld in Sources */,
 				FA75FFFC230F44A200D977B4 /* AppDelegate.swift in Sources */,
+				90AB7DD3233D3BDC0003C911 /* HorarioCollectionViewCell.swift in Sources */,
+				90AB7DD9233D3BF90003C911 /* ViewControllerHorario.swift in Sources */,
 				FA77DCFA23186EE200D98E07 /* Lecture+CoreDataClass.swift in Sources */,
 				FA77DCFB23186EE200D98E07 /* Lecture+CoreDataProperties.swift in Sources */,
 				FA77DCF923186EE200D98E07 /* Student+CoreDataProperties.swift in Sources */,
+				90AB7DD1233D3BC90003C911 /* EliminarTableViewCell.swift in Sources */,
+				90AB7DD5233D3BE80003C911 /* ViewControllerAgregar.swift in Sources */,
 				FAE140BA231ED31D00D368D3 /* RamLecture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
