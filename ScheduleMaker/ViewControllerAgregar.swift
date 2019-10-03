@@ -75,6 +75,7 @@ class ViewControllerAgregar: UIViewController {
         label.textAlignment = .center
         status.addSubview(label)
         
+        status.center.y = addButton.center.y + 23
         statusPosition = status.center
         
         greenAirplane.center.x = 0 - greenAirplane.frame.width
@@ -93,6 +94,12 @@ class ViewControllerAgregar: UIViewController {
         animatedAirplaneGreen(greenAirplane)
         //animatedAirplaneBlue(blueAirplane)
     }
+    
+    
+    @IBAction func unwindToAgregar(unwindSegue: UIStoryboardSegue){
+        
+    }
+    
 	func getStudentFromCoreDataAgregar() -> Student?{
 		do {
 			let coreDataUsers = try managedContextAgregar.fetch(Student.fetchRequest())
@@ -166,6 +173,7 @@ class ViewControllerAgregar: UIViewController {
             self.blueAirplane.alpha = 1.0
         }, completion: nil)
     }
+    
 	func stringClaveLecture(clave :String){
 		let possibleToEnroll = extractFromHTML(claveDeseada: clave)
 		if let possibleToEnroll = possibleToEnroll{
@@ -178,6 +186,7 @@ class ViewControllerAgregar: UIViewController {
 		}
 
 	}
+    
 	func RamLectureToLecture (_ value : RamLecture) -> Lecture{
 		print("attempting to enroll in group \(value.grupo)")
 		let preparedLectureForCoreData = NSEntityDescription.insertNewObject(forEntityName: "Lecture", into: self.managedContextAgregar) as! Lecture
@@ -194,6 +203,7 @@ class ViewControllerAgregar: UIViewController {
 		preparedLectureForCoreData.tipo = value.tipo
 		return preparedLectureForCoreData
 	}
+    
 	func enrollLecture(lectureToEnroll: Lecture){
 		let starts = lectureToEnroll.hora_in
 		let ends = lectureToEnroll.hora_fin
@@ -250,9 +260,9 @@ class ViewControllerAgregar: UIViewController {
             
             self.spinner.alpha = 1.0
             
-            if self.claveTextField?.text! == "1234" {
+            /*if self.claveTextField?.text! == "1234" {
                 self.performSegue(withIdentifier: "Selected", sender: sender)
-            }
+            }*/
             
         } else {
             UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {

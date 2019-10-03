@@ -68,4 +68,16 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
         return "Materias a inscribir"
     }
     
+    @IBAction func aceptarButtonAction(_ sender: Any) {
+        let alert = UIAlertController(title: "Aviso", message: "Materia agregada con exito", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
+            //Cancel Action
+        }))
+        alert.addAction(UIAlertAction(title: "Aceptar",
+                                      style: .default,
+                                      handler: {(_: UIAlertAction!) in
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

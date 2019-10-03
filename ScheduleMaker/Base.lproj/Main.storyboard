@@ -241,7 +241,7 @@
         <!--Agregar-->
         <scene sceneID="t61-Vg-bAY">
             <objects>
-                <viewController id="Fdd-ye-0kn" customClass="ViewControllerAgregar" customModule="Proyecto_Final" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fdd-ye-0kn" customClass="ViewControllerAgregar" customModule="ScheduleMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s7r-ja-NIl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -296,6 +296,7 @@
                                 <state key="normal" title="Agregar Manual"/>
                                 <connections>
                                     <action selector="add:" destination="Fdd-ye-0kn" eventType="touchUpInside" id="VDO-Pl-GKG"/>
+                                    <segue destination="cto-xP-Dkd" kind="show" id="jVI-zk-fmF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfb-h4-JHO">
@@ -332,7 +333,6 @@
                         <outlet property="greenAirplane" destination="3pP-Dt-CWc" id="fKN-UY-rzz"/>
                         <outlet property="orangeAirplane" destination="s6d-rR-ByO" id="WaK-ur-h9R"/>
                         <outlet property="titleLabel" destination="9Uf-kX-qXa" id="FH4-S9-63t"/>
-                        <segue destination="cto-xP-Dkd" kind="show" identifier="Selected" id="4FW-y0-nF1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LtF-08-zLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -342,7 +342,7 @@
         <!--Seleccionar-->
         <scene sceneID="Avw-sZ-pXS">
             <objects>
-                <viewController id="cto-xP-Dkd" userLabel="Seleccionar" customClass="ViewControllerSeleccionar" customModule="Proyecto_Final" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cto-xP-Dkd" userLabel="Seleccionar" customClass="ViewControllerSeleccionar" customModule="ScheduleMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s5e-Cg-CwN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -356,10 +356,19 @@
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUF-os-IYK">
+                                        <rect key="frame" x="319" y="7" width="48" height="30"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <segue destination="R1W-jN-YDE" kind="unwind" unwindAction="unwindToAgregarWithUnwindSegue:" id="lnM-8G-JaE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="nUF-os-IYK" secondAttribute="trailing" constant="8" id="OEf-Qr-M0H"/>
                                     <constraint firstItem="GZB-Vv-T5o" firstAttribute="centerX" secondItem="nBb-c2-e61" secondAttribute="centerX" id="W0n-KK-LNo"/>
+                                    <constraint firstItem="nUF-os-IYK" firstAttribute="centerY" secondItem="GZB-Vv-T5o" secondAttribute="centerY" id="cbQ-Ys-6LG"/>
                                     <constraint firstItem="GZB-Vv-T5o" firstAttribute="centerY" secondItem="nBb-c2-e61" secondAttribute="centerY" id="uJt-j2-BSd"/>
                                     <constraint firstAttribute="height" constant="44" id="z72-zL-0tV"/>
                                 </constraints>
@@ -368,7 +377,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubjetAddCell" rowHeight="70" id="5OG-iw-euY" customClass="SeleccionarTableViewCell" customModule="Proyecto_Final" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubjetAddCell" rowHeight="70" id="5OG-iw-euY" customClass="SeleccionarTableViewCell" customModule="ScheduleMaker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5OG-iw-euY" id="8em-ch-z80">
@@ -376,7 +385,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Texto" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5c7-4w-fQD">
-                                                    <rect key="frame" x="305" y="0.0" width="70" height="70.5"/>
+                                                    <rect key="frame" x="230" y="0.0" width="70" height="70.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="QVX-s5-KWw"/>
@@ -397,16 +406,28 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aV3-Iz-Xuv">
+                                                    <rect key="frame" x="313" y="20.5" width="55" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="H4t-8W-5e8"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Aceptar"/>
+                                                    <connections>
+                                                        <action selector="aceptarButtonAction:" destination="cto-xP-Dkd" eventType="touchUpInside" id="imh-hN-JMF"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="5c7-4w-fQD" secondAttribute="bottom" id="2EV-Ah-47X"/>
                                                 <constraint firstItem="Ro2-xl-azs" firstAttribute="top" secondItem="8em-ch-z80" secondAttribute="top" constant="13" id="GCA-sA-cVQ"/>
+                                                <constraint firstItem="aV3-Iz-Xuv" firstAttribute="trailing" secondItem="8em-ch-z80" secondAttribute="trailingMargin" constant="8" id="MfS-eC-zam"/>
+                                                <constraint firstAttribute="trailing" secondItem="5c7-4w-fQD" secondAttribute="trailing" constant="75" id="QzE-Xf-XAd"/>
                                                 <constraint firstAttribute="bottom" secondItem="zvh-MK-mI1" secondAttribute="bottom" constant="13" id="R1y-B4-b8e"/>
-                                                <constraint firstAttribute="trailing" secondItem="5c7-4w-fQD" secondAttribute="trailing" id="Tm4-dN-1YD"/>
                                                 <constraint firstItem="Ro2-xl-azs" firstAttribute="leading" secondItem="8em-ch-z80" secondAttribute="leading" constant="10" id="Xfn-68-goQ"/>
                                                 <constraint firstItem="zvh-MK-mI1" firstAttribute="leading" secondItem="8em-ch-z80" secondAttribute="leading" constant="10" id="hOy-g9-5vj"/>
                                                 <constraint firstItem="5c7-4w-fQD" firstAttribute="top" secondItem="8em-ch-z80" secondAttribute="top" id="mb2-xr-5NW"/>
                                                 <constraint firstItem="zvh-MK-mI1" firstAttribute="top" secondItem="Ro2-xl-azs" secondAttribute="bottom" constant="4" id="mhp-3d-ILr"/>
+                                                <constraint firstItem="aV3-Iz-Xuv" firstAttribute="centerY" secondItem="5c7-4w-fQD" secondAttribute="centerY" id="qku-xl-PzR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -440,6 +461,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nt6-Cz-cuj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="R1W-jN-YDE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2069.5999999999999" y="864.91754122938539"/>
         </scene>
