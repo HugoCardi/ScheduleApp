@@ -7,22 +7,23 @@
 //
 
 import UIKit
-import CoreData
 
 func delay(_ seconds: Double, completion: @escaping ()->Void) {
     DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
 }
 
 class ViewControllerAgregar: UIViewController {
-
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var claveTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var addRandomButton: UIButton!
     @IBOutlet weak var greenAirplane: UIImageView!
     @IBOutlet weak var orangeAirplane: UIImageView!
     @IBOutlet weak var blueAirplane: UIImageView!
     
     let spinner = UIActivityIndicatorView(style: .whiteLarge)
+    let spinnerRandom = UIActivityIndicatorView(style: .whiteLarge)
     let messages = ["Searching ...", "Failed"]
     let label = UILabel()
     let status = UIImageView(image: UIImage(named: "banner"))
@@ -34,24 +35,28 @@ class ViewControllerAgregar: UIViewController {
     
     var isBottonPush: Bool = false
     
-    let appDelegateAgregar = UIApplication.shared.delegate as! AppDelegate
-    let managedContextAgregar = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var defaultUserAgregar: Student? = nil
-    
     override func viewDidLoad() {
-        self.defaultUserAgregar = getStudentFromCoreDataAgregar()
         super.viewDidLoad()
         
-        print("Se carga Agregar")
         addButton.layer.cornerRadius = 8.0
         addButton.layer.masksToBounds = true
-        addButton.center.y = claveTextField.center.y + 150
+        addButton.center.y = claveTextField.center.y + 60
         addButton.center.x = view.bounds.width / 2
         
-        spinner.frame = CGRect(x: 35.0, y: 17.0, width: 20.0, height: 20.0)
+        addRandomButton.layer.cornerRadius = 8.0
+        addRandomButton.layer.masksToBounds = true
+        addRandomButton.center.y = addButton.center.y + 80
+        addRandomButton.center.x = view.bounds.width / 2
+        
+        spinner.frame = CGRect(x: 27.0, y: 14.0, width: 20.0, height: 20.0)
         spinner.startAnimating()
         spinner.alpha = 0.0
         addButton.addSubview(spinner)
+        
+        spinnerRandom.frame = CGRect(x: 27.0, y: 14.0, width: 20.0, height: 20.0)
+        spinnerRandom.startAnimating()
+        spinnerRandom.alpha = 0.0
+        addRandomButton.addSubview(spinnerRandom)
         
         status.isHidden = true
         status.center = addButton.center
@@ -82,31 +87,22 @@ class ViewControllerAgregar: UIViewController {
         //animatedAirplaneBlue(blueAirplane)
     }
     
-    func getStudentFromCoreDataAgregar() -> Student?{
-        do {
-            let coreDataUsers = try managedContextAgregar.fetch(Student.fetchRequest())
-            return coreDataUsers.first as? Student
-        }catch let error as NSError{
-            print("Could not fetch : \(error)")
-        }
-        return nil
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         addButton.alpha = 0.0
+        addRandomButton.alpha = 0.0
         
         /*greenAirplane.center.x = 0 - greenAirplane.frame.width
-        greenAirplane.center.y = CGFloat(550)
-        
-        orangeAirplane.frame.origin.x = view.frame.size.width //290
-        orangeAirplane.center.y = CGFloat(425)
-        //orangeAirplane.alpha = 0
-        
-        blueAirplane.frame.origin.x = view.frame.size.width
-        blueAirplane.center.y = CGFloat(110)
-        //blueAirplane.alpha = 0*/
+         greenAirplane.center.y = CGFloat(550)
+         
+         orangeAirplane.frame.origin.x = view.frame.size.width //290
+         orangeAirplane.center.y = CGFloat(425)
+         //orangeAirplane.alpha = 0
+         
+         blueAirplane.frame.origin.x = view.frame.size.width
+         blueAirplane.center.y = CGFloat(110)
+         //blueAirplane.alpha = 0*/
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -117,16 +113,21 @@ class ViewControllerAgregar: UIViewController {
         
         
         UIView.animate(withDuration: 0.8, animations: {
-                self.titleLabel.center.x += self.view.bounds.width
-            })
+            self.titleLabel.center.x += self.view.bounds.width
+        })
         
         UIView.animate(withDuration: 0.8, delay: 0.5, options: [], animations: {
-                self.claveTextField.center.x += self.view.bounds.width
-            }, completion: nil)
+            self.claveTextField.center.x += self.view.bounds.width
+        }, completion: nil)
         
         UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
             self.addButton.center.y += 30
             self.addButton.alpha = 1.0
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
+            self.addRandomButton.center.y += 30
+            self.addRandomButton.alpha = 1.0
         }, completion: nil)
         
         UIView.animate(withDuration: 0.5, delay: 0.5, options: [], animations: {
@@ -142,52 +143,63 @@ class ViewControllerAgregar: UIViewController {
         }, completion: nil)
     }
     
-    func enrollLecture(lectureToEnroll: Lecture){
-        let currentlyInCoreData = self.defaultUserAgregar?.lectures as! Set<Lecture>
-        let starts = lectureToEnroll.hora_in
-        let ends = lectureToEnroll.hora_fin
-        for enrolledLecture in currentlyInCoreData{
-            for iterator in Range(0 ... 5){
-                if enrolledLecture.arrayDays[iterator] == lectureToEnroll.arrayDays[iterator]{
-                    if  ((enrolledLecture.hora_in ... enrolledLecture.hora_fin).contains(starts) || (enrolledLecture.hora_in ... enrolledLecture.hora_fin).contains(ends)){
-                        print("Error, time of new lecture is already busy.")
-                        return
-                    }
-                    if(enrolledLecture.clave == lectureToEnroll.clave){
-                        print("\n\n The Lecture has already been enrolled in another group")
-                        return
-                    }else if (lectureToEnroll.cupo == 0){
-                        print("Error, No vacancy in the selected group")
-                        return
-                    }
-                }
-            }
-        }
-        defaultUserAgregar?.addToLectures(lectureToEnroll)
-        print("Se ha agregado correctamente : \(lectureToEnroll.nombreAsignatura) en el grupo \(lectureToEnroll.grupo)")
-        appDelegateAgregar.saveContext()
-        return
-        //to declare function to save lecture
-    }
-
-    @IBAction func add() {
+    @IBAction func add(_ sender: Any) {
+        guard let button = sender as? UIButton else {return}
+        
         view.endEditing(true)
         
         isBottonPush = !isBottonPush
         
-        UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
+        if button.titleLabel?.text == "Agregar Manual" {
+            UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
                 self.addButton.bounds.size.width += 80
-        }, completion: {_ in
-            self.showMessage(index: 0)
-        })
+            }, completion: {_ in
+                self.showMessage(index: 0)
+            })
+            
+            UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
+                self.addButton.center.y += 60
+                self.addButton.backgroundColor = UIColor(red: 246/255, green: 207/255, blue: 202/255, alpha: 1.0)
+            }, completion: nil)
+            
+            UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
+                self.addRandomButton.center.y += 60
+                self.addRandomButton.backgroundColor = UIColor(red: 246/255, green: 207/255, blue: 202/255, alpha: 1.0)
+            }, completion: nil)
+            
+            self.spinner.alpha = 1.0
+            
+            if self.claveTextField?.text! == "1234" {
+                self.performSegue(withIdentifier: "Selected", sender: sender)
+            }
+            
+        } else {
+            UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
+                self.addRandomButton.bounds.size.width += 80
+            }, completion: {_ in
+                self.showMessage(index: 0)
+            })
+            
+            UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
+                self.addRandomButton.center.y += 60
+                self.addRandomButton.backgroundColor = UIColor(red: 246/255, green: 207/255, blue: 202/255, alpha: 1.0)
+            }, completion: nil)
+            
+            UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
+                self.addButton.center.y += 60
+                self.addButton.backgroundColor = UIColor(red: 246/255, green: 207/255, blue: 202/255, alpha: 1.0)
+            }, completion: nil)
+            
+            self.spinnerRandom.alpha = 1.0
+        }
         
-        UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
-            self.addButton.center.y += 60
-            self.addButton.backgroundColor = UIColor(red: 246/255, green: 207/255, blue: 202/255, alpha: 1.0)
-        }, completion: nil)
-        
-        self.spinner.alpha = 1.0
         self.addButton.isEnabled = false
+        self.addRandomButton.isEnabled = false
+    }
+    
+    func nothing(){
+        print("nothing")
+        return
     }
     
     func showMessage(index: Int) {
@@ -226,10 +238,15 @@ class ViewControllerAgregar: UIViewController {
         
         UIView.animate(withDuration: 1.5, delay: 0.0, options: [], animations: {
             self.spinner.alpha = 0.0
+            self.spinnerRandom.alpha = 0.0
             self.addButton.backgroundColor = UIColor(red: 0.6, green: 0.8, blue: 0.19, alpha: 1.0)
+            self.addRandomButton.backgroundColor = UIColor(red: 0.6, green: 0.8, blue: 0.19, alpha: 1.0)
             self.addButton.center.y -= 60
-            self.addButton.bounds.size.width -= 80
+            self.addRandomButton.center.y -= 60
+            self.addButton.bounds.size.width = 260
+            self.addRandomButton.bounds.size.width = 260
             self.addButton.isEnabled = true
+            self.addRandomButton.isEnabled = true
             self.claveTextField.text = ""
         }, completion: nil)
     }
