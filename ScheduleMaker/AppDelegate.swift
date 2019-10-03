@@ -16,11 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)-> Bool {
+		
 		let dude = NSEntityDescription.insertNewObject(
 			forEntityName: "Student",
 			into: self.persistentContainer.viewContext) as! Student
 		dude.student_name = "Hugo"
 		dude.last_names = "Cruz"
+		/*
 		let lecture = NSEntityDescription.insertNewObject(forEntityName: "Lecture", into: self.persistentContainer.viewContext) as! Lecture
 		lecture.nombreAsignatura = "Crypto"
 		lecture.clave = 2930
@@ -35,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		lecture.vacantes = 0
 		lecture.student = dude
 		self.saveContext()
+		*/
 		return true
 	}
 

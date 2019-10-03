@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+import SwiftSoup
 
 func delay(_ seconds: Double, completion: @escaping ()->Void) {
     DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
@@ -35,7 +37,12 @@ class ViewControllerAgregar: UIViewController {
     
     var isBottonPush: Bool = false
     
+    let appDelegateAgregar = UIApplication.shared.delegate as! AppDelegate
+    let managedContextAgregar = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var defaultUserAgregar: Student? = nil
+	
     override func viewDidLoad() {
+		self.defaultUserAgregar = getStudentFromCoreDataAgregar()
         super.viewDidLoad()
         
         addButton.layer.cornerRadius = 8.0
@@ -86,10 +93,27 @@ class ViewControllerAgregar: UIViewController {
         animatedAirplaneGreen(greenAirplane)
         //animatedAirplaneBlue(blueAirplane)
     }
-    
+	func getStudentFromCoreDataAgregar() -> Student?{
+		do {
+			let coreDataUsers = try managedContextAgregar.fetch(Student.fetchRequest())
+			return coreDataUsers.first as? Student
+		}catch let error as NSError{
+			print("Could not fetch : \(error)")
+		}
+		return nil
+	}
+	
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+		guard let currentlyInCoreData = self.defaultUserAgregar?.lectures as! Set<Lecture>? else{
+			print("No Lectures enrolled in CoreData")
+			return
+		}
+		for item in currentlyInCoreData{
+			print("Clave \(item.clave) en grupo \(item.grupo)")
+		}
+		
         addButton.alpha = 0.0
         addRandomButton.alpha = 0.0
         
@@ -142,9 +166,66 @@ class ViewControllerAgregar: UIViewController {
             self.blueAirplane.alpha = 1.0
         }, completion: nil)
     }
+	func stringClaveLecture(clave :String){
+		let possibleToEnroll = extractFromHTML(claveDeseada: clave)
+		if let possibleToEnroll = possibleToEnroll{
+			for possible in possibleToEnroll {
+				print("\(possible.clave) || \(possible.grupo) || \(possible.profesor) || \(possible.horario!) || ")
+			}
+			self.enrollLecture(lectureToEnroll: RamLectureToLecture(possibleToEnroll.randomElement()!))
+		}else{
+			print("Oh Oh. something has gone terribly wrong")
+		}
+
+	}
+	func RamLectureToLecture (_ value : RamLecture) -> Lecture{
+		print("attempting to enroll in group \(value.grupo)")
+		let preparedLectureForCoreData = NSEntityDescription.insertNewObject(forEntityName: "Lecture", into: self.managedContextAgregar) as! Lecture
+		preparedLectureForCoreData.clave = Int32(value.clave)
+		preparedLectureForCoreData.grupo = Int32(value.grupo)
+		preparedLectureForCoreData.nombreAsignatura = value.nombreAsignatura
+		preparedLectureForCoreData.profesor = value.profesor
+		preparedLectureForCoreData.hora_in = value.hora_in
+		preparedLectureForCoreData.hora_fin = value.hora_fin
+		preparedLectureForCoreData.vacantes = Int32(value.vacantes)
+		preparedLectureForCoreData.cupo = 1
+		preparedLectureForCoreData.arrayDays = value.arrayDays
+		preparedLectureForCoreData.salon = value.salon
+		preparedLectureForCoreData.tipo = value.tipo
+		return preparedLectureForCoreData
+	}
+	func enrollLecture(lectureToEnroll: Lecture){
+		let starts = lectureToEnroll.hora_in
+		let ends = lectureToEnroll.hora_fin
+		if let currentlyInCoreData = self.defaultUserAgregar?.lectures as! Set<Lecture>?{
+		for enrolledLecture in currentlyInCoreData{
+			for iterator in Range(0 ... 5){
+				if enrolledLecture.arrayDays[iterator] == lectureToEnroll.arrayDays[iterator]{
+					if  ((enrolledLecture.hora_in ... enrolledLecture.hora_fin).contains(starts) || (enrolledLecture.hora_in ... enrolledLecture.hora_fin).contains(ends)){
+						print("Error, time of new lecture is already busy.")
+						return
+					}
+					if(enrolledLecture.clave == lectureToEnroll.clave){
+						print("\n\n The Lecture has already been enrolled in another group")
+						return
+					}else if (lectureToEnroll.cupo == 0){
+						print("Error, No vacancy in the selected group")
+						return
+					}
+				}
+			}
+		}
+		}
+		defaultUserAgregar?.addToLectures(lectureToEnroll)
+		print("Se ha agregado correctamente : \(lectureToEnroll.nombreAsignatura) en el grupo \(lectureToEnroll.grupo)")
+		appDelegateAgregar.saveContext()
+		return
+		//to declare function to save lecture
+	}
     
     @IBAction func add(_ sender: Any) {
         guard let button = sender as? UIButton else {return}
+		self.stringClaveLecture(clave: self.claveTextField.text!)
         
         view.endEditing(true)
         
