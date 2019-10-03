@@ -296,7 +296,6 @@
                                 <state key="normal" title="Agregar Manual"/>
                                 <connections>
                                     <action selector="add:" destination="Fdd-ye-0kn" eventType="touchUpInside" id="VDO-Pl-GKG"/>
-                                    <segue destination="cto-xP-Dkd" kind="show" id="jVI-zk-fmF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfb-h4-JHO">
@@ -333,6 +332,7 @@
                         <outlet property="greenAirplane" destination="3pP-Dt-CWc" id="fKN-UY-rzz"/>
                         <outlet property="orangeAirplane" destination="s6d-rR-ByO" id="WaK-ur-h9R"/>
                         <outlet property="titleLabel" destination="9Uf-kX-qXa" id="FH4-S9-63t"/>
+                        <segue destination="cto-xP-Dkd" kind="show" identifier="Selected" id="cf3-Cn-ch9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LtF-08-zLy" userLabel="First Responder" sceneMemberID="firstResponder"/>

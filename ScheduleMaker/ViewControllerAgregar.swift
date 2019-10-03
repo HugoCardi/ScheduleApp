@@ -47,12 +47,12 @@ class ViewControllerAgregar: UIViewController {
         
         addButton.layer.cornerRadius = 8.0
         addButton.layer.masksToBounds = true
-        addButton.center.y = claveTextField.center.y + 60
+        addButton.center.y = claveTextField.center.y + 90
         addButton.center.x = view.bounds.width / 2
         
         addRandomButton.layer.cornerRadius = 8.0
         addRandomButton.layer.masksToBounds = true
-        addRandomButton.center.y = addButton.center.y + 80
+        addRandomButton.center.y = addButton.center.y + 90
         addRandomButton.center.x = view.bounds.width / 2
         
         spinner.frame = CGRect(x: 27.0, y: 14.0, width: 20.0, height: 20.0)
@@ -98,6 +98,12 @@ class ViewControllerAgregar: UIViewController {
     
     @IBAction func unwindToAgregar(unwindSegue: UIStoryboardSegue){
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? ViewControllerSeleccionar
+        
+        vc?.claveMateria = extractFromHTML(claveDeseada: claveTextField.text ?? "0000")
     }
     
 	func getStudentFromCoreDataAgregar() -> Student?{
@@ -246,6 +252,9 @@ class ViewControllerAgregar: UIViewController {
                 self.addButton.bounds.size.width += 80
             }, completion: {_ in
                 self.showMessage(index: 0)
+                if self.claveTextField?.text! == "1234" {
+                    self.performSegue(withIdentifier: "Selected", sender: nil)
+                }
             })
             
             UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
@@ -259,10 +268,6 @@ class ViewControllerAgregar: UIViewController {
             }, completion: nil)
             
             self.spinner.alpha = 1.0
-            
-            /*if self.claveTextField?.text! == "1234" {
-                self.performSegue(withIdentifier: "Selected", sender: sender)
-            }*/
             
         } else {
             UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
@@ -313,6 +318,7 @@ class ViewControllerAgregar: UIViewController {
     func removeMessage(index: Int) {
         UIView.animate(withDuration: 0.33, delay: 0.0, options: [], animations: {
             self.status.center.x += self.view.frame.size.width
+            self.status.center.y = self.addButton.center.y + 23
         }, completion: {_ in
             self.status.isHidden = true
             self.status.center = self.statusPosition

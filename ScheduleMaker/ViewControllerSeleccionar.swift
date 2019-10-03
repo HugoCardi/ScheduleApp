@@ -17,6 +17,7 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
     var profesoresAgregar = ["Hugo", "Juan", "Erick"]
     var horaInAgregar = [7.0, 8.0, 9.0]
     var horaFinAgregar = [9.0, 9.3, 11.0]
+    var claveMateria: [RamLecture]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
