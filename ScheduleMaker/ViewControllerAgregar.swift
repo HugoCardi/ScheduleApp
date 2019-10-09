@@ -252,7 +252,7 @@ class ViewControllerAgregar: UIViewController {
                 self.addButton.bounds.size.width += 80
             }, completion: {_ in
                 self.showMessage(index: 0)
-                if self.claveTextField?.text! == "1234" {
+                if self.claveTextField?.text! == "2080" {
                     self.performSegue(withIdentifier: "Selected", sender: nil)
                 }
             })
