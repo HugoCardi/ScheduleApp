@@ -13,15 +13,10 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var titleLabelSeleccionar: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var clasesAgregar = ["Matemáticas", "Historia", "Español"]
-    var profesoresAgregar = ["Hugo", "Juan", "Erick"]
-    var horaInAgregar = [7.0, 8.0, 9.0]
-    var horaFinAgregar = [9.0, 9.3, 11.0]
     var claveMateria: [RamLecture]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -52,15 +47,15 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return clasesAgregar.count
+		return claveMateria?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubjetAddCell", for: indexPath) as! SeleccionarTableViewCell
         
-        cell.maestroLabel?.text = profesoresAgregar[indexPath.row]
-        cell.materiaLabel?.text = clasesAgregar[indexPath.row]
-        cell.horaTexto?.text = "\(horaInAgregar[indexPath.row])0\n\(horaFinAgregar[indexPath.row])0".replacingOccurrences(of: ".", with: ":")
+		cell.maestroLabel?.text = String(claveMateria![indexPath.row].grupo)+"   " + "\(claveMateria![indexPath.row].hora_in)0-\(claveMateria![indexPath.row].hora_fin)0".replacingOccurrences(of: ".", with: ":")
+		cell.materiaLabel?.text = claveMateria![indexPath.row].profesor
+		cell.horaTexto?.text = "\(claveMateria![indexPath.row].hora_in)0\n\(claveMateria![indexPath.row].hora_fin)0".replacingOccurrences(of: ".", with: ":")
         
         return cell
     }
