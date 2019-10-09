@@ -103,7 +103,7 @@ class ViewControllerAgregar: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as? ViewControllerSeleccionar
         
-        vc?.claveMateria = extractFromHTML(claveDeseada: claveTextField.text ?? "0000")
+        vc?.posiblesGrupos = extractFromHTML(claveDeseada: claveTextField.text ?? "0000")
     }
     
 	func getStudentFromCoreDataAgregar() -> Student?{
@@ -247,7 +247,7 @@ class ViewControllerAgregar: UIViewController {
         
         isBottonPush = !isBottonPush
         
-        if button.titleLabel?.text == "Agregar Manual" {
+        if button.titleLabel?.text == "Quiero Elegir" {
             UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
                 self.addButton.bounds.size.width += 80
             }, completion: {_ in

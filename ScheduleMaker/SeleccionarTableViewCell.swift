@@ -10,10 +10,9 @@ import UIKit
 
 class SeleccionarTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var materiaLabel: UILabel!
-    @IBOutlet weak var maestroLabel: UILabel!
-    @IBOutlet weak var horaTexto: UITextView!
     
+	@IBOutlet weak var infoText: UITextView!
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

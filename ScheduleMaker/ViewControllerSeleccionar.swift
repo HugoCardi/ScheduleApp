@@ -13,7 +13,7 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var titleLabelSeleccionar: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var claveMateria: [RamLecture]? = nil
+    var posiblesGrupos: [RamLecture]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,32 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+    func daysToArray(_ arrayDays: [Bool]) -> String{
+        var horarioFinal: String = ""
+        
+        if arrayDays[0] == true {
+            horarioFinal += "LUN-"
+        }
+        if arrayDays[1] == true {
+            horarioFinal += "MAR-"
+        }
+        if arrayDays[2] == true {
+            horarioFinal += "MIE-"
+        }
+        if arrayDays[3] == true {
+            horarioFinal += "JUE-"
+        }
+        if arrayDays[4] == true {
+            horarioFinal += "VIE-"
+        }
+        if arrayDays[5] == true {
+            horarioFinal += "SAB-"
+        }
+        
+        horarioFinal = String(horarioFinal.dropLast())
+        return horarioFinal
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -47,15 +73,16 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return claveMateria?.count ?? 0
+		return posiblesGrupos?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubjetAddCell", for: indexPath) as! SeleccionarTableViewCell
         
-		cell.maestroLabel?.text = String(claveMateria![indexPath.row].grupo)+"   " + "\(claveMateria![indexPath.row].hora_in)0-\(claveMateria![indexPath.row].hora_fin)0".replacingOccurrences(of: ".", with: ":")
-		cell.materiaLabel?.text = claveMateria![indexPath.row].profesor
-		cell.horaTexto?.text = "\(claveMateria![indexPath.row].hora_in)0\n\(claveMateria![indexPath.row].hora_fin)0".replacingOccurrences(of: ".", with: ":")
+        cell.infoText?.text = posiblesGrupos![indexPath.row].profesor+"\n\tGrupo:  "+String(posiblesGrupos![indexPath.row].grupo)+"\n\tHorario:   "
+        cell.infoText?.text += daysToArray(posiblesGrupos![indexPath.row].arrayDays)
+		cell.infoText?.text += "   " + posiblesGrupos![indexPath.row].horario!
+        
         
         return cell
     }
