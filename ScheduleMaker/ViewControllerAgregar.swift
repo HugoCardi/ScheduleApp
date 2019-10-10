@@ -203,7 +203,7 @@ class ViewControllerAgregar: UIViewController{
 			for possible in possibleToEnroll {
 				print("\(possible.clave) || \(possible.grupo) || \(possible.profesor) || \(possible.horario!) || ")
 			}
-			self.enrollLecture(lectureToEnroll: RamLectureToLecture(possibleToEnroll.randomElement()!))
+			//self.enrollLecture(lectureToEnroll: RamLectureToLecture(possibleToEnroll.randomElement()!))
 		}else{
 			print("Oh Oh. something has gone terribly wrong")
 		}
