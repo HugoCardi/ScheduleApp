@@ -248,11 +248,13 @@ class ViewControllerAgregar: UIViewController {
         isBottonPush = !isBottonPush
         
         if button.titleLabel?.text == "Quiero Elegir" {
-            UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
+            UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: { 
                 self.addButton.bounds.size.width += 80
             }, completion: {_ in
                 self.showMessage(index: 0)
-                if self.claveTextField?.text! == "2080" {
+				
+                //if self.claveTextField?.text! == "2080" {
+				if asignatura[(self.claveTextField?.text!)!] != nil {
                     self.performSegue(withIdentifier: "Selected", sender: nil)
                 }
             })

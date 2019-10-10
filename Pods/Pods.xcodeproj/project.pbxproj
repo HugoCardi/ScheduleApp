@@ -110,7 +110,7 @@
 		0A29168DA5AF77F67441271215C9DC6E /* XmlTreeBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XmlTreeBuilder.swift; path = Sources/XmlTreeBuilder.swift; sourceTree = "<group>"; };
 		0E0B69F0B0EC7BD2222948335BFFC65D /* Pods-ScheduleMaker-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ScheduleMaker-frameworks.sh"; sourceTree = "<group>"; };
 		104F57FE14C9ABC85F869E76C8EA3564 /* Pods-ScheduleMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScheduleMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		13714B8EC26CC878687F39E46E4B77A5 /* Pods_ScheduleMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ScheduleMakerUITests.framework; path = "Pods-ScheduleMakerUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13714B8EC26CC878687F39E46E4B77A5 /* Pods_ScheduleMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleMakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14874A9D6C96FC465FCD0C4009F459CC /* Pods-ScheduleMakerUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ScheduleMakerUITests-dummy.m"; sourceTree = "<group>"; };
 		152E999AE7B211A8286E727F84405191 /* HtmlTreeBuilderState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HtmlTreeBuilderState.swift; path = Sources/HtmlTreeBuilderState.swift; sourceTree = "<group>"; };
 		1748F4905B4FC87B2F3D346E5B84B616 /* Validate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validate.swift; path = Sources/Validate.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		22288D13FA0694E7A5E908C1CC9DE5BF /* Whitelist.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Whitelist.swift; path = Sources/Whitelist.swift; sourceTree = "<group>"; };
 		22E36ED5E17B02508428258D46A39FAE /* TokenQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TokenQueue.swift; path = Sources/TokenQueue.swift; sourceTree = "<group>"; };
 		268ADCD2947926FB1316F8C94FEFA5A8 /* XmlDeclaration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XmlDeclaration.swift; path = Sources/XmlDeclaration.swift; sourceTree = "<group>"; };
-		282B2A9DAD6DC90C414A95A7B66607CC /* Pods_ScheduleMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ScheduleMakerTests.framework; path = "Pods-ScheduleMakerTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		282B2A9DAD6DC90C414A95A7B66607CC /* Pods_ScheduleMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29FE73A05C9903FA27E5023421D500A9 /* SwiftSoup-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSoup-dummy.m"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		38A2FB325A7FA32271499EE7565A76F3 /* Pods-ScheduleMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScheduleMaker.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		58F9B9738C02AF58D1D5DE8834759899 /* SimpleDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimpleDictionary.swift; path = Sources/SimpleDictionary.swift; sourceTree = "<group>"; };
 		5A7F2AF32CB0CBEDD6D5F4B84B632F5A /* SerializationException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SerializationException.swift; path = Sources/SerializationException.swift; sourceTree = "<group>"; };
 		5EFE7096ABB181C94943726878DF48EE /* Pods-ScheduleMaker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScheduleMaker-Info.plist"; sourceTree = "<group>"; };
-		5F38EF8DCE7D46A354D1D1BBAC952903 /* SwiftSoup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSoup.framework; path = SwiftSoup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F38EF8DCE7D46A354D1D1BBAC952903 /* SwiftSoup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftSoup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		653737F57003A332C4E6F80EA2E55DA6 /* SwiftSoup.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSoup.xcconfig; sourceTree = "<group>"; };
 		69B1FF2A4C807871A6C40B036A09C299 /* Pods-ScheduleMakerTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ScheduleMakerTests-umbrella.h"; sourceTree = "<group>"; };
 		6BEB8A6904D574C6BB0FE93F58FDF62B /* Pods-ScheduleMakerTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ScheduleMakerTests.modulemap"; sourceTree = "<group>"; };
@@ -162,10 +162,10 @@
 		9A3101351A913C2DE311EB31C5BEC860 /* Pods-ScheduleMakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ScheduleMakerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9C80D3F1C8B054964C83D697AFBA80F9 /* Pods-ScheduleMakerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScheduleMakerTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9D7E478CFFA3AD51798EFA5D2B48C5E5 /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = String.swift; path = Sources/String.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A144A9BDDEEAFB170AA7304B319A41CF /* Pods-ScheduleMakerUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ScheduleMakerUITests-Info.plist"; sourceTree = "<group>"; };
 		A1E1DF856B2F4607BD0F2A365D1D9FD3 /* SwiftSoup-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSoup-prefix.pch"; sourceTree = "<group>"; };
-		A4BE651EF245F1F5FECFF3887660682F /* Pods_ScheduleMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ScheduleMaker.framework; path = "Pods-ScheduleMaker.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4BE651EF245F1F5FECFF3887660682F /* Pods_ScheduleMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9DC1F45FA2EFC6FD203B16A40D787A7 /* Entities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Entities.swift; path = Sources/Entities.swift; sourceTree = "<group>"; };
 		AD297727E87AF4BEBB6DE15799DB2903 /* DocumentType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DocumentType.swift; path = Sources/DocumentType.swift; sourceTree = "<group>"; };
 		B0DF7958EBA7B4D988F879F66C8C97A6 /* Pods-ScheduleMaker-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ScheduleMaker-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -332,7 +332,6 @@
 				0A29168DA5AF77F67441271215C9DC6E /* XmlTreeBuilder.swift */,
 				E1B5BB6304CFDA3D036CDE4281FF4070 /* Support Files */,
 			);
-			name = SwiftSoup;
 			path = SwiftSoup;
 			sourceTree = "<group>";
 		};
@@ -545,6 +544,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 66727712CABF09A4ED7D1B87FCD01B18 /* Products */;

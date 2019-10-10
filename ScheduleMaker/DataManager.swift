@@ -60,7 +60,7 @@ func extractFromHTML(claveDeseada : String) -> [RamLecture]?{
 			} catch {
 				print("Content could not be loaded")
 				//Return will be null
-				return choices
+				return nil
 			}
 		} else {
 			print("The URL is invalid")
@@ -73,7 +73,8 @@ func extractFromHTML(claveDeseada : String) -> [RamLecture]?{
 		*/
 		print("\n\nNo existen grupos para dicha asignatura")
 		//Return will be null
-		return choices
+		return nil
 	}//Extraction Function Closing Bracket
+	//Everything went right
 	return choices
 }
