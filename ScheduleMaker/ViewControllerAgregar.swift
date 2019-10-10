@@ -57,7 +57,7 @@ class ViewControllerAgregar: UIViewController{
         
         addButton.layer.cornerRadius = 8.0
         addButton.layer.masksToBounds = true
-        addButton.center.y = claveTextField.center.y + 90
+        addButton.center.y = CGFloat(350)
         addButton.center.x = view.bounds.width / 2
         
         addRandomButton.layer.cornerRadius = 8.0
@@ -136,7 +136,7 @@ class ViewControllerAgregar: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        addButton.center.y = claveTextField.center.y + 90
+        addButton.center.y = CGFloat(350)
         addRandomButton.center.y = addButton.center.y + 90
         
 		guard let currentlyInCoreData = self.defaultUserAgregar?.lectures as! Set<Lecture>? else{
@@ -167,7 +167,6 @@ class ViewControllerAgregar: UIViewController{
         
         titleLabel.center.x -= view.bounds.width
         claveTextField.center.x -= view.bounds.width
-        
         
         UIView.animate(withDuration: 0.8, animations: {
             self.titleLabel.center.x += self.view.bounds.width
