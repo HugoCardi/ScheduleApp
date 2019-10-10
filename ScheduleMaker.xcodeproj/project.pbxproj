@@ -187,6 +187,7 @@
 		FA75FFFA230F44A200D977B4 /* ScheduleMaker */ = {
 			isa = PBXGroup;
 			children = (
+				9014FE02234673D800621F92 /* ViewControllerSeleccionar.swift */,
 				90AB7DD8233D3BF90003C911 /* ViewControllerHorario.swift */,
 				90AB7DD6233D3BF10003C911 /* ViewControllerEliminar.swift */,
 				90AB7DD4233D3BE80003C911 /* ViewControllerAgregar.swift */,
@@ -198,7 +199,6 @@
 				FAE140B7231ED28500D368D3 /* RamStudent.swift */,
 				FAE140B9231ED31D00D368D3 /* RamLecture.swift */,
 				FA77DCF423186EE200D98E07 /* Student+CoreDataClass.swift */,
-				9014FE02234673D800621F92 /* ViewControllerSeleccionar.swift */,
 				FA77DCF523186EE200D98E07 /* Student+CoreDataProperties.swift */,
 				FA77DCF623186EE200D98E07 /* Lecture+CoreDataClass.swift */,
 				FA77DCF723186EE200D98E07 /* Lecture+CoreDataProperties.swift */,
