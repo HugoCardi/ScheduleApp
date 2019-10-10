@@ -88,7 +88,7 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Materias a inscribir"
+        return asignatura[String(posiblesGrupos![0].clave)]!
     }
     
     @IBAction func aceptarButtonAction(_ sender: Any) {
