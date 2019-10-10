@@ -14,7 +14,7 @@ func delay(_ seconds: Double, completion: @escaping ()->Void) {
     DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
 }
 
-class ViewControllerAgregar: UIViewController {
+class ViewControllerAgregar: UIViewController{
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var claveTextField: UITextField!
@@ -44,6 +44,16 @@ class ViewControllerAgregar: UIViewController {
     override func viewDidLoad() {
 		self.defaultUserAgregar = getStudentFromCoreDataAgregar()
         super.viewDidLoad()
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        toolBar.setItems([flexibleSpace, doneButton], animated: true)
+        claveTextField.inputAccessoryView = toolBar
         
         addButton.layer.cornerRadius = 8.0
         addButton.layer.masksToBounds = true
@@ -95,6 +105,13 @@ class ViewControllerAgregar: UIViewController {
         //animatedAirplaneBlue(blueAirplane)
     }
     
+    @objc func doneClicked() {
+        view.endEditing(true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {//metodo para puchar la pantalla y que se quite el teclado
+        self.view.endEditing(true)//elimina el teclado de la pantalla. self=referencia de codigo
+    }
     
     @IBAction func unwindToAgregar(unwindSegue: UIStoryboardSegue){
         
