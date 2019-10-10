@@ -136,6 +136,9 @@ class ViewControllerAgregar: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        addButton.center.y = claveTextField.center.y + 90
+        addRandomButton.center.y = addButton.center.y + 90
+        
 		guard let currentlyInCoreData = self.defaultUserAgregar?.lectures as! Set<Lecture>? else{
 			print("No Lectures enrolled in CoreData")
 			return
