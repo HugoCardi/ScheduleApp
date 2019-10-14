@@ -12,10 +12,20 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var titleLabelSeleccionar: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    
+	
     var posiblesGrupos: [RamLecture]? = nil
+	
+    let appDelegateSeleccionar = UIApplication.shared.delegate as! AppDelegate
+    let managedContextSeleccionar = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var defaultUser: Student? = nil
     
     override func viewDidLoad() {
+		if let possibleUser = getStudentFromCoreData(appDelegate : appDelegateSeleccionar){
+			self.defaultUser = possibleUser
+		}else{
+			return
+		}
+		
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -82,6 +92,7 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
         cell.infoText?.text = posiblesGrupos![indexPath.row].profesor+"\n\tGrupo:  "+String(posiblesGrupos![indexPath.row].grupo)+"\n\tHorario:   "
         cell.infoText?.text += daysToArray(posiblesGrupos![indexPath.row].arrayDays)
 		cell.infoText?.text += "   " + posiblesGrupos![indexPath.row].horario!
+		cell.outletButtonInscribir.tag = posiblesGrupos![indexPath.row].grupo
         
         
         return cell
@@ -92,14 +103,27 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func aceptarButtonAction(_ sender: Any) {
+		let button = sender as! UIButton
+		let userSelectedGroup = button.tag
         let alert = UIAlertController(title: "Aviso", message: "Materia agregada con exito", preferredStyle: .alert)
-        
+		for item in self.posiblesGrupos!{
+			if item.grupo == userSelectedGroup{
+				let toEnroll = RamLectureToLecture(item, appDelegate: self.appDelegateSeleccionar)
+				
+				if(enrollLecture(lectureToEnroll: toEnroll, possibleUserInUse: self.defaultUser, appDelegate: self.appDelegateSeleccionar)){
+					
+				}else{
+					
+				}
+			}
+		}
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
             //Cancel Action
         }))
         alert.addAction(UIAlertAction(title: "Aceptar",
                                       style: .default,
                                       handler: {(_: UIAlertAction!) in
+										
         }))
         self.present(alert, animated: true, completion: nil)
     }

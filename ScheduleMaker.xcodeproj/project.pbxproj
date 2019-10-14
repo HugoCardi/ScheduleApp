@@ -29,6 +29,7 @@
 		FA77DCF923186EE200D98E07 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77DCF523186EE200D98E07 /* Student+CoreDataProperties.swift */; };
 		FA77DCFA23186EE200D98E07 /* Lecture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77DCF623186EE200D98E07 /* Lecture+CoreDataClass.swift */; };
 		FA77DCFB23186EE200D98E07 /* Lecture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77DCF723186EE200D98E07 /* Lecture+CoreDataProperties.swift */; };
+		FAC8A588234FC30600AA3220 /* FunctionsToEnroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8A587234FC30600AA3220 /* FunctionsToEnroll.swift */; };
 		FAE140B8231ED28500D368D3 /* RamStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE140B7231ED28500D368D3 /* RamStudent.swift */; };
 		FAE140BA231ED31D00D368D3 /* RamLecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE140B9231ED31D00D368D3 /* RamLecture.swift */; };
 		FAEE34252315CADF000CFFBF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE34242315CADF000CFFBF /* DataManager.swift */; };
@@ -87,6 +88,7 @@
 		FA77DCF523186EE200D98E07 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA77DCF623186EE200D98E07 /* Lecture+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lecture+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA77DCF723186EE200D98E07 /* Lecture+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lecture+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FAC8A587234FC30600AA3220 /* FunctionsToEnroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsToEnroll.swift; sourceTree = "<group>"; };
 		FAE140B7231ED28500D368D3 /* RamStudent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamStudent.swift; sourceTree = "<group>"; };
 		FAE140B9231ED31D00D368D3 /* RamLecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamLecture.swift; sourceTree = "<group>"; };
 		FAEE34242315CADF000CFFBF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				9014FE02234673D800621F92 /* ViewControllerSeleccionar.swift */,
 				90AB7DD8233D3BF90003C911 /* ViewControllerHorario.swift */,
 				90AB7DD6233D3BF10003C911 /* ViewControllerEliminar.swift */,
+				FAC8A587234FC30600AA3220 /* FunctionsToEnroll.swift */,
 				90AB7DD4233D3BE80003C911 /* ViewControllerAgregar.swift */,
 				90AB7DD2233D3BDC0003C911 /* HorarioCollectionViewCell.swift */,
 				90AB7DD0233D3BC90003C911 /* EliminarTableViewCell.swift */,
@@ -467,6 +470,7 @@
 				90AB7DD1233D3BC90003C911 /* EliminarTableViewCell.swift in Sources */,
 				90AB7DD5233D3BE80003C911 /* ViewControllerAgregar.swift in Sources */,
 				FAE140BA231ED31D00D368D3 /* RamLecture.swift in Sources */,
+				FAC8A588234FC30600AA3220 /* FunctionsToEnroll.swift in Sources */,
 				9014FE03234673D800621F92 /* ViewControllerSeleccionar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

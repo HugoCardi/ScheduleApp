@@ -11,6 +11,7 @@ import UIKit
 class SeleccionarTableViewCell: UITableViewCell {
 
     
+	@IBOutlet weak var outletButtonInscribir: UIButton!
 	@IBOutlet weak var infoText: UITextView!
 	
     override func awakeFromNib() {
