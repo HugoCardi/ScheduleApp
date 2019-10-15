@@ -8,7 +8,8 @@
 
 import Foundation
 import CoreData
-
+import UIKit
+import SwiftSoup
 
 func stringClaveLecture(clave :String){
 	let possibleToEnroll = extractFromHTML(claveDeseada: clave)

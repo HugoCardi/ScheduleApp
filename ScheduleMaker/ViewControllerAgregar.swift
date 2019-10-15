@@ -36,6 +36,8 @@ class ViewControllerAgregar: UIViewController{
     var centerAirplaneBlueY = CGFloat(110)
     
     var isBottonPush: Bool = false
+    var isLecture: Bool = false
+	var materiaAgregada: (Bool, RamLecture?) = (false, nil)
     
     let appDelegateAgregar = UIApplication.shared.delegate as! AppDelegate
     let managedContextAgregar = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -199,17 +201,18 @@ class ViewControllerAgregar: UIViewController{
         }, completion: nil)
     }
     
-	func enrollBestPossibleAutomatically(clave :String){
+	func enrollBestPossibleAutomatically(clave :String) -> (Bool, RamLecture?) {
 		let possibleToEnroll = extractFromHTML(claveDeseada: clave)
 		if let possibleToEnroll = possibleToEnroll{
-			for _ in possibleToEnroll {
-				//print("\(possible.clave) || \(possible.grupo) || \(possible.profesor) || \(possible.horario!) || ")
-			}
-			//self.enrollLecture(lectureToEnroll: RamLectureToLecture(possibleToEnroll.randomElement()!))
+			let bestOption = possibleToEnroll.randomElement()!
+			let bestLectureOption = RamLectureToLecture(bestOption, appDelegate: self.appDelegateAgregar)
+			let returnValue = enrollLecture(lectureToEnroll: bestLectureOption, possibleUserInUse: self.defaultUserAgregar!, appDelegate: self.appDelegateAgregar)
+			return (returnValue, bestOption)
+			//return enrollLecture(lectureToEnroll: RamLectureToLecture(possibleToEnroll.randomElement()!),studeny
 		}else{
 			print("Oh Oh. something has gone terribly wrong")
 		}
-
+		return (false, nil)
 	}
     
     @IBAction func add(_ sender: Any) {
@@ -226,9 +229,11 @@ class ViewControllerAgregar: UIViewController{
             }, completion: {_ in
                 self.showMessage(index: 0)
 				
-                //if self.claveTextField?.text! == "2080" {
 				if asignatura[(self.claveTextField?.text!)!] != nil {
+                    self.isLecture = true
                     self.performSegue(withIdentifier: "Selected", sender: nil)
+                } else {
+                    self.isLecture = false
                 }
             })
             
@@ -246,7 +251,14 @@ class ViewControllerAgregar: UIViewController{
             
 			
         } else {
-			self.enrollBestPossibleAutomatically(clave: self.claveTextField.text!)
+            
+            if asignatura[(self.claveTextField?.text!)!] != nil {
+                self.materiaAgregada = self.enrollBestPossibleAutomatically(clave: self.claveTextField.text!)
+				self.isLecture = materiaAgregada.0
+            } else {
+                self.isLecture = false
+            }
+            
             UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
                 self.addRandomButton.bounds.size.width += 80
             }, completion: {_ in
@@ -282,7 +294,7 @@ class ViewControllerAgregar: UIViewController{
             self.status.isHidden = false
         }, completion: {_ in
             delay(2.0) {
-                if index < self.messages.count-1 {
+                if !self.isLecture && index < self.messages.count - 1 {
                     self.removeMessage(index: index)
                 } else {
                     self.resetForm()
@@ -299,8 +311,8 @@ class ViewControllerAgregar: UIViewController{
         }, completion: {_ in
             self.status.isHidden = true
             self.status.center = self.statusPosition
-            
-            self.showMessage(index: index+1)
+			
+			self.showMessage(index: index+1)
         })
     }
     
@@ -322,7 +334,21 @@ class ViewControllerAgregar: UIViewController{
             self.addButton.isEnabled = true
             self.addRandomButton.isEnabled = true
             self.claveTextField.text = ""
-        }, completion: nil)
+        }, completion: {_ in
+            if !self.isLecture {
+                let alert = UIAlertController(title: "Error", message: "La clave no existe", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                    //Ok Action
+                }))
+                self.present(alert, animated: true, completion: nil)
+			} else if self.materiaAgregada.1 != nil {
+				let alert = UIAlertController(title: "Materia agregada exitosamente", message: "\(self.materiaAgregada.1!.nombreAsignatura)\nGrupo inscrito: \(self.materiaAgregada.1!.grupo)", preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+					//Ok Action
+				}))
+				self.present(alert, animated: true, completion: nil)
+			}
+        })
     }
     
     func animatedAirplaneOrange(_ airplane: UIImageView) {
