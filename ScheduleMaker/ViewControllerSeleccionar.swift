@@ -105,18 +105,22 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
     @IBAction func aceptarButtonAction(_ sender: Any) {
 		let button = sender as! UIButton
 		let userSelectedGroup = button.tag
-        let alert = UIAlertController(title: "Aviso", message: "Materia agregada con exito", preferredStyle: .alert)
+        //let alert = UIAlertController(title: "Aviso", message: "Materia agregada con exito", preferredStyle: .alert)
 		for item in self.posiblesGrupos!{
 			if item.grupo == userSelectedGroup{
 				let toEnroll = RamLectureToLecture(item, appDelegate: self.appDelegateSeleccionar)
 				
 				if(enrollLecture(lectureToEnroll: toEnroll, possibleUserInUse: self.defaultUser, appDelegate: self.appDelegateSeleccionar)){
-					
+					let alert = UIAlertController(title: "Aviso", message: "Materia agregada con exito", preferredStyle: .alert)
+					self.present(alert, animated: true, completion: nil)
+					//self.dismiss(animated: true, completion: nil)
 				}else{
-					
+					let alert = UIAlertController(title: "Aviso", message: "Error al agregar la materia ", preferredStyle: .alert)
+					self.present(alert, animated: true, completion: nil)
 				}
 			}
 		}
+		/*
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
             //Cancel Action
         }))
@@ -125,6 +129,7 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
                                       handler: {(_: UIAlertAction!) in
 										
         }))
-        self.present(alert, animated: true, completion: nil)
+		*/
+        
     }
 }
