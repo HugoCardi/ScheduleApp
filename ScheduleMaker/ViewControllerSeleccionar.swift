@@ -27,7 +27,8 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
 		}
 		
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,6 +90,8 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubjetAddCell", for: indexPath) as! SeleccionarTableViewCell
         
+        cell.outletButtonInscribir.layer.cornerRadius = 8.0
+        
         cell.infoText?.text = posiblesGrupos![indexPath.row].profesor+"\n\tGrupo:  "+String(posiblesGrupos![indexPath.row].grupo)+"\n\tHorario:   "
         cell.infoText?.text += daysToArray(posiblesGrupos![indexPath.row].arrayDays)
 		cell.infoText?.text += "   " + posiblesGrupos![indexPath.row].horario!
@@ -112,10 +115,16 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
 				
 				if(enrollLecture(lectureToEnroll: toEnroll, possibleUserInUse: self.defaultUser, appDelegate: self.appDelegateSeleccionar)){
 					let alert = UIAlertController(title: "Aviso", message: "Materia agregada con exito", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                        //Ok Action
+                    }))
 					self.present(alert, animated: true, completion: nil)
 					//self.dismiss(animated: true, completion: nil)
 				}else{
-					let alert = UIAlertController(title: "Aviso", message: "Error al agregar la materia ", preferredStyle: .alert)
+					let alert = UIAlertController(title: "Error", message: "Error al agregar la materia ", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                        //Ok Action
+                    }))
 					self.present(alert, animated: true, completion: nil)
 				}
 			}
