@@ -85,3 +85,27 @@ func getStudentFromCoreData(appDelegate : AppDelegate) -> Student?{
 	}
 	return nil
 }
+
+func fetchInstanceToDeleteFunction(clave: Int, possibleUser: Student?, appDelegate: AppDelegate) -> Lecture?{
+	guard let user = possibleUser else {return nil}
+	for item in user.lectures as! Set<Lecture>{
+		if item.clave == clave{
+			return item
+		}
+	}
+	return nil
+}
+func deleteLectureFromCoreData(lectureToRemove: Lecture, possibleUser: Student?, appDelegate :AppDelegate) -> Bool{
+	guard let user = possibleUser else {return false}
+	
+	user.removeFromLectures(lectureToRemove)
+	let temp =  user.lectures as! Set<Lecture>
+	for names in temp{
+		if names.nombreAsignatura == lectureToRemove.nombreAsignatura{
+			print("Error while deleting the Lecture")
+			return false
+		}
+	}
+	print("\(lectureToRemove.nombreAsignatura) has been removed correctly")
+	return true
+}
