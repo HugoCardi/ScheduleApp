@@ -11,8 +11,9 @@ import CoreData
 
 
 
-func createLectures(data: [Element])  -> [RamLecture] {
+func createLectures(data: [Element], key: String)  -> [RamLecture] {
 	var possibleChoices =  [RamLecture]()
+    let lectureIdKey = Int(key)!
 	for group in data{
 		do{
 			if (group.children().count == 9){
@@ -29,8 +30,11 @@ func createLectures(data: [Element])  -> [RamLecture] {
 				if (clave != 0){
 					//print(clave,grup,nombre,profesor,tipo,horario,dias,salon, cupo, vacantes)
 					//Atempting to init a new class.
-					//Translation of Run-Time Lecture to CoreDataLecture still to be written
-					possibleChoices.append(RamLecture(clave: clave, nombreAsignatura: nombre, grupo: grup, profesor: profesor, tipo: tipo, horario: horario, dias: dias, salon: salon, cupo: cupo, vacantes: vacantes))
+					//Translation of Run-Time Lecture to CoreDataLecture still to be
+                    if clave == lectureIdKey {
+                        possibleChoices.append(RamLecture(clave: clave, nombreAsignatura: nombre, grupo: grup, profesor: profesor, tipo: tipo, horario: horario, dias: dias, salon: salon, cupo: cupo, vacantes: vacantes))
+                    }
+
 				}
 			}
 			//Line jump to improve style of the test output : To be removed before deploy
@@ -56,7 +60,7 @@ func extractFromHTML(claveDeseada : String) -> [RamLecture]?{
 				link.remove(at: 0)
 				//Remove Table titles
 				link.remove(at: 0)
-				choices = createLectures(data: link)
+                choices = createLectures(data: link, key: claveDeseada)
 			} catch {
 				print("Content could not be loaded")
 				//Return will be null
