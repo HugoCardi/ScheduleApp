@@ -28,7 +28,7 @@ class ViewControllerAgregar: UIViewController{
     let spinnerRandom = UIActivityIndicatorView(style: .whiteLarge)
     let messages = ["Searching ...", "Failed"]
     let label = UILabel()
-    let status = UIImageView(image: UIImage(named: "banner"))
+    let status = UIImageView(image: UIImage(named: "bannerAmar"))
     var statusPosition = CGPoint.zero
     
     var centerAirplaneY = CGFloat(525)
@@ -83,7 +83,7 @@ class ViewControllerAgregar: UIViewController{
         
         label.frame = CGRect(x: 0.0, y: 0.0, width: status.frame.size.width, height: status.frame.size.height)
         label.font = UIFont(name: "HelveticaNeue", size: 18.0)
-        label.textColor = UIColor(red: 0.89, green: 0.38, blue: 0.0, alpha: 1.0)
+        label.textColor = UIColor(red: 38/255, green: 38/255, blue: 38/255, alpha: 1.0)
         label.textAlignment = .center
         status.addSubview(label)
         
@@ -151,6 +151,8 @@ class ViewControllerAgregar: UIViewController{
 		
         addButton.alpha = 0.0
         addRandomButton.alpha = 0.0
+        claveTextField.alpha = 0.0
+        titleLabel.alpha = 0.0
         
         /*greenAirplane.center.x = 0 - greenAirplane.frame.width
          greenAirplane.center.y = CGFloat(550)
@@ -167,6 +169,9 @@ class ViewControllerAgregar: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        claveTextField.alpha = 1.0
+        titleLabel.alpha = 1.0
+        
         titleLabel.center.x -= view.bounds.width
         claveTextField.center.x -= view.bounds.width
         
@@ -179,12 +184,12 @@ class ViewControllerAgregar: UIViewController{
         }, completion: nil)
         
         UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
-            self.addButton.center.y += 30
+            self.addButton.center.y += 50
             self.addButton.alpha = 1.0
         }, completion: nil)
         
         UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
-            self.addRandomButton.center.y += 30
+            self.addRandomButton.center.y += 50
             self.addRandomButton.alpha = 1.0
         }, completion: nil)
         
@@ -217,7 +222,6 @@ class ViewControllerAgregar: UIViewController{
     
     @IBAction func add(_ sender: Any) {
         guard let button = sender as? UIButton else {return}
-		
         
         view.endEditing(true)
         
@@ -239,12 +243,12 @@ class ViewControllerAgregar: UIViewController{
             
             UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
                 self.addButton.center.y += 60
-                self.addButton.backgroundColor = UIColor(red: 246/255, green: 207/255, blue: 202/255, alpha: 1.0)
+                self.addButton.backgroundColor = UIColor(red: 193/255, green: 216/255, blue: 223/255, alpha: 1.0)
             }, completion: nil)
             
             UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
                 self.addRandomButton.center.y += 60
-                self.addRandomButton.backgroundColor = UIColor(red: 246/255, green: 207/255, blue: 202/255, alpha: 1.0)
+                self.addRandomButton.backgroundColor = UIColor(red: 193/255, green: 216/255, blue: 223/255, alpha: 1.0)
             }, completion: nil)
             
             self.spinner.alpha = 1.0
@@ -267,12 +271,12 @@ class ViewControllerAgregar: UIViewController{
             
             UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
                 self.addRandomButton.center.y += 60
-                self.addRandomButton.backgroundColor = UIColor(red: 246/255, green: 207/255, blue: 202/255, alpha: 1.0)
+                self.addRandomButton.backgroundColor = UIColor(red: 193/255, green: 216/255, blue: 223/255, alpha: 1.0)
             }, completion: nil)
             
             UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
                 self.addButton.center.y += 60
-                self.addButton.backgroundColor = UIColor(red: 246/255, green: 207/255, blue: 202/255, alpha: 1.0)
+                self.addButton.backgroundColor = UIColor(red: 193/255, green: 216/255, blue: 223/255, alpha: 1.0)
             }, completion: nil)
             
             self.spinnerRandom.alpha = 1.0

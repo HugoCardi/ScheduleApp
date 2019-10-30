@@ -28,7 +28,7 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
 		
         super.viewDidLoad()
         
-        
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,7 +88,19 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let color: UIColor
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubjetAddCell", for: indexPath) as! SeleccionarTableViewCell
+        
+        if indexPath.row % 2 == 0 {
+            color = UIColor(red: 202/255, green: 211/255, blue: 159/255, alpha: 1.0)
+        } else {
+            color = UIColor(red: 213/255, green: 233/255, blue: 201/255, alpha: 1.0)
+        }
+        
+        cell.infoText.backgroundColor = color
+        cell.contentView.backgroundColor = color
         
         cell.outletButtonInscribir.layer.cornerRadius = 8.0
         
@@ -101,8 +113,36 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return asignatura[String(posiblesGrupos![0].clave)]!
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 84/255, green: 176/255, blue: 197/255, alpha: 1.0)
+        
+        let textView = UITextView()
+        textView.isSelectable = false
+        textView.backgroundColor = UIColor(red: 84/255, green: 176/255, blue: 197/255, alpha: 1.0)
+        textView.font = UIFont(name: "HelveticaNeue-Light", size: 15)
+        textView.text = asignatura[String(posiblesGrupos![0].clave)]!.capitalized
+        
+        if asignatura[String(posiblesGrupos![0].clave)]!.count < 28{
+            textView.font = UIFont(name: "HelveticaNeue-Light", size: 25)
+        } else if asignatura[String(posiblesGrupos![0].clave)]!.count < 55 {
+            textView.font = UIFont(name: "HelveticaNeue-Light", size: 20)
+        } else {
+                textView.font = UIFont(name: "HelveticaNeue-Light", size: 15)
+        }
+        
+        textView.textAlignment = .center
+        textView.center.y = view.center.y
+        textView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width - 5, height: 63)
+        
+        
+        view.addSubview(textView)
+        
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 63
     }
     
     @IBAction func aceptarButtonAction(_ sender: Any) {
