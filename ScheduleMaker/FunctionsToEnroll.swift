@@ -45,14 +45,14 @@ func RamLectureToLecture (_ value : RamLecture ,appDelegate : AppDelegate) -> Le
 func enrollLecture(lectureToEnroll: Lecture, possibleUserInUse: Student?, appDelegate:AppDelegate) -> Bool{
 	let starts = lectureToEnroll.hora_in
 	let ends = lectureToEnroll.hora_fin
-	guard let userInUse =  possibleUserInUse else{
+	guard let userInUse = possibleUserInUse else{
 		return false
 	}
 	if let currentlyInCoreData = userInUse.lectures as! Set<Lecture>?{
 	for enrolledLecture in currentlyInCoreData{
 		for iterator in Range(0 ... 5){
-			if enrolledLecture.arrayDays[iterator] == lectureToEnroll.arrayDays[iterator]{
-				if  ((enrolledLecture.hora_in ... enrolledLecture.hora_fin).contains(starts) || (enrolledLecture.hora_in ... enrolledLecture.hora_fin).contains(ends)){
+			if ((enrolledLecture.arrayDays[iterator] == lectureToEnroll.arrayDays[iterator]) && (enrolledLecture.arrayDays[iterator] == true)) {
+				if  ((enrolledLecture.hora_in - 0.01 ... enrolledLecture.hora_fin - 0.01).contains(starts) || (enrolledLecture.hora_in - 0.01 ... enrolledLecture.hora_fin - 0.01 ).contains(ends)){
 					print("Error, time of new lecture is already busy.")
 					return false
 				}
