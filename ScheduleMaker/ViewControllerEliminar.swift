@@ -13,29 +13,35 @@ class ViewControllerEliminar: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    
-    var clases = ["Matemáticas", "Historia", "Español"]
-    var profesores = ["Hugo", "Juan", "Erick"]
-	var deletableLecturesEnrolled = Set<Lecture>()
-	var populationForTableView = Set<Lecture>()
+
     
     let appDelegateEliminar = UIApplication.shared.delegate as! AppDelegate
     let managedContextEliminar = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var defaultUserEliminar: Student? = nil
+	var populationForTableView: Set<Lecture>? = nil
+	var arrayOfLectures: [Lecture] = [Lecture]()
     
     
     override func viewDidLoad(){
+		super.viewDidLoad()
+		tableView.delegate = self
+		tableView.dataSource = self
 		self.defaultUserEliminar = getStudentFromCoreData(appDelegate: self.appDelegateEliminar)
-		self.deletableLecturesEnrolled = (self.defaultUserEliminar?.lectures as? Set<Lecture>)!
-		self.populationForTableView = self.deletableLecturesEnrolled
-		//self.deletableLecturesEnrolled = self.deletableLecturesEnrolled.intersection((self.defaultUserEliminar?.lectures as? Set<Lecture>)!)
-        super.viewDidLoad()
-        self.tableView.isEditing = true
+		
+		self.tableView.isEditing = true
+
     }
 	override func viewWillAppear(_ animated: Bool) {
-		//Intersection of deletable lectures with the new fetched lectures available.
-		//If one lectures has been deleted, it will not appear on the new set.
-		tableView.reloadData()
+		self.populationForTableView = self.defaultUserEliminar?.lectures as? Set<Lecture>
+		self.arrayOfLectures.removeAll()
+		for lecture in self.populationForTableView!{
+			self.arrayOfLectures.append(lecture)
+		}
+		self.tableView.reloadData()
+		
+	
+	}
+	override func viewWillDisappear(_ animated: Bool) {
 		
 	}
     
@@ -58,17 +64,16 @@ class ViewControllerEliminar: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return deletableLecturesEnrolled.count
+		return self.arrayOfLectures.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubjectCell", for: indexPath) as! EliminarTableViewCell
-		let usableSetToPopulatetable = self.deletableLecturesEnrolled.popFirst()!
-		cell.teacherCell.text = usableSetToPopulatetable.profesor
-		cell.signatureCell.text = usableSetToPopulatetable.nombreAsignatura
-		cell.horaCell.text = " \(usableSetToPopulatetable.hora_in) to " + " \(usableSetToPopulatetable.hora_fin)"
-		cell.claveAsignatura = String(usableSetToPopulatetable.clave)
+		let usableElement = self.arrayOfLectures[indexPath.row]
+		cell.teacherCell.text = usableElement.profesor
+		cell.signatureCell.text = usableElement.nombreAsignatura
+		cell.horaCell.text = " \(usableElement.hora_in) to " + " \(usableElement.hora_fin)"
+		cell.claveAsignatura = String(usableElement.clave)
         //cell.horaCell.text = "\(horaIn[indexPath.row])0\n\(horaFin[indexPath.row])0".replacingOccurrences(of: ".", with: ":")
         return cell
     }
@@ -79,7 +84,7 @@ class ViewControllerEliminar: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let alert = UIAlertController(title: "Advertencia", message: "Seguro que quieres eliminar la materia \(clases[indexPath.row])", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Advertencia", message: "Seguro que quieres eliminar la materia", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
                 //Cancel Action
@@ -89,9 +94,12 @@ class ViewControllerEliminar: UIViewController, UITableViewDelegate, UITableView
                                           handler: {(_: UIAlertAction!) in
 											//let toDelete = fetchInstanceToDeleteFunction(clave: )
 											let celda = tableView.cellForRow(at: indexPath) as? EliminarTableViewCell
-											let toDelete = fetchInstanceToDeleteFunction(clave: Int(celda!.claveAsignatura)!,possibleUser: self.defaultUserEliminar, appDelegate : self.appDelegateEliminar)
-											
-                                            tableView.deleteRows(at: [indexPath], with: .automatic)
+											guard let toDelete = fetchInstanceToDeleteFunction(clave: Int(celda!.claveAsignatura)!,possibleUser: self.defaultUserEliminar, appDelegate : self.appDelegateEliminar) else {return}
+											if (deleteLectureFromCoreData(lectureToRemove: toDelete, possibleUser: self.defaultUserEliminar, appDelegate: self.appDelegateEliminar) ){
+												self.tableView.reloadData()
+												self.viewWillAppear(true)
+											}
+                                           
             }))
             self.present(alert, animated: true, completion: nil)
         }

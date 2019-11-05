@@ -171,16 +171,6 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
 				}
 			}
 		}
-		/*
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
-            //Cancel Action
-        }))
-        alert.addAction(UIAlertAction(title: "Aceptar",
-                                      style: .default,
-                                      handler: {(_: UIAlertAction!) in
-										
-        }))
-		*/
         
     }
 }

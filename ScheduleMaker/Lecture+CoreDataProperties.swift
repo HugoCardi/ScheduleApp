@@ -2,7 +2,7 @@
 //  Lecture+CoreDataProperties.swift
 //  ScheduleMaker
 //
-//  Created by Hugo Cruz on 9/5/19.
+//  Created by Hugo Cruz on 05/11/19.
 //  Copyright © 2019 Hugo Cruz. All rights reserved.
 //
 //

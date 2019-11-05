@@ -1,5 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "411FD879-B255-476E-93EA-5449D1F586C2"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54C07204-937F-453A-85E9-F78291FAC5EC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ScheduleMaker/ViewControllerEliminar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "ViewControllerEliminar"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "54C07204-937F-453A-85E9-F78291FAC5EC - 7a0b6bbefa6e6de2"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScheduleMaker.ViewControllerEliminar.appDelegateEliminar.getter : ScheduleMaker.AppDelegate"
+                  moduleName = "ScheduleMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/Developer/ScheduleMaker/ScheduleMaker/ViewControllerEliminar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  uuid = "54C07204-937F-453A-85E9-F78291FAC5EC - e94634673197f7d2"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScheduleMaker.ViewControllerEliminar.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ScheduleMaker.ViewControllerEliminar"
+                  moduleName = "ScheduleMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/Developer/ScheduleMaker/ScheduleMaker/ViewControllerEliminar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "630">
+               </Location>
+               <Location
+                  uuid = "54C07204-937F-453A-85E9-F78291FAC5EC - 26e8edc5476ce317"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ScheduleMaker.ViewControllerEliminar.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ScheduleMaker.ViewControllerEliminar&gt;"
+                  moduleName = "ScheduleMaker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/Developer/ScheduleMaker/ScheduleMaker/ViewControllerEliminar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "562">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

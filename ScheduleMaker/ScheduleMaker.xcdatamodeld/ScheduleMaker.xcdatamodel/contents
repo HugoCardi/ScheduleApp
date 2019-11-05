@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18G84" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Lecture" representedClassName=".Lecture" syncable="YES">
-        <attribute name="arrayDays" attributeType="Transformable" customClassName="[Bool]" syncable="YES"/>
-        <attribute name="clave" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="cupo" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="grupo" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="hora_fin" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="hora_in" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="nombreAsignatura" attributeType="String" syncable="YES"/>
-        <attribute name="profesor" attributeType="String" syncable="YES"/>
-        <attribute name="salon" attributeType="String" syncable="YES"/>
-        <attribute name="tipo" attributeType="String" syncable="YES"/>
-        <attribute name="vacantes" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="lectures" inverseEntity="Student" syncable="YES"/>
+        <attribute name="arrayDays" attributeType="Transformable" customClassName="[Bool]"/>
+        <attribute name="clave" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cupo" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="grupo" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hora_fin" attributeType="Float" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hora_in" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="nombreAsignatura" attributeType="String"/>
+        <attribute name="profesor" attributeType="String"/>
+        <attribute name="salon" attributeType="String"/>
+        <attribute name="tipo" attributeType="String"/>
+        <attribute name="vacantes" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="lectures" inverseEntity="Student"/>
     </entity>
     <entity name="Student" representedClassName=".Student" syncable="YES">
-        <attribute name="last_names" attributeType="String" syncable="YES"/>
-        <attribute name="student_name" attributeType="String" syncable="YES"/>
-        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="student" inverseEntity="Lecture" syncable="YES"/>
+        <attribute name="last_names" attributeType="String"/>
+        <attribute name="student_name" attributeType="String"/>
+        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="student" inverseEntity="Lecture"/>
     </entity>
     <elements>
         <element name="Lecture" positionX="-269.22265625" positionY="88.8515625" width="128" height="223"/>
