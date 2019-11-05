@@ -125,6 +125,8 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
         
         if asignatura[String(posiblesGrupos![0].clave)]!.count < 28{
             textView.font = UIFont(name: "HelveticaNeue-Light", size: 25)
+        } else if asignatura[String(posiblesGrupos![0].clave)]!.count < 43 {
+			textView.font = UIFont(name: "HelveticaNeue-Light", size: 21)
         } else if asignatura[String(posiblesGrupos![0].clave)]!.count < 55 {
             textView.font = UIFont(name: "HelveticaNeue-Light", size: 20)
         } else {

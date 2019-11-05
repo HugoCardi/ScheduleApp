@@ -10,4 +10,5 @@ import UIKit
 
 class HorarioCollectionViewCell: UICollectionViewCell {
     @IBOutlet var colorHora: UILabel!
+	@IBOutlet weak var colorMediaHora: UILabel!
 }
