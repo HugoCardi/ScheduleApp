@@ -43,6 +43,8 @@ class ViewControllerAgregar: UIViewController{
     let managedContextAgregar = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var defaultUserAgregar: Student? = nil
 	
+	var activarAnimacion: Bool = false
+	
     override func viewDidLoad() {
 		self.defaultUserAgregar = getStudentFromCoreDataAgregar()
         super.viewDidLoad()
@@ -101,10 +103,12 @@ class ViewControllerAgregar: UIViewController{
         blueAirplane.frame.origin.x = view.frame.size.width
         blueAirplane.center.y = centerAirplaneBlueY
         blueAirplane.alpha = 0
-        
-        animatedAirplaneOrange(orangeAirplane)
-        animatedAirplaneGreen(greenAirplane)
-        //animatedAirplaneBlue(blueAirplane)
+		
+	
+		animatedAirplaneOrange(orangeAirplane)
+		animatedAirplaneGreen(greenAirplane)
+		//animatedAirplaneBlue(blueAirplane)
+		
     }
     
     @objc func doneClicked() {
@@ -153,7 +157,12 @@ class ViewControllerAgregar: UIViewController{
         addRandomButton.alpha = 0.0
         claveTextField.alpha = 0.0
         titleLabel.alpha = 0.0
-        
+		
+		activarAnimacion = true
+		animatedAirplaneOrange(orangeAirplane)
+		animatedAirplaneGreen(greenAirplane)
+		//animatedAirplaneBlue(blueAirplane)
+		
         /*greenAirplane.center.x = 0 - greenAirplane.frame.width
          greenAirplane.center.y = CGFloat(550)
          
@@ -205,6 +214,10 @@ class ViewControllerAgregar: UIViewController{
             self.blueAirplane.alpha = 1.0
         }, completion: nil)
     }
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		activarAnimacion = false
+	}
     
 	func enrollBestPossibleAutomatically(clave :String) -> (Bool, RamLecture?) {
 		let possibleToEnroll = extractFromHTML(claveDeseada: clave)
@@ -373,7 +386,10 @@ class ViewControllerAgregar: UIViewController{
                 airplane.center.y = self.centerAirplaneY
             }
             
-            self.animatedAirplaneOrange(airplane)
+			if self.activarAnimacion {
+				print("Siguiente animacion naranja")
+				self.animatedAirplaneOrange(airplane)
+			}
         })
     }
     
@@ -395,7 +411,10 @@ class ViewControllerAgregar: UIViewController{
                 airplane.center.y = self.centerAirplaneGreenY
             }
             
-            self.animatedAirplaneGreen(airplane)
+			if self.activarAnimacion {
+				print("Siguiente animacion verde")
+				self.animatedAirplaneGreen(airplane)
+			}
         })
     }
     

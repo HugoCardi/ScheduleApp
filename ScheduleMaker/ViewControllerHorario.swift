@@ -46,10 +46,11 @@ class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICol
 		UIColor(red: 244/255, green: 211/255, blue: 94/255, alpha: 1.0),
 		UIColor(red: 17/255, green: 157/255, blue: 164/255, alpha: 1.0)]
 	
-	var banderaHoraInicio = false
-	var banderaHoraFin = false
-	
-	var arrayItems = [[(Int, Int, Int)]] ()
+	var arrayItemsPos = [[Int]] ()
+	var arrayItemsColor = [[Int]] ()
+	var arrayItemsIniOFin = [[Int]] ()
+	var arrayItemsCuartos = [[Bool]] ()
+	var arrayClaves = [Int32] ()
     
     override func viewDidLoad() {
 		self.defaultUser = getStudentFromCoreData(appDelegate: self.appDelegate)
@@ -57,16 +58,20 @@ class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICol
     }
     
 	override func viewWillAppear(_ animated: Bool) {
+		self.collectionView.reloadData()
+		self.lectures = Set<Lecture>()
 		self.lectures = self.lectures.union(self.defaultUser?.lectures as! Set<Lecture>)
 		
-		self.arrayItems.removeAll()
+		self.arrayItemsPos.removeAll()
+		self.arrayItemsColor.removeAll()
+		self.arrayItemsIniOFin.removeAll()
+		self.arrayItemsCuartos.removeAll()
 		
 		for lecture in self.lectures {
-			print("For")
-			print(lecture.nombreAsignatura)
 			populateSchedule(days: lecture.arrayDays, firstHour: lecture.hora_in, secondHour: lecture.hora_fin)
+			self.arrayClaves.append(lecture.clave)
 		}
-		print(arrayItems)
+
 		self.collectionView.reloadData()
 	}
     
@@ -91,8 +96,11 @@ class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Time", for: indexPath) as! HorarioCollectionViewCell
-
-        switch indexPath.row {
+		
+		cell.layer.borderColor = UIColor.darkGray.cgColor
+		cell.layer.borderWidth = 0.3
+		
+        switch indexPath.item {
             case 0:
                 cell.colorHora.text = "Hora"
                 cell.colorHora.backgroundColor = UIColor(red: 70/256, green: 106/256, blue: 143/256, alpha: 1)
@@ -242,41 +250,41 @@ class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICol
                 cell.colorHora.backgroundColor = UIColor(red: 70/256, green: 106/256, blue: 143/256, alpha: 1)
                 cell.colorMediaHora.backgroundColor = UIColor(red: 70/256, green: 106/256, blue: 143/256, alpha: 1)
             default:
-				cell.colorHora.text = nil
+				cell.colorHora.text = " "
 				cell.colorHora.backgroundColor = UIColor(red: 179/256, green: 197/256, blue: 215/256, alpha: 1)
 				cell.colorMediaHora.backgroundColor = UIColor(red: 179/256, green: 197/256, blue: 215/256, alpha: 1)
 				//Color prueba
 				//UIColor(red: 252/256, green: 220/256, blue: 77/256, alpha: 1)
-				
-				for lectureHour in arrayItems {
-					for hour in lectureHour {
-						if indexPath.row == hour.0 {
-							
-							cell.colorHora.backgroundColor = self.colors[hour.1]
-							cell.colorMediaHora.backgroundColor = self.colors[hour.1]
-							
-							if hour.2 == 1 && self.banderaHoraInicio  {
-								cell.colorMediaHora.backgroundColor = self.colors[hour.1]
-								cell.colorHora.backgroundColor = UIColor(red: 179/256, green: 197/256, blue: 215/256, alpha: 1)
+		
+					for i in 0..<self.arrayItemsPos.count {
+						for j in 0...(self.arrayItemsPos[i].count - 1) {
+							if indexPath.item == self.arrayItemsPos[i][j] {
 								
-							}
-							
-							if hour.2 == -1 && self.banderaHoraFin {
-								cell.colorHora.backgroundColor = self.colors[hour.1]
-								cell.colorMediaHora.backgroundColor = UIColor(red: 179/256, green: 197/256, blue: 215/256, alpha: 1)
-							}
-						}
+								cell.colorHora.backgroundColor = self.colors[self.arrayItemsColor[i][j]]
+								cell.colorMediaHora.backgroundColor = self.colors[self.arrayItemsColor[i][j]]
+								
+								if self.arrayItemsIniOFin[i][j] == 1 && self.arrayItemsCuartos[i][j] {
+									cell.colorMediaHora.backgroundColor = self.colors[self.arrayItemsColor[i][j]]
+									cell.colorHora.backgroundColor = UIColor(red: 179/256, green: 197/256, blue: 215/256, alpha: 1)
+								}
+								
+								if self.arrayItemsIniOFin[i][j] == -1 && self.arrayItemsCuartos[i][j] {
+									cell.colorHora.backgroundColor = self.colors[self.arrayItemsColor[i][j]]
+									cell.colorMediaHora.backgroundColor = UIColor(red: 179/256, green: 197/256, blue: 215/256, alpha: 1)
+								}
+							}//Termina Segundo For
+						}//Termina Primer For
 					}
-				}
-        }
+					
+			}//Termina Switch
 		
         return cell
     }
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		
-		if indexPath.row > 7 && indexPath.row % 7 != 0 {
-			self.infoTextView.text = String(indexPath.row)
+		if indexPath.item > 7 && indexPath.item % 7 != 0 {
+			self.infoTextView.text = String(indexPath.item)
 		} else {
 			self.infoTextView.text = nil
 		}
@@ -289,7 +297,10 @@ class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICol
 		var memoFila = fila
 		var columna = 1
 		
-		var auxArray = [(Int, Int, Int)] ()
+		var auxArrayPos = [Int] ()
+		var auxArrayColor = [Int] ()
+		var auxArrayIniOFin = [Int] ()
+		var auxArrayCuartos = [Bool] ()
 		
 		if firstHour < 7.3 {
 			fila = 1
@@ -355,35 +366,46 @@ class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICol
 		
 		memoFila = fila
 		
-		if String(firstHour).contains(".15") || String(firstHour).contains(".45") {
-			banderaHoraInicio = true
-			print("True uno")
-		}
-		if String(secondHour).contains(".15") || String(secondHour).contains(".45") {
-			print("True")
-			banderaHoraFin = true
-		}
 		if String(firstHour).contains(".3") {
 			bloques -= 1
 		}
-		banderaHoraInicio = false
-		banderaHoraFin = false
-		
 		
 		for bandera in days {
 			if bandera {
+				var banderaHoraInicio = false
+				var banderaHoraFin = false
+				
+				if String(firstHour).contains(".15") || String(firstHour).contains(".45") {
+					banderaHoraInicio = true
+				} else {
+					banderaHoraInicio = false
+				}
+				
+				if String(secondHour).contains(".15") || String(secondHour).contains(".45") {
+					banderaHoraFin = true
+				}else {
+					banderaHoraFin = false
+				}
+				
 				for i in 1...bloques {
 					var auxPos = 0
+					var auxBool = false
 					
 					if i == 1{
 						auxPos = 1
+						auxBool = banderaHoraInicio
 					} else if i == bloques{
 						auxPos = -1
+						auxBool = banderaHoraFin
 					} else {
 						auxPos = 0
+						auxBool = false
 					}
 					
-					auxArray.append(((7 * fila + columna), self.auxColor, auxPos))
+					auxArrayPos.append(7 * fila + columna)
+					auxArrayColor.append(self.auxColor)
+					auxArrayIniOFin.append(auxPos)
+					auxArrayCuartos.append(auxBool)
 					fila += 1
 				}
 			}
@@ -391,7 +413,10 @@ class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICol
 			fila = memoFila
 		}
 		
-		self.arrayItems.append(auxArray)
+		self.arrayItemsPos.append(auxArrayPos)
+		self.arrayItemsColor.append(auxArrayColor)
+		self.arrayItemsIniOFin.append(auxArrayIniOFin)
+		self.arrayItemsCuartos.append(auxArrayCuartos)
 		
 		self.auxColor += 1
 		

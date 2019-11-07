@@ -103,9 +103,10 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
         cell.contentView.backgroundColor = color
         
         cell.outletButtonInscribir.layer.cornerRadius = 8.0
-        
-        cell.infoText?.text = posiblesGrupos![indexPath.row].profesor+"\n\tGrupo:  "+String(posiblesGrupos![indexPath.row].grupo)+"\n\tHorario:   "
-        cell.infoText?.text += daysToArray(posiblesGrupos![indexPath.row].arrayDays)
+		
+		cell.infoText?.text = posiblesGrupos![indexPath.row].profesor+"\n\tGrupo:  "+String(posiblesGrupos![indexPath.row].grupo)
+        cell.infoText?.text += "\tVacantes: "+String(posiblesGrupos![indexPath.row].vacantes)+"\n\tHorario:   "
+		cell.infoText?.text += daysToArray(posiblesGrupos![indexPath.row].arrayDays)
 		cell.infoText?.text += "   " + posiblesGrupos![indexPath.row].horario!
 		cell.outletButtonInscribir.tag = posiblesGrupos![indexPath.row].grupo
         
