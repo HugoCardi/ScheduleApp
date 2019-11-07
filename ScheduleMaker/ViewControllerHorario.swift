@@ -257,7 +257,7 @@ class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICol
 				//UIColor(red: 252/256, green: 220/256, blue: 77/256, alpha: 1)
 		
 					for i in 0..<self.arrayItemsPos.count {
-						for j in 0...(self.arrayItemsPos[i].count - 1) {
+						for j in 0..<self.arrayItemsPos[i].count {
 							if indexPath.item == self.arrayItemsPos[i][j] {
 								
 								cell.colorHora.backgroundColor = self.colors[self.arrayItemsColor[i][j]]
@@ -272,9 +272,9 @@ class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICol
 									cell.colorHora.backgroundColor = self.colors[self.arrayItemsColor[i][j]]
 									cell.colorMediaHora.backgroundColor = UIColor(red: 179/256, green: 197/256, blue: 215/256, alpha: 1)
 								}
-							}//Termina Segundo For
-						}//Termina Primer For
-					}
+							}//Termina IF
+						}//Termina Segundo For
+					}//Termina Primer For
 					
 			}//Termina Switch
 		
@@ -284,10 +284,38 @@ class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICol
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		
 		if indexPath.item > 7 && indexPath.item % 7 != 0 {
-			self.infoTextView.text = String(indexPath.item)
+			//Muestra el numero del item
+			//self.infoTextView.text = "Item: \(String(indexPath.item))"
+			self.infoTextView.text = " "
+			
+			let auxPos = valueIn(self.arrayItemsPos, indexPath.item)
+			
+			if auxPos != -1 {
+				let lecture = fetchInstanceToDeleteFunction(clave: Int(self.arrayClaves[auxPos]), possibleUser: self.defaultUser, appDelegate: self.appDelegate)
+				
+				if let lecture = lecture{
+					self.infoTextView.text += "\nMateria: \(lecture.nombreAsignatura)"
+					self.infoTextView.text += "\nProfesor: \(lecture.profesor)"
+					self.infoTextView.text += "\nGrupo: \(lecture.grupo)"
+					self.infoTextView.text += "\t\t\tClave: \(lecture.clave)"
+				}
+			}
+			
 		} else {
 			self.infoTextView.text = nil
 		}
+	}
+	
+	func valueIn(_ array: [[Int]], _  value: Int) -> Int {
+		for i in 0..<array.count{
+			for j in 0..<array[i].count{
+				if array[i][j] == value {
+					return i
+				}
+			}
+		}
+		
+		return -1
 	}
 	
 	func populateSchedule(days: [Bool], firstHour: Float, secondHour: Float) {
