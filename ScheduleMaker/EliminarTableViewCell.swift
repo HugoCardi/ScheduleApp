@@ -10,10 +10,11 @@ import UIKit
 
 class EliminarTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var horaCell: UITextView!
-    @IBOutlet weak var signatureCell: UILabel!
-    @IBOutlet weak var teacherCell: UILabel!
+    
+	@IBOutlet weak var infoTextEliminar: UITextView!
+	
 	var claveAsignatura: String = ""
+	
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

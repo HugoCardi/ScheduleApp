@@ -68,13 +68,23 @@ class ViewControllerEliminar: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SubjectCell", for: indexPath) as! EliminarTableViewCell
+		
+		let horaInicioAux: String
+		let horaFinAux: String
+		
+		let cell = tableView.dequeueReusableCell(withIdentifier: "SubjectCell", for: indexPath) as! EliminarTableViewCell
 		let usableElement = self.arrayOfLectures[indexPath.row]
-		cell.teacherCell.text = usableElement.profesor
-		cell.signatureCell.text = usableElement.nombreAsignatura
-		cell.horaCell.text = " \(usableElement.hora_in) to " + " \(usableElement.hora_fin)"
+		cell.infoTextEliminar.text = "\(usableElement.profesor)\n"
+		cell.infoTextEliminar.text += "Clave: \(usableElement.clave) \(usableElement.nombreAsignatura)\n"
+		cell.infoTextEliminar.text += daysToArray(usableElement.arrayDays)
+		
+		horaInicioAux = String(format: "%.2f", usableElement.hora_in)
+		horaFinAux = String(format: "%.2f", usableElement.hora_fin)
+		
+		cell.infoTextEliminar.text += "\t\t"+horaInicioAux+" -  "+horaFinAux+"\n"
+		cell.infoTextEliminar.text = cell.infoTextEliminar.text.replacingOccurrences(of: ".", with: ":")
 		cell.claveAsignatura = String(usableElement.clave)
-        //cell.horaCell.text = "\(horaIn[indexPath.row])0\n\(horaFin[indexPath.row])0".replacingOccurrences(of: ".", with: ":")
+		
         return cell
     }
     

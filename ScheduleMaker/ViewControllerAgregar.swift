@@ -387,7 +387,6 @@ class ViewControllerAgregar: UIViewController{
             }
             
 			if self.activarAnimacion {
-				print("Siguiente animacion naranja")
 				self.animatedAirplaneOrange(airplane)
 			}
         })
@@ -412,7 +411,6 @@ class ViewControllerAgregar: UIViewController{
             }
             
 			if self.activarAnimacion {
-				print("Siguiente animacion verde")
 				self.animatedAirplaneGreen(airplane)
 			}
         })

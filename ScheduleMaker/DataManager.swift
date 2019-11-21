@@ -20,13 +20,16 @@ func createLectures(data: [Element], key: String)  -> [RamLecture] {
 				let clave = try Int(group.child(0).text()) ?? 0
 				let grup = try Int(group.child(1).text()) ?? 0
 				let nombre = asignatura[String(clave)] ?? "Not available"
-				let profesor = try group.child(2).text()
+				var profesor = try group.child(2).text()
 				let tipo = try group.child(3).text()
 				let horario = try group.child(4).text()
 				let dias = try group.child(5).text()
 				let salon = try group.child(6).text()
 				let cupo = try Int(group.child(7).text()) ?? 0
 				let vacantes = try Int(group.child(8).text()) ?? 0
+                
+                profesor = profesor.replacingOccurrences(of: "(Grupo para primer ingreso sin cupo para reingreso)", with: "")
+                
 				if (clave != 0){
 					//print(clave,grup,nombre,profesor,tipo,horario,dias,salon, cupo, vacantes)
 					//Atempting to init a new class.

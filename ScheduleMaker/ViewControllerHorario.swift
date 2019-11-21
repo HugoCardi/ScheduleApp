@@ -59,6 +59,7 @@ class ViewControllerHorario: UIViewController, UICollectionViewDataSource, UICol
     
 	override func viewWillAppear(_ animated: Bool) {
 		self.collectionView.reloadData()
+		self.infoTextView.text = " "
 		self.lectures = Set<Lecture>()
 		self.lectures = self.lectures.union(self.defaultUser?.lectures as! Set<Lecture>)
 		

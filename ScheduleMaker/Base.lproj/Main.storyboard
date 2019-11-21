@@ -36,7 +36,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="biJ-Iu-XY0">
                                 <rect key="frame" x="0.0" y="713" width="414" height="100"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pi6-BO-DcJ">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pi6-BO-DcJ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                         <color key="backgroundColor" systemColor="tertiarySystemFillColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.50196078430000002" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -167,51 +167,33 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubjectCell" rowHeight="70" id="c4e-JA-G2w" customClass="EliminarTableViewCell" customModule="ScheduleMaker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubjectCell" rowHeight="85" id="c4e-JA-G2w" customClass="EliminarTableViewCell" customModule="ScheduleMaker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c4e-JA-G2w" id="lMs-am-KJi">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Maestro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utu-IA-zAc">
-                                                    <rect key="frame" x="10" y="42.5" width="62.5" height="20"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Materia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQT-98-nyF">
-                                                    <rect key="frame" x="10" y="13.5" width="67" height="25"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="texto" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvy-Hj-svw">
-                                                    <rect key="frame" x="336" y="0.0" width="70" height="70"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Info" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0b-Gj-Vhs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="70" id="Qib-lo-VS3"/>
-                                                        <constraint firstAttribute="width" constant="70" id="bU8-rp-w6Z"/>
+                                                        <constraint firstAttribute="height" constant="85" id="GH7-EO-lZ1"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15.5"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="DQT-98-nyF" firstAttribute="top" secondItem="lMs-am-KJi" secondAttribute="top" constant="13" id="AEE-yt-hyZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="uvy-Hj-svw" secondAttribute="bottom" id="OfO-ox-D9b"/>
-                                                <constraint firstItem="DQT-98-nyF" firstAttribute="leading" secondItem="lMs-am-KJi" secondAttribute="leading" constant="10" id="bes-uq-6F9"/>
-                                                <constraint firstItem="Utu-IA-zAc" firstAttribute="top" secondItem="DQT-98-nyF" secondAttribute="bottom" constant="4" id="cdG-Kb-fM9"/>
-                                                <constraint firstItem="Utu-IA-zAc" firstAttribute="leading" secondItem="lMs-am-KJi" secondAttribute="leading" constant="10" id="fnR-BP-4rP"/>
-                                                <constraint firstItem="uvy-Hj-svw" firstAttribute="top" secondItem="lMs-am-KJi" secondAttribute="top" id="rLT-aJ-KRp"/>
-                                                <constraint firstAttribute="trailing" secondItem="uvy-Hj-svw" secondAttribute="trailing" constant="8" id="tiR-f8-VG3"/>
-                                                <constraint firstAttribute="bottom" secondItem="Utu-IA-zAc" secondAttribute="bottom" constant="13" id="uLu-7w-E3F"/>
+                                                <constraint firstAttribute="bottom" secondItem="A0b-Gj-Vhs" secondAttribute="bottom" id="6Mr-lK-rra"/>
+                                                <constraint firstItem="A0b-Gj-Vhs" firstAttribute="top" secondItem="lMs-am-KJi" secondAttribute="top" id="Db4-yE-jOp"/>
+                                                <constraint firstItem="A0b-Gj-Vhs" firstAttribute="leading" secondItem="lMs-am-KJi" secondAttribute="leading" id="wDK-lI-N0B"/>
+                                                <constraint firstAttribute="trailing" secondItem="A0b-Gj-Vhs" secondAttribute="trailing" id="zqZ-9A-vXT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="horaCell" destination="uvy-Hj-svw" id="0ug-vV-fEs"/>
-                                            <outlet property="signatureCell" destination="DQT-98-nyF" id="1e7-Uw-BQH"/>
-                                            <outlet property="teacherCell" destination="Utu-IA-zAc" id="yaQ-EO-N3v"/>
+                                            <outlet property="infoTextEliminar" destination="A0b-Gj-Vhs" id="6d8-Pj-LKi"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -435,8 +417,8 @@
                                                         <action selector="aceptarButtonAction:" destination="cto-xP-Dkd" eventType="touchUpInside" id="imh-hN-JMF"/>
                                                     </connections>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Info" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfe-tv-TMG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="268" height="85"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Info" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfe-tv-TMG">
+                                                    <rect key="frame" x="2" y="0.0" width="268" height="85"/>
                                                     <color key="backgroundColor" red="0.92549019610000005" green="0.92941176469999998" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="85" id="Rod-4f-W4b"/>

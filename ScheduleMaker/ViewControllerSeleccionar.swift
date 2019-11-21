@@ -49,32 +49,6 @@ class ViewControllerSeleccionar: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-    func daysToArray(_ arrayDays: [Bool]) -> String{
-        var horarioFinal: String = ""
-        
-        if arrayDays[0] == true {
-            horarioFinal += "LUN-"
-        }
-        if arrayDays[1] == true {
-            horarioFinal += "MAR-"
-        }
-        if arrayDays[2] == true {
-            horarioFinal += "MIE-"
-        }
-        if arrayDays[3] == true {
-            horarioFinal += "JUE-"
-        }
-        if arrayDays[4] == true {
-            horarioFinal += "VIE-"
-        }
-        if arrayDays[5] == true {
-            horarioFinal += "SAB-"
-        }
-        
-        horarioFinal = String(horarioFinal.dropLast())
-        return horarioFinal
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
